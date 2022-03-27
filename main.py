@@ -1,10 +1,13 @@
 import DownloadDomains
 from ping3 import ping
 
-URL = "https://whoisds.com/newly-registered-domains"
 
-zip_link = DownloadDomains.ScrapTodaysDomainsFileLink(URL)
+WHO_IS_URL = "https://www.whoisds.com/newly-registered-domains"
+
+zip_link = DownloadDomains.ScrapTodaysDomainsFileLink(WHO_IS_URL)
+print(zip_link)
 DownloadDomains.DownloadDomainList(zip_link)
+
 
 # opening 'domain-names.txt' file and saving it as an object called domain_file
 domain_file = open('./domains/domain-names.txt', 'r')
