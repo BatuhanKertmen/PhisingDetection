@@ -23,9 +23,6 @@ def ScrapTodaysDomainsFileLink(URL):
 
 
 def DownloadDomainList(link):
-    try:
-        get_zip = requests.get(link)
-        zip_file = zipfile.ZipFile(BytesIO(get_zip.content))
-        zip_file.extractall(str(CURRENT_PATH) + "/domains")
-    except:
-        raise Exception("An error occurred while downloading/extracting zip file")
+    get_zip = requests.get(link)
+    zip_file = zipfile.ZipFile(BytesIO(get_zip.content))
+    zip_file.extractall(str(CURRENT_PATH) + "/domains")
