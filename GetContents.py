@@ -2,6 +2,7 @@ import requests
 from time import sleep
 from bs4 import BeautifulSoup
 
+
 ######################################################################
 ######################################################################
 #
@@ -19,7 +20,7 @@ from bs4 import BeautifulSoup
 #
 #   EXAMPLE
 #
-#   url = "www.test.com"
+#   url = "http://www.test.com"
 #   content = WebsiteContent(url)  //content.home_page -> html of the url
 #   content.getAllContent(Speed.fast) //content.internal_pages -> [ {<subdomain> : < html of subdomain>}, ...]
 #
@@ -38,9 +39,17 @@ class Speed:
 class WebSiteContent:
     def __init__(self, url):
         self.url = url
-        self.home_page = requests.get(url).content
-        self.internal_pages = []
 
+        if url[0:4] != "http":
+            self.url = "http://" + self.url
+
+        try:
+            self.home_page = requests.get(self.url).content
+        except:
+            self.url = "https" + self.url[4:]
+            self.home_page = requests.get(self.url).content
+
+        self.internal_pages = []
 
     def findInternalLinks(self, page_content):
         try:
