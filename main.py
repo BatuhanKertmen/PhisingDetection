@@ -1,13 +1,16 @@
+import requests
+
 import DownloadDomains
+import GetContents
 import time
 import subprocess # in order to speed up processes, subprocess module is going to be used
 
 
 WHO_IS_URL = "https://www.whoisds.com/newly-registered-domains"
 
-zip_link = DownloadDomains.ScrapTodaysDomainsFileLink(WHO_IS_URL)
-print(zip_link)
-DownloadDomains.DownloadDomainList(zip_link)
+#zip_link = DownloadDomains.ScrapTodaysDomainsFileLink(WHO_IS_URL)
+#DownloadDomains.DownloadDomainList(zip_link)
+
 
 
 # opening 'domain-names.txt' file and saving it as an object called domain_file
@@ -31,9 +34,11 @@ for domain_name in domain_names[:no_domains]:
 
 for d_name, process in zip(domain_names, results):
   if process.wait() == 0:
-      valid_domain_names.append(d_name)
+      valid_domain_names.append(d_name.strip())
 
 end_time = time.perf_counter()
 
 print('Process finished in {} seconds.'.format(end_time - start_time))
 print("Number of valid domain names is {}".format(len(valid_domain_names)))
+
+web = GetContents.WebSiteContent(valid_domain_names[1])
