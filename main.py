@@ -40,5 +40,3 @@ end_time = time.perf_counter()
 
 print('Process finished in {} seconds.'.format(end_time - start_time))
 print("Number of valid domain names is {}".format(len(valid_domain_names)))
-
-web = GetContents.WebSiteContent(valid_domain_names[1])
