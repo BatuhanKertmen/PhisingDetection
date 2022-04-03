@@ -1,4 +1,8 @@
+import json
 import requests
+from math import inf
+from PIL import Image
+from io import BytesIO
 from time import sleep
 from bs4 import BeautifulSoup
 
@@ -39,17 +43,235 @@ class Speed:
 class WebSiteContent:
     def __init__(self, url):
         self.url = url
+        self.parsed_content = \
+            {
+                "status_code": None,
+                "head":
+                    {
+                        "title": None,
+                        "script": None,
+                        "script_count": None,
+                        "link":
+                            [{
+                                "rel": None,
+                                "href": None
+                            }],
+                        "link_count": None,
+                        "favicon": None,
+                        "meta":
+                            [{
+                                "name": None,
+                                "content": None
+                            }],
+                        "meta_count": None
+                    },
+                "text":
+                    {
+                        "h1": None,
+                        "h2": None,
+                        "h3": None,
+                        "h4": None,
+                        "h5": None,
+                        "strong": None,
+                        "p": None,
+                        "mark": None
+                    },
+                "body":
+                    {
+                        "a":
+                            [{
+                                "href": None,
+                                "text": None
+                            }],
+                        "img":
+                            [{
+                                "src": None,
+                                "size": None,
+                                "alt": None
+                            }],
+                        "img_biggest":
+                            {
+                                "src": None,
+                                "size": None
+                            },
+                        "img_smallest":
+                            {
+                                "src": None,
+                                "size": None
+                            },
+                        "audio":
+                            [{
+                                "src": None,
+                                "auto_play": None
+                            }]
+                    }
+            }
 
         if url[0:4] != "http":
-            self.url = "http://" + self.url
+            self.url = "https://" + self.url
 
         try:
-            self.home_page = requests.get(self.url).content
+            response = requests.get(self.url, timeout=(2, 10))
+            self.home_page = response.content
+            self.status_code = response.status_code
         except:
-            self.url = "https" + self.url[4:]
-            self.home_page = requests.get(self.url).content
+            self.url = "http" + self.url[5:]
+            response = requests.get(self.url, timeout=(2, 10))
+            self.home_page = response.content
+            self.status_code = response.status_code
 
         self.internal_pages = []
+
+    def getContent(self, indent=2):
+        return json.dumps(self.parsed_content, indent=indent)
+
+    def parseContent(self):
+        self.parsed_content['status_code'] = self.status_code
+
+        page_soup = BeautifulSoup(self.home_page, features="html.parser")
+        self.parseTitle(page_soup.find('title'))
+        self.parseScript(page_soup.findAll('script'))
+        self.parseLinks(page_soup.findAll('link'))
+        self.parseMeta(page_soup.findAll('meta'))
+        self.getTextualContent(page_soup)
+        self.parseAnchors(page_soup.findAll('a'))
+        self.parseImage(page_soup.findAll('img'))
+        self.parseAudio(page_soup.findAll('audio'))
+
+    def getTextualContent(self, body):
+        text_tags = ['h1', 'h2', 'h3', 'h4', 'h5', 'strong', 'p', 'mark']
+        for text_tag in text_tags:
+            text_contents = body.findAll(text_tag)
+
+            for text_content in text_contents:
+                if self.parsed_content["text"][text_tag]:
+                    self.parsed_content["text"][text_tag].append(text_content.text.strip())
+                else:
+                    self.parsed_content["text"][text_tag] = [text_content.text.strip()]
+
+    def parseScript(self, scripts):
+        for script in scripts:
+            try:
+                src = script['src']
+            except KeyError:
+                src = "local script"
+
+            if self.parsed_content["head"]["script"]:
+                self.parsed_content["head"]["script"].append(src)
+            else:
+                self.parsed_content["head"]["script"] = [src]
+
+        self.parsed_content["head"]["script_count"] = \
+            len(self.parsed_content["head"]["script"]) if self.parsed_content["head"]["script"] else 0
+
+    def parseLinks(self, links):
+        for link in links:
+            rel = href = None
+            if link.has_attr('rel'): rel = link['rel'][0]
+            if link.has_attr('href'): href = link['href']
+
+            if self.parsed_content["head"]["link"][0]['rel'] is not None:
+                self.parsed_content["head"]["link"].append({"rel": rel, "href": href})
+            else:
+                self.parsed_content["head"]["link"][0]["rel"] = rel
+                self.parsed_content["head"]["link"][0]["href"] = href
+
+            if link['rel'][0].find('icon') != -1:
+                self.parsed_content['head']['favicon'] = href
+
+        self.parsed_content["head"]["link_count"] = \
+            len(self.parsed_content["head"]["link"]) if self.parsed_content["head"]["link"] else 0
+
+    def parseMeta(self, metas):
+        for meta in metas:
+            name = content = None
+            if meta.has_attr('name'): name = meta['name']
+            if meta.has_attr('content'): content = meta['content']
+
+            if self.parsed_content["head"]["meta"][0]["name"] is not None:
+                self.parsed_content["head"]["meta"].append({"name": name, "content": content})
+            else:
+                self.parsed_content["head"]["meta"][0]["name"] = name
+                self.parsed_content["head"]["meta"][0]["content"] = content
+
+        self.parsed_content["head"]['meta_count'] = \
+            len(self.parsed_content["head"]["meta"]) if self.parsed_content["head"]["meta"] else 0
+
+    def parseTitle(self, title):
+        if title is not None:
+            self.parsed_content["head"]["title"] = title.text
+
+    def parseAnchors(self, anchors):
+        for anchor in anchors:
+            href = text = None
+            if anchor.has_attr('href'): href = anchor['href']
+            if anchor.text: text = anchor.text
+
+            if self.parsed_content["body"]["a"][0]["href"] is not None:
+                self.parsed_content["body"]["a"].append(
+                    {"href": href,
+                     "text": text})
+            else:
+                self.parsed_content["body"]["a"][0]["href"] = href
+                self.parsed_content["body"]["a"][0]["text"] = text
+
+    def parseImage(self, images):
+        smallest_img = [None, 0, 0, 0]
+        biggest_img = [None, inf, 0, 0]
+        for image in images:
+            if image['src']:
+                if self.parsed_content["body"]["img"][0]["src"] is not None:
+                    height, width, src = self.getImageSizeAndLink(image)
+                    self.parsed_content["body"]["img"].append(
+                        {"src": src,
+                         "size": (height, width)})
+                    if height * width < smallest_img[1]:
+                        smallest_img = [src, width * height, [width, height]]
+                    if height * width > biggest_img[1]:
+                        biggest_img = [src, width * height, [width, height]]
+                else:
+                    height, width, src = self.getImageSizeAndLink(image)
+
+                    self.parsed_content["body"]["img"][0]["src"] = src
+                    self.parsed_content["body"]["img"][0]["size"] = (height, width)
+                    smallest_img = biggest_img = [src, width * height, [width, height]]
+
+            self.parsed_content["body"]["img_biggest"]["src"] = biggest_img[0]
+            self.parsed_content["body"]["img_biggest"]["size"] = biggest_img[2]
+            self.parsed_content["body"]["img_smallest"]["src"] = smallest_img[0]
+            self.parsed_content["body"]["img_smallest"]["size"] = smallest_img[2]
+
+    def parseAudio(self, audios):
+        for audio in audios:
+            src = []
+            for child in audio.children:
+                if child.name == "source" and child.has_attr('src'):
+                    src.append(child['src'])
+
+            if self.parsed_content["body"]["audio"][0]["src"] is not None:
+                self.parsed_content["body"]["audio"].append(
+                    {"src": src,
+                     "auto_play": audio.has_attr("autoplay")})
+            else:
+                self.parsed_content["body"]["audio"][0]["src"] = src
+                self.parsed_content["body"]["audio"][0]["auto_play"] = audio.has_attr("autoplay")
+
+    def getImageSizeAndLink(self, image):
+
+        url = image['src']
+        if url.find('http') == -1:
+            url = self.url + url
+
+        width = height = -1
+        if image.has_attr('width') and image.has_attr('height'):
+            width = image['width']
+            height = image['height']
+        """else:
+            raw_image = requests.get(url)
+            image = Image.open(BytesIO(raw_image.content))
+            width, height = image.size
+        """
+        return int(width), int(height), url
 
     def findInternalLinks(self, page_content):
         try:
