@@ -13,7 +13,7 @@ WHO_IS_URL = "https://www.whoisds.com/newly-registered-domains"
 
 zip_link = DownloadDomains.ScrapTodaysDomainsFileLink(WHO_IS_URL)
 DownloadDomains.DownloadDomainList(zip_link)
-
+"""
 
 
 # opening 'domain-names.txt' file and saving it as an object called domain_file
@@ -25,7 +25,7 @@ domain_names = domain_file.readlines()
 # storing the valid domain names in an array called valid_domain_names
 valid_domain_names = []
 
-no_domains = 1 # number of domains that we are going to investigate
+no_domains = 100  # number of domains that we are going to investigate
 
 start_time = time.perf_counter()
 
@@ -44,8 +44,6 @@ end_time = time.perf_counter()
 
 print('Process finished in {} seconds.'.format(end_time - start_time))
 print("Number of valid domain names is {}".format(len(valid_domain_names)))
-"""
-valid_domain_names = ["0000test00.com"]
 
 WORKING_DIRECTORY = str(pathlib.Path().resolve().parents[0])
 for valid_domain_name in valid_domain_names:
@@ -68,6 +66,8 @@ for valid_domain_name in valid_domain_names:
         print(valid_domain_name, "already exists that's why it is skipped!")
     except requests.exceptions.ConnectionError:
         print("Could not connect to", valid_domain_name, "skipping!")
+    except requests.exceptions.ReadTimeout:
+        print("Max time exceeded", valid_domain_name, "skipping!")
 
 
 

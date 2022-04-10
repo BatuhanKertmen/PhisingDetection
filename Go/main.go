@@ -101,6 +101,8 @@ func main() {
 		log.Fatal("could nor create file", err.Error())
 	}
 
+	defer file.Close()
+
 	_, err = io.Copy(file, strings.NewReader(updatedJson))
 	if checkError(err) {
 		log.Fatal("could not write to file", err.Error())
