@@ -5,7 +5,7 @@ from io import BytesIO
 from datetime import date
 from bs4 import BeautifulSoup
 
-CURRENT_PATH = pathlib.Path().resolve()
+CURRENT_PATH = str(pathlib.Path().resolve()) + "\Python"
 
 
 def ScrapTodaysDomainsFileLink(URL):
