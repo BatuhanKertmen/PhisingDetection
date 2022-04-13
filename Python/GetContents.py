@@ -26,6 +26,9 @@ from bs4 import BeautifulSoup
 #
 #   url = "http://www.test.com"
 #   content = WebsiteContent(url)  //content.home_page -> html of the url
+#   content.parseContent() //parses html of the hom page and stores it in content.parsedContent
+#   content.getContent // returns content.parsedContent as a JSON object
+#
 #   content.getAllContent(Speed.fast) //content.internal_pages -> [ {<subdomain> : < html of subdomain>}, ...]
 #
 ######################################################################
@@ -76,12 +79,16 @@ class WebSiteContent:
                         "img_biggest":
                             {
                                 "src": None,
-                                "size": None
+                                "size": None,
+                                "alt": None,
+                                "byte": None
                             },
                         "img_smallest":
                             {
                                 "src": None,
-                                "size": None
+                                "size": None,
+                                "alt": None,
+                                "byte": None
                             },
                         "audio": []
                     }
@@ -181,31 +188,18 @@ class WebSiteContent:
                         "text": text
                     })
 
-
     def parseImage(self, images):
-        smallest_img = [None, 0, 0, 0]
-        biggest_img = [None, inf, 0, 0]
         for image in images:
             if image.has_attr('src'):
-                height, width, src = self.getImageSizeAndLink(image)
+                src = self.getImageLink(image)
                 alt = image['alt'] if image.has_attr('alt') else None
 
                 self.parsed_content["body"]["img"].append(
                     {
                         "src": src,
-                        "size": (height, width),
+                        "size": (-1, -1),
                         "alt": alt
                     })
-
-                if height * width < smallest_img[1] and (height != -1 or width != -1):
-                    smallest_img = [src, width * height, [width, height]]
-                if height * width > biggest_img[1] and (height != -1 and width != -1):
-                    biggest_img = [src, width * height, [width, height]]
-
-            self.parsed_content["body"]["img_biggest"]["src"] = biggest_img[0]
-            self.parsed_content["body"]["img_biggest"]["size"] = biggest_img[2]
-            self.parsed_content["body"]["img_smallest"]["src"] = smallest_img[0]
-            self.parsed_content["body"]["img_smallest"]["size"] = smallest_img[2]
 
     def parseAudio(self, audios):
         for audio in audios:
@@ -221,16 +215,15 @@ class WebSiteContent:
                 })
 
 
-    def getImageSizeAndLink(self, image):
+    def getImageLink(self, image):
         url = image['src']
         if url.find('http') == -1:
-            url = self.url + url
+            if url[0] != "/" and self.url[-1] != "/":
+                url = self.url + "/" + url
+            else:
+                url = self.url + url
 
-        width = height = -1
-        if image.has_attr('width') and image.has_attr('height'):
-            width = image['width']
-            height = image['height']
-        return int(width), int(height), url
+        return url
 
     def findInternalLinks(self, page_content):
         try:
