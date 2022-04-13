@@ -50,8 +50,6 @@ func main() {
 
 	imageLinks := gjson.Get(jsonContent, "body.img").Array()
 
-	fmt.Println("link len", len(imageLinks))
-
 	var completeImageList []AdvancedImage
 	var biggestImage, smallestImage AdvancedImage
 
@@ -106,8 +104,6 @@ func main() {
 			}
 		}
 	}
-
-	fmt.Println("len: ", len(completeImageList))
 
 	deleteFile(fileName)
 	updatedJson, _ := sjson.Set(jsonContent, "body.img", completeImageList)
