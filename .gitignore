@@ -12,5 +12,13 @@ ENV/
 env.bak/
 venv.bak/
 
-#Domains
-domains/
+# Domains
+Python/domains/
+Go/WebsiteContents
+
+# Temp files
+Go/Images
+Go/ScrapedContent
+
+# Debugging/Testing Files
+Python/benchmarking.py
