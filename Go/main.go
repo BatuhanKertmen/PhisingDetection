@@ -14,6 +14,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path/filepath"
 	"strings"
 )
 
@@ -30,73 +31,91 @@ type AdvancedImage struct {
 	Byte int    `json:"byte"`
 }
 
-func printAdvancedImage(image AdvancedImage) {
-	fmt.Println(image.Src)
-	fmt.Println(image.Size)
-	fmt.Println(image.Alt)
-	fmt.Println(image.Byte)
-}
-
 func main() {
 	fileName := os.Args[1]
+
 	jsonFile := openFile(fileName)
 
 	if jsonFile == nil {
+		log.Fatal("could not open json file")
 		return
 	}
 
 	jsonContent := *getFileContent(jsonFile)
 
-	jsonFile.Close()
+	err := jsonFile.Close()
+	if checkError(err) {
+		fmt.Println(err.Error())
+	}
 
 	imageLinks := gjson.Get(jsonContent, "body.img").Array()
 
+	fmt.Println("link len", len(imageLinks))
+
 	var completeImageList []AdvancedImage
+	var biggestImage, smallestImage AdvancedImage
+
 	for i := 0; i < len(imageLinks); i++ {
 
-		var image Image
-		err := json.Unmarshal([]byte(imageLinks[i].String()), &image)
+		var img Image
+		err := json.Unmarshal([]byte(imageLinks[i].String()), &img)
 
 		if checkError(err) {
-			fmt.Println(err.Error())
+			fmt.Println("6" + err.Error())
 			continue
 		}
 
-		url := image.Src
-		imageLocation := "Images/" + *getImageName(url)
+		url := img.Src
+		path := *getCurrentDirectory() + "\\Go\\Images\\" + *getImageName(url)
+		imageLocation := path
 
 		err, size := downloadFile(url, imageLocation)
 
 		if checkError(err) {
-			fmt.Println(err.Error())
+			fmt.Println("5" + err.Error())
 			continue
 		}
 
 		err, width, height := getImageDimension(imageLocation)
 
 		if checkError(err) {
-			fmt.Println(err.Error())
+			fmt.Println("4" + err.Error())
 			continue
 		}
 
-		image.Size[0] = width
-		image.Size[1] = height
+		img.Size[0] = width
+		img.Size[1] = height
 
 		err = os.Remove(imageLocation)
 
 		if checkError(err) {
-			fmt.Println(err.Error())
+			fmt.Println("3" + err.Error())
 		}
 
-		advancedImage := *createAdvancedImage(&image, size)
+		advancedImage := *createAdvancedImage(&img, size)
 
-		completeImageList = append(completeImageList, advancedImage)
+		if i == 0 {
+			biggestImage = advancedImage
+			smallestImage = advancedImage
+		} else {
+			if advancedImage.Size[0]*advancedImage.Size[1] > biggestImage.Size[0]*biggestImage.Size[1] {
+				biggestImage = advancedImage
+			}
+			if advancedImage.Size[0]*advancedImage.Size[1] < smallestImage.Size[0]*smallestImage.Size[1] {
+				completeImageList = append(completeImageList, advancedImage)
+			}
+		}
 	}
+
+	fmt.Println("len: ", len(completeImageList))
 
 	deleteFile(fileName)
 	updatedJson, _ := sjson.Set(jsonContent, "body.img", completeImageList)
+	updatedJson, _ = sjson.Set(updatedJson, "body.img_biggest", biggestImage)
+	updatedJson, _ = sjson.Set(updatedJson, "body.img_smallest", smallestImage)
 
-	file, err := os.Create("ScrapedContent/" + fileName)
+	path := filepath.Join(*getCurrentDirectory(), "Go", "ScrapedContent", fileName)
+	file, err := os.Create(path)
 	if checkError(err) {
 		log.Fatal("could nor create file", err.Error())
 	}
@@ -107,6 +126,7 @@ func main() {
 	if checkError(err) {
 		log.Fatal("could not write to file", err.Error())
 	}
+
 }
 
 func createAdvancedImage(image *Image, byte int) *AdvancedImage {
@@ -125,21 +145,34 @@ func getImageDimension(imagePath string) (error, int, int) {
 		return err, -1, -1
 	}
 
-	image, _, err := image.DecodeConfig(file)
+	img, _, err := image.DecodeConfig(file)
 	if checkError(err) {
 		return err, -1, -1
 	}
-	return nil, image.Width, image.Height
+	return nil, img.Width, img.Height
 }
 
 func getImageName(url string) *string {
 	temp := strings.Split(url, "/")
 	imageName := temp[len(temp)-1]
+
+	var idx int
+	if strings.Index(imageName, "png") != -1 {
+		idx = strings.Index(imageName, "png") + 3
+	} else {
+		idx = strings.Index(imageName, "jpeg") + 4
+	}
+
+	imageName = imageName[:idx]
+
+	fmt.Println("img-->", imageName)
 	return &imageName
 }
 
 func openFile(fileName string) *os.File {
-	jsonFile, err := os.Open("WebsiteContents/" + fileName)
+	path := filepath.Join(*getCurrentDirectory(), "Go", "WebsiteContents", fileName)
+	fmt.Println(path)
+	jsonFile, err := os.Open(path)
 
 	if checkError(err) {
 		return nil
@@ -149,10 +182,11 @@ func openFile(fileName string) *os.File {
 }
 
 func deleteFile(fileName string) {
-	err := os.Remove("WebsiteContents/" + fileName)
+	path := filepath.Join(*getCurrentDirectory(), "Go", "WebsiteContents", fileName)
+	err := os.Remove(path)
 
 	if checkError(err) {
-		fmt.Println(err.Error())
+		fmt.Println("2" + err.Error())
 	}
 }
 
@@ -167,7 +201,9 @@ func checkError(err error) bool {
 }
 
 func downloadFile(URL, fileName string) (error, int) {
-	//Get the response bytes from the url
+
+	fmt.Println("path --> ", fileName)
+
 	response, err := http.Get(URL)
 	if checkError(err) {
 		return err, -1
@@ -177,7 +213,7 @@ func downloadFile(URL, fileName string) (error, int) {
 	if response.StatusCode != 200 {
 		return errors.New("received non 200 response code"), -1
 	}
-	//Create a empty file
+
 	file, err := os.Create(fileName)
 	if checkError(err) {
 		return err, -1
@@ -191,4 +227,24 @@ func downloadFile(URL, fileName string) (error, int) {
 	}
 
 	return nil, int(size)
+}
+
+func getCurrentDirectory() *string {
+	path, err := os.Getwd()
+	if err != nil {
+		log.Println("1" + err.Error())
+	}
+
+	split := strings.Split(path, "\\")
+	for split[len(split)-1] != "PhisingDetection" {
+		split = split[:len(split)-1]
+	}
+
+	finalPath := ""
+	for i := 0; i < len(split); i++ {
+		finalPath = finalPath + split[i] + "\\"
+	}
+	finalPath = finalPath[:len(finalPath)-1]
+
+	return &finalPath
 }

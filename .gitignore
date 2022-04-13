@@ -18,6 +18,7 @@ Go/WebsiteContents
 
 # Temp files
 Go/Images
+Go/ScrapedContent
 
 # Debugging/Testing Files
 Python/benchmarking.py
