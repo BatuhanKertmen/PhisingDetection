@@ -22,20 +22,24 @@ domains_address = DownloadDomains.DownloadDomainList(zip_link)
 
 domain_file = open(domains_address, 'r')
 
-domain_names = domain_file.readlines()
+domain_names = domain_file.readlines()[:10]
 valid_domain_names = []
+
+print("1")
 
 def pinging(d_name):
     if ping(d_name[:-1]):
         valid_domain_names.append(d_name[:-1])
 
 
+print("2")
 tic = time.perf_counter()
 
 with concurrent.futures.ThreadPoolExecutor(max_workers=1000) as executor:
-    executor.map(pinging, domain_names[:100])
+    executor.map(pinging, domain_names[:1000])
 
 toc = time.perf_counter()
+print("3")
 
 print('Process finished in {} seconds.'.format(toc - tic))
 print("Number of valid domain names is {}".format(len(valid_domain_names)))
@@ -68,18 +72,18 @@ def scrape(domain_name, working_directory_path):
         #print(domain_name, "exceeded 30 redirections, skipping!")
 
 
-resluts = {}
+results = {}
 print("----------------------------- BEGINNING --------------------------------------")
 try:
     for n_job_count in range(1000, 50001, 250):
         start = time.perf_counter()
-        thread = Parallel(n_jobs=n_job_count, prefer="threads")((delayed(scrape)(i, dir.WORKING_DIR) for i in valid_domain_names))
+        thread = Parallel(n_jobs=n_job_count, prefer="threads")((delayed(scrape)(i, str(dir.WORKING_DIR)) for i in valid_domain_names))
         end = time.perf_counter()
         print(end - start)
-        resluts[n_job_count] = end - start
+        results[n_job_count] = end - start
 finally:
-    x_val = resluts.keys()
-    y_val = resluts.values()
+    x_val = results.keys()
+    y_val = results.values()
 
     plt.plot(x_val, y_val)
     plt.show()
