@@ -1,11 +1,10 @@
+import os
 import zipfile
-import pathlib
 import requests
 from io import BytesIO
 from datetime import date
 from bs4 import BeautifulSoup
-
-CURRENT_PATH = str(pathlib.Path().resolve()) + "\Python"
+from directories import DOMAINS_RAW_DIR
 
 
 def ScrapTodaysDomainsFileLink(URL):
@@ -22,7 +21,10 @@ def ScrapTodaysDomainsFileLink(URL):
     return domains_table_rows[1].contents[7].a['href']
 
 
+# returns address of the downloaded file
 def DownloadDomainList(link):
     get_zip = requests.get(link)
     zip_file = zipfile.ZipFile(BytesIO(get_zip.content))
-    zip_file.extractall(str(CURRENT_PATH) + "/domains")
+    zip_file.extractall(DOMAINS_RAW_DIR)
+    return os.path.join(DOMAINS_RAW_DIR, zip_file.namelist()[0])
+
