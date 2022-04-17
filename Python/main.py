@@ -25,21 +25,16 @@ domain_file = open(domains_address, 'r')
 domain_names = domain_file.readlines()[:10]
 valid_domain_names = []
 
-print("1")
-
 def pinging(d_name):
     if ping(d_name[:-1]):
         valid_domain_names.append(d_name[:-1])
 
-
-print("2")
 tic = time.perf_counter()
 
 with concurrent.futures.ThreadPoolExecutor(max_workers=1000) as executor:
     executor.map(pinging, domain_names[:1000])
 
 toc = time.perf_counter()
-print("3")
 
 print('Process finished in {} seconds.'.format(toc - tic))
 print("Number of valid domain names is {}".format(len(valid_domain_names)))
