@@ -152,13 +152,15 @@ class WebSiteContent:
             if link.has_attr('rel'): rel = link['rel'][0]
             if link.has_attr('href'): href = link['href']
 
-            self.parsed_content["head"]["link"].append({"rel": rel, "href": href})
+            if rel is not None or href is not None:
+                self.parsed_content["head"]["link"].append({"rel": rel, "href": href})
 
-            if link['rel'][0].find('icon') != -1:
+            if rel != -1:
                 self.parsed_content['head']['favicon'] = href
 
         self.parsed_content["head"]["link_count"] = \
-            len(self.parsed_content["head"]["link"]) if self.parsed_content["head"]["link"] else 0
+            len(self.parsed_content["head"]["link"])
+
 
     def parseMeta(self, metas):
         for meta in metas:
@@ -192,14 +194,15 @@ class WebSiteContent:
         for image in images:
             if image.has_attr('src'):
                 src = self.getImageLink(image)
-                alt = image['alt'] if image.has_attr('alt') else None
+                if src is not None:
+                    alt = image['alt'] if image.has_attr('alt') else None
 
-                self.parsed_content["body"]["img"].append(
-                    {
-                        "src": src,
-                        "size": (-1, -1),
-                        "alt": alt
-                    })
+                    self.parsed_content["body"]["img"].append(
+                        {
+                            "src": src,
+                            "size": (-1, -1),
+                            "alt": alt
+                        })
 
     def parseAudio(self, audios):
         for audio in audios:
@@ -216,6 +219,9 @@ class WebSiteContent:
 
 
     def getImageLink(self, image):
+        if image['src'] == "":
+            return None
+
         url = image['src']
         if url.find('http') == -1:
             if url[0] != "/" and self.url[-1] != "/":

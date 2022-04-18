@@ -35,7 +35,7 @@ func main() {
 
 	fileName := os.Args[1]
 
-	deleteFile(fileName)
+	//deleteFile(fileName)
 
 	log.Fatal()
 

@@ -23,6 +23,7 @@ SCRAPED_CONTENT_DIR = os.path.join(GO_DIR, "ScrapedContent")
 
 # DOMAIN RELATED
 VALID_NAMES_TXT = os.path.join(DOMAINS_VALID_DIR, "valid-domain-names.txt")
+RAW_NAMES_TXT = os.path.join(DOMAINS_RAW_DIR, "domain-names.txt")
 
 
 
