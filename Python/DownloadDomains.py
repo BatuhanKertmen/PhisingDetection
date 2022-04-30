@@ -4,7 +4,7 @@ import requests
 from io import BytesIO
 from datetime import date
 from bs4 import BeautifulSoup
-from directories import DOMAINS_RAW_DIR
+from paths import DOMAINS_RAW_DIR
 
 
 def ScrapTodaysDomainsFileLink(URL):

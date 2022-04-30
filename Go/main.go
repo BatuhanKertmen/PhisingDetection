@@ -32,7 +32,14 @@ type AdvancedImage struct {
 }
 
 func main() {
+
 	fileName := os.Args[1]
+
+	//deleteFile(fileName)
+
+	log.Fatal()
+
+
 
 	jsonFile := openFile(fileName)
 
@@ -67,7 +74,7 @@ func main() {
 		path := *getCurrentDirectory() + "\\Go\\Images\\" + *getImageName(url)
 		imageLocation := path
 
-		err, size := downloadFile(url, imageLocation)
+		err, byte := downloadFile(url, imageLocation)
 
 		if checkError(err) {
 			fmt.Println("5" + err.Error())
@@ -90,9 +97,12 @@ func main() {
 			fmt.Println("3" + err.Error())
 		}
 
-		advancedImage := *createAdvancedImage(&img, size)
+		advancedImage := *createAdvancedImage(&img, byte)
+
+		completeImageList = append(completeImageList, advancedImage)
 
 		if i == 0 {
+			fmt.Println("in if")
 			biggestImage = advancedImage
 			smallestImage = advancedImage
 		} else {
@@ -100,12 +110,12 @@ func main() {
 				biggestImage = advancedImage
 			}
 			if advancedImage.Size[0]*advancedImage.Size[1] < smallestImage.Size[0]*smallestImage.Size[1] {
-				completeImageList = append(completeImageList, advancedImage)
+				smallestImage = advancedImage
 			}
 		}
 	}
 
-	deleteFile(fileName)
+
 	updatedJson, _ := sjson.Set(jsonContent, "body.img", completeImageList)
 	updatedJson, _ = sjson.Set(updatedJson, "body.img_biggest", biggestImage)
 	updatedJson, _ = sjson.Set(updatedJson, "body.img_smallest", smallestImage)
