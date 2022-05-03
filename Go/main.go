@@ -34,13 +34,6 @@ type AdvancedImage struct {
 func main() {
 
 	fileName := os.Args[1]
-
-	//deleteFile(fileName)
-
-	log.Fatal()
-
-
-
 	jsonFile := openFile(fileName)
 
 	if jsonFile == nil {
@@ -54,6 +47,8 @@ func main() {
 	if checkError(err) {
 		fmt.Println(err.Error())
 	}
+
+	deleteFile(fileName)
 
 	imageLinks := gjson.Get(jsonContent, "body.img").Array()
 
