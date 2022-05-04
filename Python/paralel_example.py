@@ -6,9 +6,8 @@ def square(x):
     print(x ** 2)
 
 from joblib import Parallel, delayed
-a = Parallel(n_jobs=10000, prefer="threads")(
-    (delayed(square)[i] for i in range(10000))
-)
+a = Parallel(n_jobs=10000, prefer="threads")(delayed(square)(i) for i in range(10000))
+
 
 print(a)
 

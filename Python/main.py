@@ -9,7 +9,7 @@ import subprocess
 from ping3 import ping
 from itertools import islice
 from joblib import Parallel, delayed
-from paths import VALID_NAMES_TXT, WORKING_DIR
+from paths import VALID_NAMES_TXT, WORKING_DIR, RAW_NAMES_TXT
 
 
 def pinging(d_name):
@@ -47,17 +47,19 @@ if __name__ == "__main__":
     WHO_IS_URL = "https://www.whoisds.com/newly-registered-domains"
 
     zip_link = DownloadDomains.ScrapTodaysDomainsFileLink(WHO_IS_URL)
-    domains_address = DownloadDomains.DownloadDomainList(zip_link)
+    #domains_address = DownloadDomains.DownloadDomainList(zip_link)
+    domains_address = RAW_NAMES_TXT
 
     valid_domain_names = []
 
     tic = time.perf_counter()
-    batch_count = 500
-    thread_count = 50
+    batch_count = 250
+    thread_count = 100
     counter = 0
     with open(domains_address, 'r') as domain_file:
         while True:
             domain_names = list(islice(domain_file, batch_count))
+
             print("received ", counter * batch_count, "lines")
             if not domain_names:
                 break
@@ -78,14 +80,15 @@ if __name__ == "__main__":
     print('Process finished in {} seconds.'.format(toc - tic))
 
     batch_count = 250
-    thread_count = 10
+    thread_count = 100
     try:
-        while True:
-            with open(VALID_NAMES_TXT, "r") as file:
+        with open(VALID_NAMES_TXT, "r") as file:
+            while True:
                 valid_domains = list(islice(file, batch_count))
                 if not valid_domains:
                     break
 
-                Parallel(n_jobs=thread_count, prefer="threads", verbose=50)((delayed(scrape)(i.strip(), str(WORKING_DIR)) for i in valid_domains))
+                valid_domains = [valid_domain.strip() for valid_domain in valid_domains]
+                Parallel(n_jobs=thread_count, prefer="threads", verbose=10)((delayed(scrape)(i, str(WORKING_DIR)) for i in valid_domains))
     except:
         pass
