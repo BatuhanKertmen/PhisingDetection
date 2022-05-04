@@ -12,14 +12,5 @@ ENV/
 env.bak/
 venv.bak/
 
-# Domains
-Python/domains/raw/*
-Python/domains/valid/*
-
-# Temp files
-Go/Images/*
-Go/ScrapedContent/*
-Go/WebsiteContents/*
-
 # Debugging/Testing Files
 Python/benchmarking.py
