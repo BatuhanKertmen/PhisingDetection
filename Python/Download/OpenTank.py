@@ -3,7 +3,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 from Python.paths import DOMAINS_RAW_DIR
 
-def calculateTimeDifference(time1, time2):
+def _calculateTimeDifferenceInMin(time1, time2):
     time1_split = time1.split(':')
     time2_split = time2.split(':')
 
@@ -13,13 +13,11 @@ def calculateTimeDifference(time1, time2):
 
     return dif
 
-
-
 def scrapeOpenPhising():
-    OPEN_TANK_URL = "https://openphish.com/"
+    open_tank_url = "https://openphish.com/"
     current_time = datetime.now().strftime("%H:%M:%S")
 
-    open_tank_page = requests.get(OPEN_TANK_URL)
+    open_tank_page = requests.get(open_tank_url)
     soup = BeautifulSoup(open_tank_page.content, features="html.parser")
     domains_table_rows = soup.findAll('tr')
 
@@ -28,10 +26,13 @@ def scrapeOpenPhising():
     with open(DOMAINS_RAW_DIR + "\\open_tank_phishing.txt", "w") as file:
         for domains_table_row in domains_table_rows[1:]:
             upload_time = domains_table_row.contents[5].text
-            if calculateTimeDifference(current_time, upload_time) > 240: break
+            if _calculateTimeDifferenceInMin(current_time, upload_time) > 240:
+                break
 
             url = domains_table_row.contents[1].text
             file.write(url + "\n")
+
+    return DOMAINS_RAW_DIR + "\\open_tank_phishing.txt"
 
 
 

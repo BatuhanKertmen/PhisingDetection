@@ -1,15 +1,17 @@
 import json
 import os
-from requests.exceptions import TooManyRedirects, ConnectionError, ReadTimeout
-
-from Python.Download.DownloadDomains import ScrapeWhoIsDs
-import GetContents
 import time
 import subprocess
 from ping3 import ping
 from itertools import islice
 from joblib import Parallel, delayed
-from paths import VALID_NAMES_TXT, WORKING_DIR, RAW_NAMES_TXT
+
+from requests.exceptions import TooManyRedirects, ConnectionError, ReadTimeout
+
+import GetContents
+from paths import VALID_NAMES_TXT, WORKING_DIR
+from Python.Download.DownloadDomains import ScrapeWhoIsDs
+from Python.Download.OpenTank import scrapeOpenPhising
 
 
 def pinging(d_name):
