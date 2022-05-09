@@ -2,7 +2,7 @@ import json
 import os
 from requests.exceptions import TooManyRedirects, ConnectionError, ReadTimeout
 
-import DownloadDomains
+from Python.Download.DownloadDomains import ScrapeWhoIsDs
 import GetContents
 import time
 import subprocess
@@ -43,13 +43,7 @@ def scrape(domain_name, working_directory_path):
 
 
 if __name__ == "__main__":
-
-    WHO_IS_URL = "https://www.whoisds.com/newly-registered-domains"
-
-    zip_link = DownloadDomains.ScrapTodaysDomainsFileLink(WHO_IS_URL)
-    #domains_address = DownloadDomains.DownloadDomainList(zip_link)
-    domains_address = RAW_NAMES_TXT
-
+    domains_address = ScrapeWhoIsDs()
     valid_domain_names = []
 
     tic = time.perf_counter()
@@ -89,6 +83,7 @@ if __name__ == "__main__":
                     break
 
                 valid_domains = [valid_domain.strip() for valid_domain in valid_domains]
-                Parallel(n_jobs=thread_count, prefer="threads", verbose=10)((delayed(scrape)(i, str(WORKING_DIR)) for i in valid_domains))
+                Parallel(n_jobs=thread_count, prefer="threads", verbose=10)(
+                    (delayed(scrape)(i, str(WORKING_DIR)) for i in valid_domains))
     except:
         pass
