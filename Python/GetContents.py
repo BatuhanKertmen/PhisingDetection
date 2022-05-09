@@ -1,8 +1,5 @@
 import json
 import requests
-from math import inf
-from PIL import Image
-from io import BytesIO
 from time import sleep
 from bs4 import BeautifulSoup
 
