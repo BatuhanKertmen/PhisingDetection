@@ -1,0 +1,45 @@
+{
+    "status_code": null,
+    "head":
+        {
+            "title": null,
+            "script": [],
+            "script_count": 0,
+            "link": [],
+            "link_count": 0,
+            "favicon": null,
+            "meta": [],
+            "meta_count": 0
+        },
+    "text":
+        {
+            "h1": null,
+            "h2": null,
+            "h3": null,
+            "h4": null,
+            "h5": null,
+            "strong": null,
+            "p": null,
+            "mark": null
+        },
+    "body":
+        {
+            "a": [],
+            "img": [],
+            "img_biggest":
+                {
+                    "src": null,
+                    "size": null,
+                    "alt": null,
+                    "byte": null
+                },
+            "img_smallest":
+                {
+                    "src": null,
+                    "size": null,
+                    "alt": null,
+                    "byte": null
+                },
+            "audio": []
+        }
+}

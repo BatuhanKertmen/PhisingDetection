@@ -36,3 +36,4 @@ def ScrapeWhoIsDs():
     file_path = _DownloadDomainList(zip_link)
     return file_path
 
+ScrapeWhoIsDs()

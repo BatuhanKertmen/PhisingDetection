@@ -43,71 +43,20 @@ class Speed:
 class WebSiteContent:
     def __init__(self, url):
         self.domain = url
-        self.url = url
-        self.parsed_content = \
-            {
-                "status_code": None,
-                "head":
-                    {
-                        "title": None,
-                        "script": [],
-                        "script_count": 0,
-                        "link": [],
-                        "link_count": 0,
-                        "favicon": None,
-                        "meta": [],
-                        "meta_count": 0
-                    },
-                "text":
-                    {
-                        "h1": None,
-                        "h2": None,
-                        "h3": None,
-                        "h4": None,
-                        "h5": None,
-                        "strong": None,
-                        "p": None,
-                        "mark": None
-                    },
-                "body":
-                    {
-                        "a": [],
-                        "img": [],
-                        "img_biggest":
-                            {
-                                "src": None,
-                                "size": None,
-                                "alt": None,
-                                "byte": None
-                            },
-                        "img_smallest":
-                            {
-                                "src": None,
-                                "size": None,
-                                "alt": None,
-                                "byte": None
-                            },
-                        "audio": []
-                    }
-            }
+
+        with open('content_structure.json') as json_file:
+            self.parsed_content = json.load(json_file)
 
         with open('realistic_header.json') as json_file:
             header = json.load(json_file)
 
         if url[0:4] != "http":
-            self.url = "https://" + self.url
+            url = "https://" + url
 
-        try:
-            response = requests.get(self.url, headers=header,  timeout=(2, 5))
-            self.home_page = response.content
-            self.status_code = response.status_code
-        except:
-            self.url = "http" + self.url[5:]
-            header["method"] = "http"
-            response = requests.get(self.url, headers=header, timeout=(2, 5))
-            self.home_page = response.content
-            self.status_code = response.status_code
-
+        response = requests.get(url, headers=header, timeout=(2, 5), verify=False)
+        self.url = response.url
+        self.home_page = response.text
+        self.status_code = response.status_code
         self.internal_pages = []
 
     def getContent(self, indent=2):
@@ -268,3 +217,8 @@ class WebSiteContent:
                 sleep(speed)
             except requests.exceptions.InvalidURL:
                 pass
+
+
+web = WebSiteContent("denizlitaksim.com")
+web.parseContent()
+print(web.getContent())
