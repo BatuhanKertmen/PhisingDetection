@@ -1,31 +1,33 @@
 import requests
 from Python.paths import CRAWLER_DIR, DOMAINS_RAW_DIR
 
+
 # Stackoverflow Todd Gamblin
-def find_nth(haystack, needle, n):
+def _find_nth(haystack, needle, n):
     start = haystack.find(needle)
     while start >= 0 and n > 1:
         start = haystack.find(needle, start+len(needle))
         n -= 1
     return start
 
+
 # Stackoverflow Markus Jarderot
 # edited by Georgy
-def removeDuplicate(seq):
+def _removeDuplicate(seq):
     seen = set()
     seen_add = seen.add
     return [x for x in seq if not (x in seen or seen_add(x))]
 
 
-def scrapeOpenPhising():
+def scrapeOpenPhishing():
     open_phish_list_url = "https://openphish.com/feed.txt"
     phishing_domains = requests.get(open_phish_list_url).text.split('\n')
-    phishing_domains = [line[0:idx] for line, idx in [(line.strip(),  find_nth(line.strip(), '/', 3)) for line in phishing_domains]]
+    phishing_domains = [line[0:idx] for line, idx in [(line.strip(), _find_nth(line.strip(), '/', 3)) for line in phishing_domains]]
 
     with open(CRAWLER_DIR + "\\newly_scraped_domains.txt", "r") as file:
         newly_scraped_domains = [line.strip() for line in file.readlines()]
 
-    unique_phishing_domains = removeDuplicate(phishing_domains)
+    unique_phishing_domains = _removeDuplicate(phishing_domains)
     del phishing_domains
 
     processed_domains = []
