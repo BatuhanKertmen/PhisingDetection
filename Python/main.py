@@ -8,9 +8,8 @@ from joblib import Parallel, delayed
 
 from requests.exceptions import TooManyRedirects, ConnectionError, ReadTimeout
 
-import GetContents
+from Python.Crawlers import GetContents
 from paths import VALID_NAMES_TXT, WORKING_DIR
-from Python.Download.DownloadDomains import ScrapeWhoIsDs
 from Python.Download.OpenTank import scrapeOpenPhising
 
 
@@ -45,7 +44,9 @@ def scrape(domain_name, working_directory_path):
 
 
 if __name__ == "__main__":
-    domains_address = ScrapeWhoIsDs()
+    #domains_address = ScrapeWhoIsDs()
+
+    domains_address = scrapeOpenPhising()
     valid_domain_names = []
 
     tic = time.perf_counter()

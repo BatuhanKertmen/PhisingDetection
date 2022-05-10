@@ -91,16 +91,20 @@ class WebSiteContent:
                     }
             }
 
+        with open('realistic_header.json') as json_file:
+            header = json.load(json_file)
+
         if url[0:4] != "http":
             self.url = "https://" + self.url
 
         try:
-            response = requests.get(self.url, timeout=(2, 5))
+            response = requests.get(self.url, headers=header,  timeout=(2, 5))
             self.home_page = response.content
             self.status_code = response.status_code
         except:
             self.url = "http" + self.url[5:]
-            response = requests.get(self.url, timeout=(2, 5))
+            header["method"] = "http"
+            response = requests.get(self.url, headers=header, timeout=(2, 5))
             self.home_page = response.content
             self.status_code = response.status_code
 
