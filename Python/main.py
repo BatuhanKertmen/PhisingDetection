@@ -42,10 +42,13 @@ def scrape(domain_name, working_directory_path):
     except TooManyRedirects:
         print(domain_name, "exceeded 30 redirections, skipping!")
 
+domain = "https://lukasfuerst243w5le9wzbeoszataesq-afa593.ingress-baronn.easywp.com"
+boole = ping(domain)
+print(boole)
+exit(0)
 
 if __name__ == "__main__":
     #domains_address = ScrapeWhoIsDs()
-
     domains_address = scrapeOpenPhising()
     valid_domain_names = []
 
@@ -90,3 +93,4 @@ if __name__ == "__main__":
                     (delayed(scrape)(i, str(WORKING_DIR)) for i in valid_domains))
     except:
         pass
+

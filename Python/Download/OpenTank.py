@@ -1,39 +1,48 @@
 import requests
-from datetime import datetime
-from bs4 import BeautifulSoup
-from Python.paths import DOMAINS_RAW_DIR
+from Python.paths import CRAWLER_DIR, DOMAINS_RAW_DIR
 
-def _calculateTimeDifferenceInMin(time1, time2):
-    time1_split = time1.split(':')
-    time2_split = time2.split(':')
+# Stackoverflow Todd Gamblin
+def find_nth(haystack, needle, n):
+    start = haystack.find(needle)
+    while start >= 0 and n > 1:
+        start = haystack.find(needle, start+len(needle))
+        n -= 1
+    return start
 
-    time1_min = (int(time1_split[0]) * 60) + int(time1_split[1])
-    time2_min = (int(time2_split[0]) * 60) + int(time2_split[1])
-    dif = abs(time1_min - time2_min)
+# Stackoverflow Markus Jarderot
+# edited by Georgy
+def removeDuplicate(seq):
+    seen = set()
+    seen_add = seen.add
+    return [x for x in seq if not (x in seen or seen_add(x))]
 
-    return dif
 
 def scrapeOpenPhising():
-    open_tank_url = "https://openphish.com/"
-    current_time = datetime.now().strftime("%H:%M:%S")
+    open_phish_list_url = "https://openphish.com/feed.txt"
+    phishing_domains = requests.get(open_phish_list_url).text.split('\n')
+    phishing_domains = [line[0:idx] for line, idx in [(line.strip(),  find_nth(line.strip(), '/', 3)) for line in phishing_domains]]
 
-    open_tank_page = requests.get(open_tank_url)
-    soup = BeautifulSoup(open_tank_page.content, features="html.parser")
-    domains_table_rows = soup.findAll('tr')
+    with open(CRAWLER_DIR + "\\newly_scraped_domains.txt", "r") as file:
+        newly_scraped_domains = [line.strip() for line in file.readlines()]
 
-    print("DİR-->", DOMAINS_RAW_DIR)
+    unique_phishing_domains = removeDuplicate(phishing_domains)
+    del phishing_domains
+
+    processed_domains = []
+    counter = 0
+    for domain in unique_phishing_domains:
+        if domain in newly_scraped_domains:
+            counter += 1
+        else:
+            processed_domains.append(domain)
+
+        if counter == 5:
+            break
+
+    with open(CRAWLER_DIR + "\\newly_scraped_domains.txt", "w") as file:
+        file.write('\n'.join(processed_domains[:5]))
 
     with open(DOMAINS_RAW_DIR + "\\open_tank_phishing.txt", "w") as file:
-        for domains_table_row in domains_table_rows[1:]:
-            upload_time = domains_table_row.contents[5].text
-            if _calculateTimeDifferenceInMin(current_time, upload_time) > 240:
-                break
-
-            url = domains_table_row.contents[1].text
-            file.write(url + "\n")
+        file.write('\n'.join(processed_domains))
 
     return DOMAINS_RAW_DIR + "\\open_tank_phishing.txt"
-
-
-
-

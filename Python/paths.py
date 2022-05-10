@@ -10,6 +10,7 @@ WORKING_DIR = pathlib.Path().resolve()
 PYTHON_DIR = os.path.join(WORKING_DIR, "Python")
 DOMAINS_RAW_DIR = os.path.join(PYTHON_DIR, "domains", "raw")
 DOMAINS_VALID_DIR = os.path.join(PYTHON_DIR, "domains", "valid")
+CRAWLER_DIR = os.path.join(PYTHON_DIR, "Crawlers")
 
 
 # GO

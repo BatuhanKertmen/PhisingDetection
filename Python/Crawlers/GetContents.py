@@ -217,8 +217,3 @@ class WebSiteContent:
                 sleep(speed)
             except requests.exceptions.InvalidURL:
                 pass
-
-
-web = WebSiteContent("denizlitaksim.com")
-web.parseContent()
-print(web.getContent())
