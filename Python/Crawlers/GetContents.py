@@ -1,7 +1,13 @@
+import os
 import json
 import requests
+import pytesseract
+pytesseract.pytesseract.tesseract_cmd = os.path.expanduser('~') + r"\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"
+
+from PIL import Image
 from time import sleep
 from bs4 import BeautifulSoup
+from Python.paths import CONTENT_STRUCTURE_JSON, REALISTIC_HEADER_JSON, IMAGES_DIR
 
 
 ######################################################################
@@ -43,21 +49,26 @@ class Speed:
 class WebSiteContent:
     def __init__(self, url):
         self.domain = url
+        self.session = requests.Session()
 
-        with open('content_structure.json') as json_file:
-            self.parsed_content = json.load(json_file)
+        with open(CONTENT_STRUCTURE_JSON) as content_file:
+            self.parsed_content = json.load(content_file)
 
-        with open('realistic_header.json') as json_file:
-            header = json.load(json_file)
+        with open(REALISTIC_HEADER_JSON) as header_file:
+            request_header = json.load(header_file)
+
+        request_header["Host"] = url
 
         if url[0:4] != "http":
             url = "https://" + url
 
-        response = requests.get(url, headers=header, timeout=(2, 5), verify=False)
+        response = self.session.get(url, timeout=(2, 10))
         self.url = response.url
         self.home_page = response.text
         self.status_code = response.status_code
         self.internal_pages = []
+
+
 
     def getContent(self, indent=2):
         return json.dumps(self.parsed_content, indent=indent)
@@ -146,13 +157,25 @@ class WebSiteContent:
                 src = self.getImageLink(image)
                 if src is not None:
                     alt = image['alt'] if image.has_attr('alt') else None
+                    byte, width, height, ocr = self.processImage(src)
 
-                    self.parsed_content["body"]["img"].append(
-                        {
+                    if byte != -1:
+
+                        img = {
                             "src": src,
-                            "size": (-1, -1),
-                            "alt": alt
-                        })
+                            "size": (width, height),
+                            "alt": alt,
+                            "byte": byte,
+                            "ocr": ocr
+                        }
+
+                        if self._isSmallestImage(width, height):
+                            self.parsed_content['body']['img_smallest'] = img
+
+                        if self._isBiggestImage(width, height):
+                            self.parsed_content['body']['img_biggest'] = img
+
+                        self.parsed_content["body"]["img"].append(img)
 
     def parseAudio(self, audios):
         for audio in audios:
@@ -167,7 +190,6 @@ class WebSiteContent:
                     "auto_play": audio.has_attr("autoplay")
                 })
 
-
     def getImageLink(self, image):
         if image['src'] == "":
             return None
@@ -180,6 +202,78 @@ class WebSiteContent:
                 url = self.url + url
 
         return url
+
+    def processImage(self, image_link):
+        image_type = self.getImageType(image_link)
+        if image_type == "SKIP":
+            return -1, -1, -1, "-1"
+
+        try:
+            image_name = IMAGES_DIR + "\\image" + image_type
+            image_bytes = self.session.get(image_link).content
+
+            byte = len(image_bytes)
+
+            with open(image_name, 'wb') as handler:
+                handler.write(image_bytes)
+
+            with Image.open(image_name) as image:
+                width, height = image.size
+                ocr_text = pytesseract.image_to_string(image)
+
+            os.remove(image_name)
+
+            return byte, width, height, ocr_text
+        except:
+            return -1, -1, -1, "-1"
+
+    def _isSmallestImage(self, width, height):
+        if self.parsed_content['body']['img_smallest']['size'][0] == 0:
+            return True
+
+        small_width = self.parsed_content['body']['img_smallest']['size'][0]
+        small_height = self.parsed_content['body']['img_smallest']['size'][1]
+        if width * height < small_width * small_height:
+            return True
+
+        return False
+
+    def _isBiggestImage(self, width, height):
+        if self.parsed_content['body']['img_biggest']['size'][0] == 0:
+            return True
+
+        big_width = self.parsed_content['body']['img_biggest']['size'][0]
+        big_height = self.parsed_content['body']['img_biggest']['size'][1]
+        if width * height > big_width * big_height:
+            return True
+
+        return False
+
+    def getImageType(self, image_link):
+        if image_link.find(".png") != -1:
+            return ".png"
+        elif image_link.find(".jpeg") != -1:
+            return ".jpeg"
+        elif image_link.find(".jpg") != -1:
+            return ".jpg"
+        elif image_link.find(".apng") != -1:
+            return ".apng"
+        elif image_link.find(".avif") != -1:
+            return ".avif"
+        elif image_link.find(".gif") != -1:
+            return ".gif"
+        elif image_link.find(".jfif") != -1:
+            return ".jfif"
+        elif image_link.find(".pjpeg") != -1:
+            return ".pjpeg"
+        elif image_link.find(".pjp") != -1:
+            return ".pjp"
+        elif image_link.find(".svg") != -1:
+            return "SKIP"
+        elif image_link.find(".webp") != -1:
+            return ".webp"
+
+
 
     def findInternalLinks(self, page_content):
         try:
@@ -211,7 +305,7 @@ class WebSiteContent:
                 used_internal_links.add(internal_link)
                 print("url:", internal_link, "processing...")
 
-                internal_page = requests.get(self.url[0:-1] + internal_link).content
+                internal_page = self.session.get(self.url[0:-1] + internal_link).content
                 internal_links |= set(self.findInternalLinks(internal_page) - used_internal_links)
                 self.internal_pages.append({self.url[0:-1] + internal_link: internal_page})
                 sleep(speed)
