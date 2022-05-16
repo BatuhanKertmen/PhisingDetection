@@ -61,7 +61,7 @@ func main() {
 		err := json.Unmarshal([]byte(imageLinks[i].String()), &img)
 
 		if checkError(err) {
-			fmt.Println("6" + err.Error())
+			fmt.Println(err.Error())
 			continue
 		}
 
@@ -72,14 +72,14 @@ func main() {
 		err, byte := downloadFile(url, imageLocation)
 
 		if checkError(err) {
-			fmt.Println("5" + err.Error())
+			fmt.Println(err.Error())
 			continue
 		}
 
 		err, width, height := getImageDimension(imageLocation)
 
 		if checkError(err) {
-			fmt.Println("4" + err.Error())
+			fmt.Println(err.Error())
 			continue
 		}
 
@@ -89,7 +89,7 @@ func main() {
 		err = os.Remove(imageLocation)
 
 		if checkError(err) {
-			fmt.Println("3" + err.Error())
+			fmt.Println(err.Error())
 		}
 
 		advancedImage := *createAdvancedImage(&img, byte)
@@ -97,7 +97,6 @@ func main() {
 		completeImageList = append(completeImageList, advancedImage)
 
 		if i == 0 {
-			fmt.Println("in if")
 			biggestImage = advancedImage
 			smallestImage = advancedImage
 		} else {
@@ -109,7 +108,6 @@ func main() {
 			}
 		}
 	}
-
 
 	updatedJson, _ := sjson.Set(jsonContent, "body.img", completeImageList)
 	updatedJson, _ = sjson.Set(updatedJson, "body.img_biggest", biggestImage)
@@ -165,8 +163,6 @@ func getImageName(url string) *string {
 	}
 
 	imageName = imageName[:idx]
-
-	fmt.Println("img-->", imageName)
 	return &imageName
 }
 
@@ -202,8 +198,6 @@ func checkError(err error) bool {
 }
 
 func downloadFile(URL, fileName string) (error, int) {
-
-	fmt.Println("path --> ", fileName)
 
 	response, err := http.Get(URL)
 	if checkError(err) {
