@@ -29,16 +29,26 @@
             "img_biggest":
                 {
                     "src": null,
-                    "size": null,
+                    "size":
+                        [
+                            0,
+                            0
+                        ],
                     "alt": null,
-                    "byte": null
+                    "byte": null,
+                    "ocr": null
                 },
             "img_smallest":
                 {
                     "src": null,
-                    "size": null,
+                    "size":
+                        [
+                            0,
+                            0
+                        ],
                     "alt": null,
-                    "byte": null
+                    "byte": null,
+                    "ocr": null
                 },
             "audio": []
         }

@@ -1,10 +1,11 @@
 {
-  "scheme": "https",
   "method": "GET",
-  "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:80.0) Gecko/20100101 Firefox/80.0",
+  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36",
   "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-  "Accept-Encoding": "gzip, deflate",
   "Accept-Language": "*",
-  "Connection": "close",
-  "te": "trailers"
+  "Accept-Encoding": "gzip, deflate",
+  "Upgrade-Insecure-Requests": "1",
+  "Cache-Control": "max-age=0",
+  "te": "trailers",
+  "Connection": "close"
 }

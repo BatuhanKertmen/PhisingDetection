@@ -8,15 +8,16 @@ from Python.paths import DOMAINS_RAW_DIR
 
 
 # returns the
-def _ScrapeTodaysDomainsFileLink():
+def _ScrapeTodaysDomainsFileLink(check_date):
     WHO_IS_URL = "https://www.whoisds.com/newly-registered-domains"
     whois_page = requests.get(WHO_IS_URL)
     soup = BeautifulSoup(whois_page.content, features="html.parser")
     domains_table_rows = soup.findAll('tr')
 
     today = date.today().strftime("%Y-%m-%d")
-    if domains_table_rows[1].contents[5].text != today:
-        raise Exception("No domain file with the current date!")
+    if check_date:
+        if domains_table_rows[1].contents[5].text != today:
+            raise Exception("No domain file with the current date!")
     if int(domains_table_rows[1].contents[3].text) <= 0:
         raise Exception("0 domains in the file with the current date")
 
@@ -31,9 +32,7 @@ def _DownloadDomainList(link):
     return os.path.join(DOMAINS_RAW_DIR, zip_file.namelist()[0])
 
 
-def ScrapeWhoIsDs():
-    zip_link = _ScrapeTodaysDomainsFileLink()
+def ScrapeWhoIsDs(check_date=True):
+    zip_link = _ScrapeTodaysDomainsFileLink(check_date)
     file_path = _DownloadDomainList(zip_link)
     return file_path
-
-ScrapeWhoIsDs()

@@ -22,7 +22,9 @@ def _removeDuplicate(seq):
 def scrapeOpenPhishing():
     open_phish_list_url = "https://openphish.com/feed.txt"
     phishing_domains = requests.get(open_phish_list_url).text.split('\n')
-    phishing_domains = [line[0:idx] for line, idx in [(line.strip(), _find_nth(line.strip(), '/', 3)) for line in phishing_domains]]
+    phishing_domains = [line[idx1+1:idx2] for line, idx1, idx2 in
+                        [(line.strip(), _find_nth(line.strip(), '/', 2), _find_nth(line.strip(), '/', 3))
+                         for line in phishing_domains]]
 
     with open(CRAWLER_DIR + "\\newly_scraped_domains.txt", "r") as file:
         newly_scraped_domains = [line.strip() for line in file.readlines()]
