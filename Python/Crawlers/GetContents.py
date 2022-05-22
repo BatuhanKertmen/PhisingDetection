@@ -1,13 +1,16 @@
-import os
-import json
-import requests
-import pytesseract
-pytesseract.pytesseract.tesseract_cmd = os.path.expanduser('~') + r"\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"
-
 from PIL import Image
 from time import sleep
 from bs4 import BeautifulSoup
+from collections import Counter
+
 from Python.paths import CONTENT_STRUCTURE_JSON, REALISTIC_HEADER_JSON, IMAGES_DIR
+
+import os
+import json
+import requests
+import googletrans
+import pytesseract
+pytesseract.pytesseract.tesseract_cmd = os.path.expanduser('~') + r"\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"
 
 
 ######################################################################
@@ -62,7 +65,7 @@ class WebSiteContent:
         if url[0:4] != "http":
             url = "https://" + url
 
-        response = self.session.get(url, timeout=(2, 10))
+        response = self.session.get(url, headers=request_header, timeout=(2, 10))
         self.url = response.url
         self.home_page = response.text
         self.status_code = response.status_code
@@ -87,15 +90,36 @@ class WebSiteContent:
         self.parseAudio(page_soup.findAll('audio'))
 
     def getTextualContent(self, body):
-        text_tags = ['h1', 'h2', 'h3', 'h4', 'h5', 'strong', 'p', 'mark']
-        for text_tag in text_tags:
-            text_contents = body.findAll(text_tag)
+        tags = ['h1', 'h2', 'h3', 'h4', 'h5', 'strong', 'p', 'mark']
+        translator = googletrans.Translator()
+        detected_langs = list()
+        for tag in tags:
+            text_tags = body.findAll(tag)
+            texts = [text_tag.text.strip() for text_tag in text_tags]
 
-            for text_content in text_contents:
-                if self.parsed_content["text"][text_tag]:
-                    self.parsed_content["text"][text_tag].append(text_content.text.strip())
-                else:
-                    self.parsed_content["text"][text_tag] = [text_content.text.strip()]
+            if len(texts) > 0:
+                for text in texts:
+                    if self.parsed_content["text"]["original"][tag]:
+                        self.parsed_content["text"]["original"][tag].append(text)
+                    else:
+                        self.parsed_content["text"]["original"][tag] = [text]
+
+                translation_objects = translator.translate(text=texts, dest='en')
+                detected_langs.extend([translation_object.src for translation_object in translation_objects])
+
+                translated_texts = [translation_object.text.strip() for translation_object in translation_objects]
+                for translated_text in translated_texts:
+                    if self.parsed_content["text"]["english"][tag]:
+                        self.parsed_content["text"]["english"][tag].append(translated_text.strip())
+                    else:
+                        self.parsed_content["text"]["english"][tag] = [translated_text.strip()]
+
+        if len(detected_langs) > 0:
+            occurrence_count = Counter(detected_langs)
+            self.parsed_content["dominant_lang"] = occurrence_count.most_common(1)[0][0]
+
+
+
 
     def parseScript(self, scripts):
         for script in scripts:
@@ -311,3 +335,5 @@ class WebSiteContent:
                 sleep(speed)
             except requests.exceptions.InvalidURL:
                 pass
+
+

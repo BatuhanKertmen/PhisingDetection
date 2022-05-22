@@ -14,7 +14,7 @@ from requests.exceptions import TooManyRedirects, ConnectionError, ReadTimeout
 from Python.Crawlers import GetContents
 from Python.Download.DownloadDomains import ScrapeWhoIsDs
 from Python.Download.OpenTank import scrapeOpenPhishing
-from paths import VALID_NAMES_TXT, WORKING_DIR, RAW_OPEN_PHISH_TXT
+from paths import VALID_NAMES_TXT, RAW_OPEN_PHISH_TXT, WEBSITES_DIR
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -24,14 +24,14 @@ def pinging(d_name):
         valid_domain_names.append(d_name)
 
 
-def scrape(domain_name, working_directory_path):
+def scrape(domain_name, folder):
     try:
         web = GetContents.WebSiteContent(domain_name)
         web.parseContent()
 
-        file_name = domain_name.replace(".", "-") + ".json"
+        file_name = domain_name + ".json"
 
-        path = os.path.join(working_directory_path, "Go", "WebsiteContents", file_name)
+        path = os.path.join(folder, file_name)
         with open(path, "w") as content_file:
             json.dump(web.parsed_content, content_file)
 
@@ -43,7 +43,7 @@ def scrape(domain_name, working_directory_path):
         print(domain_name, "exceeded 30 redirections, skipping!")
 
 
-number_of_sites = 1000
+number_of_sites = 250
 batch_count = 250
 ping_thread_count = 100
 scrape_thread_count = 100
@@ -71,8 +71,6 @@ if __name__ == "__main__":
                     valid_domain_names.clear()
                     counter += batch_count
 
-
-
     with open(VALID_NAMES_TXT, "r") as file:
         while True:
             valid_domains = list(islice(file, batch_count))
@@ -83,7 +81,7 @@ if __name__ == "__main__":
 
             try:
                 Parallel(n_jobs=scrape_thread_count, prefer="threads", verbose=10, timeout=20)(
-                    (delayed(scrape)(i, str(WORKING_DIR)) for i in valid_domains))
+                    (delayed(scrape)(i, str(WEBSITES_DIR)) for i in valid_domains))
             except multiprocessing.context.TimeoutError:
                 pass
             finally:

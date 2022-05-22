@@ -8,7 +8,6 @@ def square(x):
 from joblib import Parallel, delayed
 a = Parallel(n_jobs=10000, prefer="threads")(delayed(square)(i) for i in range(10000))
 
-
 print(a)
 
 toc_1 = time.perf_counter()

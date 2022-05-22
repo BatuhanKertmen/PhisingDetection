@@ -11,14 +11,13 @@ PYTHON_DIR = os.path.join(WORKING_DIR, "Python")
 DOMAINS_RAW_DIR = os.path.join(PYTHON_DIR, "domains", "raw")
 DOMAINS_VALID_DIR = os.path.join(PYTHON_DIR, "domains", "valid")
 CRAWLER_DIR = os.path.join(PYTHON_DIR, "Crawlers")
+WEBSITES_DIR = os.path.join(PYTHON_DIR, "websites")
 IMAGES_DIR = os.path.join(CRAWLER_DIR, "Images")
 
 
 # GO
-GO_DIR = os.path.join(WORKING_DIR, "Go")
-WEBSITE_CONTENT_DIR = os.path.join(GO_DIR, "WebsiteContents")
-SCRAPED_CONTENT_DIR = os.path.join(GO_DIR, "ScrapedContent")
-
+# GO_DIR = os.path.join(WORKING_DIR, "Go")
+# SCRAPED_CONTENT_DIR = os.path.join(GO_DIR, "ScrapedContent")
 
 # -------- FILES ---------- #
 
@@ -38,10 +37,8 @@ def debug():
     print("RAW_DOMAINS_DIR:", DOMAINS_RAW_DIR)
     print("VALID_DOMAINS_DIR:", DOMAINS_VALID_DIR)
     print("CRAWLER_DIR:", CRAWLER_DIR)
-    print("GO_DIR:", GO_DIR)
     print("IMAGES_DIR:", IMAGES_DIR)
-    print("WEBSITE_CONTENT_DIR:", WEBSITE_CONTENT_DIR)
-    print("SCRAPED_CONTENT_DIR:", SCRAPED_CONTENT_DIR)
+    print("WEBSITES_DIR:", WEBSITES_DIR)
     print("VALID_NAMES_TXT:", VALID_NAMES_TXT)
     print("RAW_NAMES_TXT:", RAW_NAMES_TXT)
     print("RAW_OPEN_PHISH_TXT:", RAW_OPEN_PHISH_TXT)

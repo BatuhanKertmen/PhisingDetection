@@ -1,5 +1,6 @@
 {
     "status_code": null,
+    "dominant_lang": null,
     "head":
         {
             "title": null,
@@ -13,14 +14,28 @@
         },
     "text":
         {
-            "h1": null,
-            "h2": null,
-            "h3": null,
-            "h4": null,
-            "h5": null,
-            "strong": null,
-            "p": null,
-            "mark": null
+            "original":
+                {
+                    "h1": null,
+                    "h2": null,
+                    "h3": null,
+                    "h4": null,
+                    "h5": null,
+                    "strong": null,
+                    "p": null,
+                    "mark": null
+                },
+            "english":
+                {
+                    "h1": null,
+                    "h2": null,
+                    "h3": null,
+                    "h4": null,
+                    "h5": null,
+                    "strong": null,
+                    "p": null,
+                    "mark": null
+                }
         },
     "body":
         {

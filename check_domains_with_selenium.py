@@ -14,3 +14,4 @@ for domain in top_one_millions_domains[:10]:
     browser.get('http://www.'+domain)
     time.sleep(5)
     browser.close()
+
