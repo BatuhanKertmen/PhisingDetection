@@ -1,3 +1,5 @@
+import re
+
 from PIL import Image
 from time import sleep
 from bs4 import BeautifulSoup
@@ -67,6 +69,7 @@ class WebSiteContent:
 
         response = self.session.get(url, headers=request_header, timeout=(2, 10))
         self.url = response.url
+        self.parsed_content['url'] = response.url
         self.home_page = response.text
         self.status_code = response.status_code
         self.internal_pages = []
