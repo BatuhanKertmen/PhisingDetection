@@ -1,0 +1,114 @@
+Gravatar - Dünya çapında tanınan avatarlar  WordPress.com
+Create a free website.
+VaultPress
+Backup and security scanning for your site.
+Akismet
+The anti-spam service for the web.
+Crowdsignal
+Create surveys for the web and mobile.
+Oturum aç
+Her yerde, her şey için
+tek bir avatar.
+
+Gravatar, herkese açık profilinizi güçlendirir, yayınladığınız, yorum yaptığınız ve çevrimiçi etkileşimde bulunduğunuz her yerde görünür.
+
+Gravatarınızı oluşturun
+Gravatar API'sini uygulayın
+
+Gravatar herkes için ve süresiz olarak ücretsizdir.
+
+Close
+Bir kez ayarlayın, her yerde görülsün.
+
+Tüm dünyanın tanıyacağı avatarınızı tek bir yerden oluşturun, yükleyin ve yönetin.
+
+Video oynatın
+Sadece bir görsel değil, daha fazlası.
+
+Web'e kim olduğunuzu ve insanların sizi nerede bulabileceğini anında bildirin. Gravatar bağlantıları, fotoğrafları, iletişim bilgilerini, cüzdan adreslerini ve diğer ayrıntıları görüntüleyebilir.
+
+En iyi markaların güvendiği hizmet.
+
+Bildiğiniz en büyük şirketler Gravatar kullanıyor. Avatarınız Slack, GitHub, WordPress ve diğer popüler hizmetler tarafından otomatik olarak tanınır.
+
+Herkese yönelik, açık ve sorumlu.
+
+Avatarınız genel bir e-posta adresine bağlı olur. Gravatar özellikli sitelerde nelerin görüntüleneceğini siz seçin: Profilinizde paylaştığınız her şey tüm dünyaya açık olur.
+
+Her zaman olduğu gibi, verileriniz sizindir.
+
+Gizlilik Politikamızı okuyun
+SITE SAHIPLERI VE GELIŞTIRICILER IÇIN
+Açık ağ oluşturan bir marka ağına katılın.
+
+Popüler içerik yönetim sistemlerine yönelik kaynaklar ve eklentiler, Gravatar'ı hemen kullanmaya başlamanıza yardımcı olacaktır. Kolaylaştırılmış bir kayıt akışından görüntü düzenlemeye ve diğer yerleşik avantajlara kadar Gravatar, açık standartlar aracılığıyla birçok olanak sunar.
+
+Gravatar API'sini uygulayın
+example.js
+example.php
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+const md5 = require( 'md5' );
+
+function getGravatarURL( email ) {
+  // Trim leading and trailing whitespace from
+  // an email address and force all characters
+  // to lower case
+  const address = String( email ).trim().toLowerCase();
+
+  // Create an MD5 hash of the final string
+  const hash = md5( address );
+
+  // Grab the actual image URL
+  return `https://www.gravatar.com/avatar/${ hash }`;
+}
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+function get_gravatar_url( $email ) {
+  // Trim leading and trailing whitespace from
+  // an email address and force all characters
+  // to lower case
+  $address = strtolower( trim( $email ) );
+
+  // Create an MD5 hash of the final string
+  $hash = md5( $address );
+
+  // Grab the actual image URL
+  return 'https://www.gravatar.com/avatar/' . $hash;
+}
+15 yılı aşkın süredir daha iyi bir ağ inşa ediliyor.
+Gravatarınızı oluşturun
+
+Milyonlarca siteye entegre olan Gravatar, site sahipleri, geliştiriciler ve kimliklerini çevrimiçi olarak oluşturmak için zahmetsiz ve doğrulanmış bir yol isteyen herkese yönelik ücretsiz bir hizmettir.
+
+2007'den beri bir Automattic projesi olan Gravatar, her WordPress.com
+hesabında yerleşiktir ve açık web'de yaygın olarak uygulanır.
+
+Diller
+Geliştirici kaynakları
+Gizlilik Politikası
+Destek
+An  venture
+Work With Us

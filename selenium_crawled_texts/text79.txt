@@ -1,0 +1,3 @@
+502 Bad Gateway  502 Bad Gateway
+
+ProtocolException('Server connection to (\'www.akadns.net\', 443) failed: Error connecting to "www.akadns.net": [Errno 11001] getaddrinfo failed')

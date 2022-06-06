@@ -1,0 +1,150 @@
+World Wide Web Consortium (W3C)  W3C
+
+Leading the web to its full potential
+
+STANDARDS
+PARTICIPATE
+MEMBERSHIP
+ABOUT W3C
+Site Navigation
+WEB FOR ALL 
+Accessibility
+Internationalization
+Web Security
+Privacy
+WEB AND INDUSTRY 
+Automotive and Transportation
+Entertainment (TV and Broadcasting)
+Publishing
+Web Payments
+Web of Data
+Web and Telecommunications
+Web of Things
+W3C WORK GROUPS 
+Code of Ethics and Professional Conduct
+Participant guidebook
+W3C Community Groups
+Get a W3C Account
+DEV RESOURCES 
+API
+Validators
+W3C cheatsheet
+More Open Source Software
+Web Platform Tests
+W3Cx (Training)
+
+Skip
+
+
+
+News
+W3C Advisory Committee Elects Advisory Board
+
+3 June 2022 | Archive
+
+The W3C Advisory Committee has elected the following people to fill five seats on the W3C Advisory Board starting 1 July 2022: Wei Ding (Huawei), Tatsuya Igarashi (Sony), Florian Rivoal (W3C Invited Expert), Tzviya Siegman (Wiley) and David Singer (Apple) will join continuing participants Heejin Chung (Samsung), Avneesh Singh (DAISY Consortium), Eric Siow (Intel), Léonie Watson (TetraLogical), Chris Wilson (Google) and Hongru (Judy) Zhu (Alibaba). Many thanks to the 6 candidates, and to Tantek Çelik (Mozilla) whose term ends this month.
+
+Created in March 1998, the Advisory Board provides ongoing guidance to the W3C Team on issues of strategy, management, legal matters, process, and conflict resolution. The Advisory Board manages the evolution of the Process Document. The elected Members of the Advisory Board participate as individual contributors and not representatives of their organizations. Advisory Board participants use their best judgment to find the best solutions for the Web, not just for any particular network, technology, vendor, or user. Read more about the Advisory Board and its work.
+
+W3C Strategic Highlights, April 2022
+
+9 May 2022 | Archive
+
+W3C released today to the public the April 2022 edition of the W3C Strategic Highlights.
+
+This report summarizes recent work W3C Members and the public do at the Web Consortium to enhance the web and innovate for its growth and strength.
+
+This semi-annual report includes comprehensive updates in key areas that are core to the web platform, how W3C meets the needs of industry and society as a whole, how the future of web standards is determined, and the latest information on web for all and outreach to the world.
+
+First Public Working Draft: Viewport Capture
+
+24 May 2022 | Archive
+
+First Public Working Drafts: Event Timing API, Largest Contentful Paint
+
+24 May 2022 | Archive
+
+W3C Invites Implementations of EPUB 3.3, EPUB Reading Systems 3.3, EPUB Accessibility 1.1
+
+12 May 2022 | Archive
+
+Draft Notes: Privacy Principles, Ethical Web Principles
+
+12 May 2022 | Archive
+
+First Public Working Draft: Capture Handle — Bootstrapping Collaboration when Screensharing
+
+10 May 2022 | Archive
+
+Judy Brewer receives ACM award for her leadership of the Web Accessibility Initiative
+
+5 May 2022 | Archive
+
+More news…  
+
+TALKS AND APPEARANCES 
+
+2022
+09 JUN
+
+Escaping the sRGB Prison
+
+Zuiderkerk, Amsterdam
+
+Amsterdam, Netherlands
+
+EVENTS 
+2022
+12 SEP
+16 SEP
+
+TPAC 2022 - Hybrid meeting
+
+Main in-person hub: Vancouver, CA
+
+ABOUT W3C 
+
+The World Wide Web Consortium (W3C) is an international community that develops open standards to ensure the long-term growth of the Web.
+
+DONATIONS 
+
+Become a Friend of W3C: support the W3C mission and free developer tools.
+
+W3C BLOG 
+
+EPUB 3.3 is now in CR
+
+17 May 2022 by Wendy Reid
+
+Privacy Principles for the Web
+
+13 May 2022 by Daniel Appelquist
+
+Towards a Dubbing and Audio Description exchange format
+
+12 May 2022 by Nigel Megitt
+
+JOBS AND FELLOWSHIP AT W3C 
+Automotive & Transportation Champion
+Web accessibility development and operations lead
+FEATURED W3C MEMBER 
+WEB ACCESSIBILITY AND W3C STANDARDS (VIDEO) 
+
+Watch our video on Web Accessibility and W3C standards!
+
+Footer Navigation
+NAVIGATION
+Home
+Standards
+Participate
+Membership
+About W3C
+CONTACT W3C
+Contact
+Help and FAQ
+Sponsor / Donate
+Site Map
+Feedback
+W3C UPDATES
+
+Copyright © 2022 W3C ® (MIT, ERCIM, Keio, Beihang) Usage policies apply.
