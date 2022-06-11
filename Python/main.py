@@ -11,8 +11,9 @@ from joblib import Parallel, delayed
 from requests.exceptions import TooManyRedirects, ConnectionError, ReadTimeout
 from Python.Download.DownloadDomains import ScrapeWhoIsDs
 from Python.Crawlers import GetContents
-from Python.utilities.paths import VALID_NAMES_TXT, WEBSITES_DIR, IMAGES_DIR
+from Python.utilities.paths import VALID_NAMES_TXT, WEBSITES_CONTENT_DIR, WEBSITES_FEATURE_DIR, IMAGES_DIR, TLD_TXT
 from Python.utilities.log import Log
+from Python.Features.Featues import Features
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -41,18 +42,37 @@ def scrape(domain_name, folder):
     except:
         Log.warning("Unexpected error while scraping " + domain_name)
 
+def extractFeatures(filename, tld):
+    try:
+        with open(filename, "r") as website_content_file:
+            website_content = json.load(website_content_file)
 
-number_of_sites = 1000
-batch_count = 500
+        url = website_content['url']
+        feat = Features(url)
+        feat.extractAllFeatures(tld)
+
+        file_name = filename.split('\\')[-1]
+        path = os.path.join(WEBSITES_FEATURE_DIR, file_name)
+        with open(path, "w") as content_file:
+            json.dump(feat.getFeatures(), content_file)
+    except:
+        file_name = filename.split('\\')[-1]
+        Log.warning(" failed to extract features of " + file_name)
+
+
+
+number_of_sites = 100
+batch_count = 100
 ping_thread_count = 100
-scrape_thread_count = 500
+scrape_thread_count = 100
+feature_thread_count = 100
 
 if __name__ == "__main__":
     domains_address = ScrapeWhoIsDs(check_date=True)
 
     valid_domain_names = []
     counter = 0
-    """
+
     with open(domains_address, 'r') as domain_file:
         with open(VALID_NAMES_TXT, "w") as valid_domains_file:
             while counter < number_of_sites:
@@ -68,7 +88,7 @@ if __name__ == "__main__":
                 finally:
                     valid_domain_names.clear()
                     counter += batch_count
-    """
+
     counter = 0
     with open(VALID_NAMES_TXT, "r") as file:
         while counter < number_of_sites:
@@ -76,12 +96,11 @@ if __name__ == "__main__":
             if not valid_domains:
                 break
             counter += len(valid_domains)
-            Log.succes(counter)
             valid_domains = [valid_domain.strip() for valid_domain in valid_domains]
 
             try:
                 Parallel(n_jobs=scrape_thread_count, prefer="threads", verbose=1, timeout=50)(
-                    (delayed(scrape)(i, str(WEBSITES_DIR)) for i in valid_domains))
+                    (delayed(scrape)(i, str(WEBSITES_CONTENT_DIR)) for i in valid_domains))
 
             except multiprocessing.context.TimeoutError:
                 pass
@@ -95,4 +114,31 @@ if __name__ == "__main__":
                         pass
 
                 valid_domains.clear()
+
+    website_files = glob.glob(str(WEBSITES_CONTENT_DIR) + "\\*")
+
+    with open(TLD_TXT, "r") as tld_file:
+        tld = tld_file.read().split('\n')
+
+    counter = 0
+    while counter < number_of_sites:
+        try:
+            if counter >= len(website_files):
+                break
+
+            remainder = len(website_files) - counter
+            batch = batch_count if batch_count < remainder else remainder
+            website_contents = website_files[counter: counter + batch]
+            website_contents = [website_content.strip() for website_content in website_contents]
+
+            Parallel(n_jobs=feature_thread_count, prefer="threads", verbose=1, timeout=50)(
+                delayed(extractFeatures)(i, tld) for i in website_contents)
+
+        except multiprocessing.context.TimeoutError:
+            pass
+
+        finally:
+            counter += batch_count
+
+
 

@@ -4,6 +4,7 @@ import OpenSSL
 import requests
 from bs4 import BeautifulSoup
 from googlesearch import search
+from Python.utilities.paths import COUNTRY_CODES_TXT
 
 
 def getDomains(url):
@@ -13,7 +14,7 @@ def getDomains(url):
 
     last = domains_list[-1]
 
-    with open("country_codes.txt", "r")as file:
+    with open(COUNTRY_CODES_TXT, "r")as file:
         country_codes = file.read().split("\n")
     tld_idx = -1 if last not in country_codes else -2
 
@@ -84,52 +85,65 @@ def getGooglePageRank(url):
 
     received_urls = search(search_keyword, tld=tld, num=100, stop=100, pause=0)
     index = 1
-    for received_url in received_urls:
-        if url == received_url:
-            return index
-        index += 1
-
-    return 0
+    try:
+        for received_url in received_urls:
+            if url == received_url:
+                return index
+            index += 1
+    except:
+        pass
+    return -1
 
 
 def getCertificateIssuer(domain):
-    cert = ssl.get_server_certificate((domain, 443))
-    x509 = OpenSSL.crypto.load_certificate(OpenSSL.crypto.FILETYPE_PEM, cert)
-    return x509.get_issuer().get_components()[1][1].decode("utf-8")
-
+    try:
+        cert = ssl.get_server_certificate((domain, 443))
+        x509 = OpenSSL.crypto.load_certificate(OpenSSL.crypto.FILETYPE_PEM, cert)
+        return x509.get_issuer().get_components()[1][1].decode("utf-8")
+    except:
+        return "-"
 
 class Features:
     def __init__(self, url):
         self.url = url
+        self.features = {}
+
+    def getFeatures(self):
+        return self.features
+
+    def extractAllFeatures(self, tld):
+        self.extractUrlBasedFeatures(self.url, tld)
+        self.extractLookUpBasedFeatures(self.url)
+        self.extractSearchEngineBasedFeatures(self.url)
 
     def extractUrlBasedFeatures(self, url, tld):
-        self.is_ip_based = findIfIpBased(url)
-        self.number_of_sub_domains = getNumberOfSubDomains(url)
-        self.is_contains_at = False if url.find("@") == -1 else True
-        self.number_of_dashes = url.count("-")
-        self.url_length = len(url)
-        self.has_embedded_domain = (url.count('//') > 1)
-        self.protocol = "https" if url[0:5] == "https" else "http"
-        self.has_mispositioned_tld = False if len(tldPositions(url, tld)) == 0 else True
+        self.features['isIpBased'] = findIfIpBased(url)
+        self.features['numberOfSubDomains'] = getNumberOfSubDomains(url)
+        self.features['isContainsAt'] = False if url.find("@") == -1 else True
+        self.features['numberOfDashes'] = url.count("-")
+        self.features['urlLength'] = len(url)
+        self.features['hasEmbeddedDomain'] = (url.count('//') > 1)
+        self.features['protocol'] = "https" if url[0:5] == "https" else "http"
+        self.features['hasMispositionedTld'] = False if len(tldPositions(url, tld)) == 0 else True
 
 
     def extractLookUpBasedFeatures(self, url):
         who_is_info_list = self.__downloadWhoisInfo(url)
 
-        self.certificate_authority = getCertificateIssuer(getRawDomainName(url))
+        self.features['certificateAuthority'] = getCertificateIssuer(getRawDomainName(url))
         if who_is_info_list is None:
-            self.whois_match = False
+            self.features['whoisMatch'] = False
         else:
-            self.whois_match = True
+            self.features['whoisMatch'] = True
             for item in who_is_info_list:
                 if item.find("Creation Date") != -1:
-                    self.creation_date = getDate(parseWhoIsRecord(item)[1])
+                    self.features['creationDate'] = getDate(parseWhoIsRecord(item)[1])
                 elif item.find("Registrant Country") != -1:
-                    self.country = parseWhoIsRecord(item)[1]
+                    self.features['country'] = parseWhoIsRecord(item)[1]
 
 
     def extractSearchEngineBasedFeatures(self, url):
-        self.google_page_index = getGooglePageRank(url)
+        self.features['googlePageIndex'] = getGooglePageRank(url)
 
 
 
@@ -149,3 +163,5 @@ class Features:
             return []
 
         return raw_data_div.getText().split("\n")
+
+

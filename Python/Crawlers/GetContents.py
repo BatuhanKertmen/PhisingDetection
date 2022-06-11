@@ -65,12 +65,16 @@ class WebSiteContent:
 
         response = self.session.get(url, headers=request_header, timeout=15)
         self.url = response.url
+        self.__editUrl()
+
         self.parsed_content['url'] = response.url
         self.home_page = response.text
         self.status_code = response.status_code
         self.internal_pages = []
 
-
+    def __editUrl(self):
+        if self.url.count("/") < 3 and self.url[-1] != "/":
+            self.url = self.url + "/"
 
     def getContent(self, indent=2):
         return json.dumps(self.parsed_content, indent=indent)
