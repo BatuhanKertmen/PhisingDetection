@@ -67,7 +67,7 @@ class WebSiteContent:
         self.url = response.url
         self.__editUrl()
 
-        self.parsed_content['url'] = response.url
+        self.parsed_content['url'] = self.url
         self.home_page = response.text
         self.status_code = response.status_code
         self.internal_pages = []

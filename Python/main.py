@@ -57,18 +57,18 @@ def extractFeatures(filename, tld):
             json.dump(feat.getFeatures(), content_file)
     except:
         file_name = filename.split('\\')[-1]
-        Log.warning(" failed to extract features of " + file_name)
+        Log.warning("Failed to extract features of " + file_name)
 
 
 
-number_of_sites = 100
-batch_count = 100
-ping_thread_count = 100
-scrape_thread_count = 100
-feature_thread_count = 100
+number_of_sites = 1000
+batch_count = 500
+ping_thread_count = 500
+scrape_thread_count = 250
+feature_thread_count = 250
 
 if __name__ == "__main__":
-    domains_address = ScrapeWhoIsDs(check_date=True)
+    domains_address = ScrapeWhoIsDs(check_date=False)
 
     valid_domain_names = []
     counter = 0

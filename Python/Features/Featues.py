@@ -4,7 +4,7 @@ import OpenSSL
 import requests
 from bs4 import BeautifulSoup
 from googlesearch import search
-from Python.utilities.paths import COUNTRY_CODES_TXT
+from Python.utilities.paths import COUNTRY_CODES_TXT, TLD_TXT, WEBSITES_CONTENT_DIR
 
 
 def getDomains(url):
@@ -163,5 +163,3 @@ class Features:
             return []
 
         return raw_data_div.getText().split("\n")
-
-
