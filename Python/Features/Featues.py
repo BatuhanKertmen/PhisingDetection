@@ -5,6 +5,7 @@ import requests
 from bs4 import BeautifulSoup
 from googlesearch import search
 
+
 def getDomains(url):
     url_split = url.split("/")[2:-1]
     domain = url_split[0]

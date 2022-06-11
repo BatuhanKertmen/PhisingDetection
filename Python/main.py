@@ -1,8 +1,7 @@
 import json
 import multiprocessing
 import os
-import time
-import subprocess
+import glob
 
 import urllib3
 from ping3 import ping
@@ -10,11 +9,10 @@ from itertools import islice
 from joblib import Parallel, delayed
 
 from requests.exceptions import TooManyRedirects, ConnectionError, ReadTimeout
-
-from Python.Crawlers import GetContents
 from Python.Download.DownloadDomains import ScrapeWhoIsDs
-from Python.Download.OpenTank import scrapeOpenPhishing
-from paths import VALID_NAMES_TXT, RAW_OPEN_PHISH_TXT, WEBSITES_DIR
+from Python.Crawlers import GetContents
+from Python.utilities.paths import VALID_NAMES_TXT, WEBSITES_DIR, IMAGES_DIR
+from Python.utilities.log import Log
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -30,29 +28,31 @@ def scrape(domain_name, folder):
         web.parseContent()
 
         file_name = domain_name + ".json"
-
         path = os.path.join(folder, file_name)
         with open(path, "w") as content_file:
             json.dump(web.parsed_content, content_file)
 
     except ConnectionError:
-        print("Could not connect to", domain_name, "skipping!")
+        Log.log("Could not connect to " + domain_name + " skipping!")
     except ReadTimeout:
-        print("Max time exceeded", domain_name, "skipping!")
+        Log.log("Max time exceeded " + domain_name + " skipping!")
     except TooManyRedirects:
-        print(domain_name, "exceeded 30 redirections, skipping!")
+        Log.log(domain_name + " exceeded 30 redirections, skipping!")
+    except:
+        Log.warning("Unexpected error while scraping " + domain_name)
 
 
-number_of_sites = 250
-batch_count = 250
+number_of_sites = 1000
+batch_count = 500
 ping_thread_count = 100
-scrape_thread_count = 100
+scrape_thread_count = 500
 
 if __name__ == "__main__":
-    domains_address = ScrapeWhoIsDs()
+    domains_address = ScrapeWhoIsDs(check_date=True)
+
     valid_domain_names = []
     counter = 0
-
+    """
     with open(domains_address, 'r') as domain_file:
         with open(VALID_NAMES_TXT, "w") as valid_domains_file:
             while counter < number_of_sites:
@@ -62,29 +62,37 @@ if __name__ == "__main__":
                         break
 
                     domain_names = [domain_name.strip() for domain_name in domain_names]
-
-                    Parallel(n_jobs=ping_thread_count, prefer="threads", verbose=10)(delayed(pinging)(i) for i in domain_names)
-
+                    Parallel(n_jobs=ping_thread_count, prefer="threads", verbose=1)(delayed(pinging)(i) for i in domain_names)
                     valid_domains_file.write('\n'.join(valid_domain_names))
 
                 finally:
                     valid_domain_names.clear()
                     counter += batch_count
-
+    """
+    counter = 0
     with open(VALID_NAMES_TXT, "r") as file:
-        while True:
+        while counter < number_of_sites:
             valid_domains = list(islice(file, batch_count))
             if not valid_domains:
                 break
-
+            counter += len(valid_domains)
+            Log.succes(counter)
             valid_domains = [valid_domain.strip() for valid_domain in valid_domains]
 
             try:
-                Parallel(n_jobs=scrape_thread_count, prefer="threads", verbose=10, timeout=20)(
+                Parallel(n_jobs=scrape_thread_count, prefer="threads", verbose=1, timeout=50)(
                     (delayed(scrape)(i, str(WEBSITES_DIR)) for i in valid_domains))
+
             except multiprocessing.context.TimeoutError:
                 pass
-            finally:
-                valid_domains.clear()
 
+            finally:
+                files = glob.glob(str(IMAGES_DIR) + "\\*")
+                for image_file in files:
+                    try:
+                        os.remove(image_file)
+                    except:
+                        pass
+
+                valid_domains.clear()
 

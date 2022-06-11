@@ -1,5 +1,5 @@
 import requests
-from Python.paths import CRAWLER_DIR, DOMAINS_RAW_DIR
+from Python.utilities.paths import CRAWLER_DIR, DOMAINS_RAW_DIR
 
 
 # Stackoverflow Todd Gamblin
