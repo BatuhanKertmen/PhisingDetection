@@ -1,0 +1,738 @@
+Welcome to The Apache Software Foundation! THE WORLD'S LARGEST OPEN SOURCE FOUNDATION
+All volunteer community
+271M+ lines of code in stewardship
+4.8B+ lines of code changed
+4.6M+ code commits
+850+ individual ASF Members
+8,200+ Apache Committers
+49,000+ code contributors
+640,000+ people involved in our communities
+350+ Projects and Initiatives
+300+ Top-Level Projects
+37 podlings in the Apache Incubator
+~2 Petabytes source code downloads from Apache mirrors
+28M+ emails across 1,400+ mailing lists
+Web requests received from every Internet-connected country on the planet
+286M+ weekly page views across apache.org
+$22B+ worth of Apache Open Source software products are made available to the public-at-large at 100% no cost, and benefit billions of users around the world.
+Make a one-time or recurring donation | Corporate Support and ASF Sponsorship
+View additional videos
+"The most popular open source software is Apache…"
+DZone, “What Open Source Software Do You Use?”
+❮
+❯
+LATEST NEWS
+Keep up with the ASF's news and announcements by subscribing to the Apache Announcements List, as well as following the Foundation Blog, Apache Weekly News Round-Ups, @TheASF on Twitter, The Apache Software Foundation on LinkedIn, on the ASF's YouTube channel, and on Feathercast, the voice of the ASF.
+Twitter
+@TheASF
+Continue Reading →
+Foundation Blog
+THE APACHE NEWS ROUND-UP: WEEK ENDING 27 MAY 2022
+Continue Reading →
+Project Blogs
+THE APACHE NEWS ROUND-UP: WEEK ENDING 27 MAY 2022
+Continue Reading →
+Conferences
+CALL FOR PRESENTATIONS FOR APACHECON ASIA 2022 NOW OPEN
+Continue Reading →
+REPORTS
+Official ASF reports and statements, including Quarterly and Annual Reports, Vision Statement, "Apache is Open", 5-Year Strategic Plan, and more.
+COMMUNITY
+Guidance and mentoring for those interested in participating in Apache projects and their communities. From Google Summer of Code to community events, get started here to learn how to become an Apache contributor.
+THE APACHE WAY
+Our consensus-driven, open development process was refined over the past 20 years and produced some of the largest and longest-lived Open Source projects that have revolutionized the industry.
+CONFERENCES
+"Tomorrow's Technology Today" since 1998. Intentionally intimate, offering unparalleled educational, networking, and collaboration opportunities.
+The ASF develops, shepherds, and incubates hundreds of freely-available, enterprise-grade projects that serve as the backbone for some of the most visible and widely used applications in computing today. Through the ASF's merit-based process known as "The Apache Way," more than 840 individual volunteer Members and 8,200+ code Committers across six continents successfully collaborate on innovations in Artificial Intelligence and Deep Learning, Big Data, Build Management, Cloud Computing, Content Management, DevOps, IoT and Edge Computing, Mobile, Servers, and Web Frameworks, among other categories.
+APACHE IS …
+OPEN: The Apache Software Foundation provides support for 350+ Apache Projects and their Communities, furthering its mission of providing Open Source software for the public good.
+INNOVATION: Apache Projects are defined by collaborative, consensus-based processes, an open, pragmatic software license and a desire to create high quality software that leads the way in its field.
+COMMUNITY: We are a community of developers and users of enterprise-grade, Open Source Apache projects used in every Internet-connected country on the planet.
+APACHE PROJECTS
+The all-volunteer ASF develops, stewards, and incubates more than 350 Open Source projects and initiatives that cover a wide range of technologies. From Accumulo to Zookeeper, if you are looking for a rewarding experience in Open Source and industry leading software, chances are you are going to find it here. Are you powered by Apache?
+FEATURED PROJECTS
+Avro
+OpenWebBeans
+Druid
+AVRO
+A Serialization System
+Learn More...
+INCUBATING PROJECTS
+The Apache Incubator is the primary entry path into The Apache Software Foundation for projects and their communities wishing to become part of the Foundation’s efforts. All code donations from external organisations and existing external projects seeking to join the Apache community enter through the Incubator.
+Crail
+ShenYu
+Spot
+CRAIL
+Crail is a storage platform for sharing performance critical data in distributed data processing jobs at very high speed.
+Learn More...
+APACHE PROJECT LIST
+Overview
+All Projects
+BY CATEGORY
+Attic
+Big Data
+Build Management
+Cloud
+Content
+Databases
+FTP
+Graphics
+HTTP
+HTTP-module
+Incubating
+JavaEE
+Libraries
+Mail
+Mobile
+Network-client
+Network-server
+OSGi
+RegExp
+Retired
+Search
+Security
+SQL
+Testing
+Virtual-machine
+Web-framework
+XML
+BY NAME
+HTTP Server
+A
+AGE
+APISIX
+Accumulo
+ActiveMQ
+Airavata
+Airflow
+Allura
+Ant
+Any23
+Archiva
+Aries
+Arrow
+AsterixDB
+Atlas
+Attic
+Avro
+Axis
+B
+BVal
+Bahir
+Beam
+Bigtop
+Bloodhound
+BookKeeper
+Brooklyn
+Buildr
+C
+CXF
+Calcite
+Camel
+CarbonData
+Cassandra
+Cayenne
+Celix
+Clerezza
+CloudStack
+Cocoon
+Commons
+Community Development
+Cordova
+CouchDB
+Creadur
+Curator
+cTAKES
+D
+DB
+Daffodil
+DataFu
+DataSketches
+DeltaSpike
+Directory
+DolphinScheduler
+Drill
+Druid
+Dubbo
+E
+ECharts
+Empire-db
+F
+Felix
+Fineract
+Flex
+Flink
+Flume
+Fluo
+FreeMarker
+G
+Geode
+Geronimo
+Giraph
+Gobblin
+Gora
+Griffin
+Groovy
+Guacamole
+Gump
+H
+HAWQ
+HBase
+Hadoop
+Helix
+Hive
+Hop
+HttpComponents
+Hudi
+I
+Iceberg
+Ignite
+Impala
+Incubator
+IoTDB
+Isis
+J
+JMeter
+JSPWiki
+Jackrabbit
+James
+Jena
+Johnzon
+Juneau
+jUDDI
+jclouds
+K
+Kafka
+Karaf
+Kibble
+Knox
+Kudu
+Kylin
+L
+Libcloud
+Logging Services
+Lucene
+Lucene.Net
+M
+MADlib
+MINA
+Mahout
+ManifoldCF
+Maven
+Mesos
+Mnemonic
+MyFaces
+Mynewt
+N
+NetBeans
+NiFi
+Nutch
+O
+OFBiz
+OODT
+ORC
+Olingo
+Oozie
+OpenJPA
+OpenMeetings
+OpenNLP
+OpenOffice
+OpenWebBeans
+OpenWhisk
+Ozone
+P
+PDFBox
+PLC4X
+POI
+Parquet
+Perl
+Petri
+Phoenix
+Pig
+Pinot
+Pivot
+Portable Runtime (APR)
+Portals
+Pulsar
+Q
+Qpid
+R
+REEF
+Ranger
+Ratis
+RocketMQ
+Roller
+Royale
+Rya
+S
+SINGA
+SIS
+Samza
+Santuario
+Serf
+ServiceComb
+ServiceMix
+ShardingSphere
+Shiro
+SkyWalking
+Sling
+Solr
+SpamAssassin
+Spark
+Steve
+Storm
+Streams
+Struts
+Submarine
+Subversion
+Superset
+Synapse
+Syncope
+SystemDS
+T
+TVM
+Tapestry
+Tcl
+Tez
+Thrift
+Tika
+TinkerPop
+TomEE
+Tomcat
+Traffic Control
+Traffic Server
+Turbine
+U
+UIMA
+Unomi
+V
+VCL
+Velocity
+W
+Web Services
+Whimsy
+Wicket
+X
+XML Graphics
+Xalan
+Xerces
+Y
+Yetus
+YuniKorn
+Z
+Zeppelin
+ZooKeeper Skip to Main Content
+News
+About 
+Make a Donation 
+The Apache Way 
+Join Us 
+Downloads 
+Search
+COMMUNITY-LED DEVELOPMENT "THE APACHE WAY"
+Projects 
+People 
+Community 
+License 
+Sponsors 
+THE WORLD'S LARGEST OPEN SOURCE FOUNDATION
+All volunteer community
+271M+ lines of code in stewardship
+4.8B+ lines of code changed
+4.6M+ code commits
+850+ individual ASF Members
+8,200+ Apache Committers
+49,000+ code contributors
+640,000+ people involved in our communities
+350+ Projects and Initiatives
+300+ Top-Level Projects
+37 podlings in the Apache Incubator
+~2 Petabytes source code downloads from Apache mirrors
+28M+ emails across 1,400+ mailing lists
+Web requests received from every Internet-connected country on the planet
+286M+ weekly page views across apache.org
+
+$22B+ worth of Apache Open Source software products are made available to the public-at-large at 100% no cost, and benefit billions of users around the world.
+
+Make a one-time or recurring donation | Corporate Support and ASF Sponsorship
+
+View additional videos
+
+"The most popular open source software is Apache…"
+
+DZone, “What Open Source Software Do You Use?”
+❮
+❯
+  
+LATEST NEWS
+
+Keep up with the ASF's news and announcements by subscribing to the Apache Announcements List, as well as following the Foundation Blog, Apache Weekly News Round-Ups, @TheASF on Twitter, The Apache Software Foundation on LinkedIn, on the ASF's YouTube channel, and on Feathercast, the voice of the ASF.
+
+Twitter
+
+@TheASF
+
+Continue Reading →
+Foundation Blog
+THE APACHE NEWS ROUND-UP: WEEK ENDING 27 MAY 2022
+Continue Reading →
+Project Blogs
+THE APACHE NEWS ROUND-UP: WEEK ENDING 27 MAY 2022
+Continue Reading →
+Conferences
+CALL FOR PRESENTATIONS FOR APACHECON ASIA 2022 NOW OPEN
+Continue Reading →
+REPORTS
+
+Official ASF reports and statements, including Quarterly and Annual Reports, Vision Statement, "Apache is Open", 5-Year Strategic Plan, and more.
+
+COMMUNITY
+
+Guidance and mentoring for those interested in participating in Apache projects and their communities. From Google Summer of Code to community events, get started here to learn how to become an Apache contributor.
+
+THE APACHE WAY
+
+Our consensus-driven, open development process was refined over the past 20 years and produced some of the largest and longest-lived Open Source projects that have revolutionized the industry.
+
+CONFERENCES
+
+"Tomorrow's Technology Today" since 1998. Intentionally intimate, offering unparalleled educational, networking, and collaboration opportunities.
+
+The ASF develops, shepherds, and incubates hundreds of freely-available, enterprise-grade projects that serve as the backbone for some of the most visible and widely used applications in computing today. Through the ASF's merit-based process known as "The Apache Way," more than 840 individual volunteer Members and 8,200+ code Committers across six continents successfully collaborate on innovations in Artificial Intelligence and Deep Learning, Big Data, Build Management, Cloud Computing, Content Management, DevOps, IoT and Edge Computing, Mobile, Servers, and Web Frameworks, among other categories.
+
+APACHE IS …
+
+OPEN: The Apache Software Foundation provides support for 350+ Apache Projects and their Communities, furthering its mission of providing Open Source software for the public good.
+
+INNOVATION: Apache Projects are defined by collaborative, consensus-based processes, an open, pragmatic software license and a desire to create high quality software that leads the way in its field.
+
+COMMUNITY: We are a community of developers and users of enterprise-grade, Open Source Apache projects used in every Internet-connected country on the planet.
+
+APACHE PROJECTS
+
+The all-volunteer ASF develops, stewards, and incubates more than 350 Open Source projects and initiatives that cover a wide range of technologies. From Accumulo to Zookeeper, if you are looking for a rewarding experience in Open Source and industry leading software, chances are you are going to find it here. Are you powered by Apache?
+
+FEATURED PROJECTS
+Avro
+OpenWebBeans
+Druid
+AVRO
+
+A Serialization System
+
+Learn More...
+INCUBATING PROJECTS
+
+The Apache Incubator is the primary entry path into The Apache Software Foundation for projects and their communities wishing to become part of the Foundation’s efforts. All code donations from external organisations and existing external projects seeking to join the Apache community enter through the Incubator.
+
+Crail
+ShenYu
+Spot
+CRAIL
+
+Crail is a storage platform for sharing performance critical data in distributed data processing jobs at very high speed.
+
+Learn More...
+APACHE PROJECT LIST
+Overview
+All Projects
+BY CATEGORY
+Attic
+Big Data
+Build Management
+Cloud
+Content
+Databases
+FTP
+Graphics
+HTTP
+HTTP-module
+Incubating
+JavaEE
+Libraries
+Mail
+Mobile
+Network-client
+Network-server
+OSGi
+RegExp
+Retired
+Search
+Security
+SQL
+Testing
+Virtual-machine
+Web-framework
+XML
+BY NAME
+HTTP Server
+A
+AGE
+APISIX
+Accumulo
+ActiveMQ
+Airavata
+Airflow
+Allura
+Ant
+Any23
+Archiva
+Aries
+Arrow
+AsterixDB
+Atlas
+Attic
+Avro
+Axis
+B
+BVal
+Bahir
+Beam
+Bigtop
+Bloodhound
+BookKeeper
+Brooklyn
+Buildr
+C
+CXF
+Calcite
+Camel
+CarbonData
+Cassandra
+Cayenne
+Celix
+Clerezza
+CloudStack
+Cocoon
+Commons
+Community Development
+Cordova
+CouchDB
+Creadur
+Curator
+cTAKES
+D
+DB
+Daffodil
+DataFu
+DataSketches
+DeltaSpike
+Directory
+DolphinScheduler
+Drill
+Druid
+Dubbo
+E
+ECharts
+Empire-db
+F
+Felix
+Fineract
+Flex
+Flink
+Flume
+Fluo
+FreeMarker
+G
+Geode
+Geronimo
+Giraph
+Gobblin
+Gora
+Griffin
+Groovy
+Guacamole
+Gump
+H
+HAWQ
+HBase
+Hadoop
+Helix
+Hive
+Hop
+HttpComponents
+Hudi
+I
+Iceberg
+Ignite
+Impala
+Incubator
+IoTDB
+Isis
+J
+JMeter
+JSPWiki
+Jackrabbit
+James
+Jena
+Johnzon
+Juneau
+jUDDI
+jclouds
+K
+Kafka
+Karaf
+Kibble
+Knox
+Kudu
+Kylin
+L
+Libcloud
+Logging Services
+Lucene
+Lucene.Net
+M
+MADlib
+MINA
+Mahout
+ManifoldCF
+Maven
+Mesos
+Mnemonic
+MyFaces
+Mynewt
+N
+NetBeans
+NiFi
+Nutch
+O
+OFBiz
+OODT
+ORC
+Olingo
+Oozie
+OpenJPA
+OpenMeetings
+OpenNLP
+OpenOffice
+OpenWebBeans
+OpenWhisk
+Ozone
+P
+PDFBox
+PLC4X
+POI
+Parquet
+Perl
+Petri
+Phoenix
+Pig
+Pinot
+Pivot
+Portable Runtime (APR)
+Portals
+Pulsar
+Q
+Qpid
+R
+REEF
+Ranger
+Ratis
+RocketMQ
+Roller
+Royale
+Rya
+S
+SINGA
+SIS
+Samza
+Santuario
+Serf
+ServiceComb
+ServiceMix
+ShardingSphere
+Shiro
+SkyWalking
+Sling
+Solr
+SpamAssassin
+Spark
+Steve
+Storm
+Streams
+Struts
+Submarine
+Subversion
+Superset
+Synapse
+Syncope
+SystemDS
+T
+TVM
+Tapestry
+Tcl
+Tez
+Thrift
+Tika
+TinkerPop
+TomEE
+Tomcat
+Traffic Control
+Traffic Server
+Turbine
+U
+UIMA
+Unomi
+V
+VCL
+Velocity
+W
+Web Services
+Whimsy
+Wicket
+X
+XML Graphics
+Xalan
+Xerces
+Y
+Yetus
+YuniKorn
+Z
+Zeppelin
+ZooKeeper
+
+
+COMMUNITY
+Overview
+Conferences
+Summer of Code
+Getting Started
+The Apache Way
+Travel Assistance
+Get Involved
+Code of Conduct
+Community FAQ
+Memorials
+INNOVATION
+Incubator
+Labs
+Licensing
+Licensing FAQ
+Trademark Policy
+Contacts
+TECH OPERATIONS
+Developer Information
+Infrastructure
+Security
+Status
+Contacts
+PRESS
+Overview
+ASF News
+Announcements
+Twitter Feed
+Contacts
+LEGAL
+Legal Affairs
+DMCA
+Licensing
+Trademark Policy
+Public Records
+Privacy Policy
+Export Information
+Licensing FAQ
+Contacts
+
+Copyright © 2022 The Apache Software Foundation, Licensed under the Apache License, Version 2.0.
+
+Apache and the Apache feather logo are trademarks of The Apache Software Foundation.
