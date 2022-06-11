@@ -3,7 +3,7 @@ from time import sleep
 from bs4 import BeautifulSoup
 from collections import Counter
 
-from Python.paths import CONTENT_STRUCTURE_JSON, REALISTIC_HEADER_JSON, IMAGES_DIR
+from Python.utilities.paths import CONTENT_STRUCTURE_JSON, REALISTIC_HEADER_JSON, IMAGES_DIR
 
 import os
 import json
@@ -60,13 +60,12 @@ class WebSiteContent:
         with open(REALISTIC_HEADER_JSON) as header_file:
             request_header = json.load(header_file)
 
-        request_header["Host"] = url
-
         if url[0:4] != "http":
-            url = "https://" + url
+            url = "http://" + url
 
-        response = self.session.get(url, headers=request_header, timeout=(2, 10))
+        response = self.session.get(url, headers=request_header, timeout=15)
         self.url = response.url
+        self.parsed_content['url'] = response.url
         self.home_page = response.text
         self.status_code = response.status_code
         self.internal_pages = []
@@ -176,13 +175,16 @@ class WebSiteContent:
                     })
 
     def parseImage(self, images):
+        counter = 0
         for image in images:
+            counter += 1
+            name = self.domain + "-" + str(counter)
             if image.has_attr('src'):
                 src = self.getImageLink(image)
                 if src is not None:
                     alt = image['alt'] if image.has_attr('alt') else None
-                    byte, width, height, ocr = self.processImage(src)
-
+                    byte, width, height, ocr = self.processImage(src, name)
+                    byte, width, height, ocr = 1, 1, 1, ""
                     if byte != -1:
 
                         img = {
@@ -227,13 +229,13 @@ class WebSiteContent:
 
         return url
 
-    def processImage(self, image_link):
+    def processImage(self, image_link, name):
         image_type = self.getImageType(image_link)
         if image_type == "SKIP":
             return -1, -1, -1, "-1"
 
         try:
-            image_name = IMAGES_DIR + "\\image" + image_type
+            image_name = IMAGES_DIR + "\\" + name + image_type
             image_bytes = self.session.get(image_link).content
 
             byte = len(image_bytes)
@@ -295,7 +297,7 @@ class WebSiteContent:
         elif image_link.find(".svg") != -1:
             return "SKIP"
         elif image_link.find(".webp") != -1:
-            return ".webp"
+            return "SKIP"
 
 
 
@@ -335,5 +337,4 @@ class WebSiteContent:
                 sleep(speed)
             except requests.exceptions.InvalidURL:
                 pass
-
 

@@ -4,7 +4,8 @@ import requests
 from io import BytesIO
 from datetime import date
 from bs4 import BeautifulSoup
-from Python.paths import DOMAINS_RAW_DIR
+from Python.utilities.log import Log
+from Python.utilities.paths import RAW_NAMES_TXT, DOMAINS_RAW_DIR
 
 
 # returns the
@@ -26,11 +27,15 @@ def _ScrapeTodaysDomainsFileLink(check_date):
 
 # returns address of the downloaded file
 def _DownloadDomainList(link):
-    get_zip = requests.get(link)
-    zip_file = zipfile.ZipFile(BytesIO(get_zip.content))
-    zip_file.extractall(DOMAINS_RAW_DIR)
-    return os.path.join(DOMAINS_RAW_DIR, zip_file.namelist()[0])
-
+    try:
+        get_zip = requests.get(link)
+        zip_file = zipfile.ZipFile(BytesIO(get_zip.content))
+        zip_file.extractall(DOMAINS_RAW_DIR)
+        Log.succes("Downloading domains successful!")
+        return os.path.join(DOMAINS_RAW_DIR, zip_file.namelist()[0])
+    except zipfile.BadZipfile:
+        Log.warning("Couldn't find zip file! Returning default location")
+        return RAW_NAMES_TXT
 
 def ScrapeWhoIsDs(check_date=True):
     zip_link = _ScrapeTodaysDomainsFileLink(check_date)
