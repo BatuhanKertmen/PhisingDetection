@@ -61,9 +61,9 @@ def extractFeatures(filename, tld):
 
 
 
-number_of_sites = 1000
-batch_count = 500
-ping_thread_count = 500
+number_of_sites = 250
+batch_count = 250
+ping_thread_count = 250
 scrape_thread_count = 250
 feature_thread_count = 250
 
@@ -89,6 +89,7 @@ if __name__ == "__main__":
                     valid_domain_names.clear()
                     counter += batch_count
 
+    Log.succes("Pinging Done")
     counter = 0
     with open(VALID_NAMES_TXT, "r") as file:
         while counter < number_of_sites:
@@ -115,6 +116,7 @@ if __name__ == "__main__":
 
                 valid_domains.clear()
 
+    Log.succes("Scraping Done.")
     website_files = glob.glob(str(WEBSITES_CONTENT_DIR) + "\\*")
 
     with open(TLD_TXT, "r") as tld_file:
@@ -139,6 +141,6 @@ if __name__ == "__main__":
 
         finally:
             counter += batch_count
-
+    Log.succes("Feature Extraction Done.")
 
 

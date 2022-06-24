@@ -2,6 +2,7 @@ from PIL import Image
 from time import sleep
 from bs4 import BeautifulSoup
 from collections import Counter
+from Python.utilities.log import Log
 
 from Python.utilities.paths import CONTENT_STRUCTURE_JSON, REALISTIC_HEADER_JSON, IMAGES_DIR
 
@@ -188,7 +189,6 @@ class WebSiteContent:
                 if src is not None:
                     alt = image['alt'] if image.has_attr('alt') else None
                     byte, width, height, ocr = self.processImage(src, name)
-                    byte, width, height, ocr = 1, 1, 1, ""
                     if byte != -1:
 
                         img = {
@@ -225,6 +225,10 @@ class WebSiteContent:
             return None
 
         url = image['src']
+
+        if url[0:2] == "//":
+            return "http:" + url
+
         if url.find('http') == -1:
             if url[0] != "/" and self.url[-1] != "/":
                 url = self.url + "/" + url
@@ -239,7 +243,7 @@ class WebSiteContent:
             return -1, -1, -1, "-1"
 
         try:
-            image_name = IMAGES_DIR + "\\" + name + image_type
+            image_name = IMAGES_DIR + "\\" + name.replace('/', '_').replace("http", "").replace(":", "") + image_type
             image_bytes = self.session.get(image_link).content
 
             byte = len(image_bytes)
@@ -342,3 +346,11 @@ class WebSiteContent:
             except requests.exceptions.InvalidURL:
                 pass
 
+
+
+"""
+url = "stackoverflow.com"
+web = WebSiteContent(url)
+web.parseContent()
+print(web.getContent())
+"""
