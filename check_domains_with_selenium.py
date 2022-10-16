@@ -2,8 +2,9 @@ import os
 import pandas as pd
 from selenium import webdriver
 import time
+from Python.utilities.paths import CHROME_DRIVER
 
-os.environ["PATH"] += os.pathsep + r'C:\Users\D\geckodriver'
+os.environ["PATH"] += CHROME_DRIVER
 
 df = pd.read_csv('top-1m.csv')
 top_one_millions_domains = [website for website in df['Website']]

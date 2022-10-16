@@ -2,17 +2,20 @@ from PIL import Image
 from time import sleep
 from bs4 import BeautifulSoup
 from collections import Counter
-from Python.utilities.log import Log
 
-from Python.utilities.paths import CONTENT_STRUCTURE_JSON, REALISTIC_HEADER_JSON, IMAGES_DIR
+from seleniumwire import webdriver
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.ui import WebDriverWait
+
+from Python.utilities.paths import CONTENT_STRUCTURE_JSON, IMAGES_DIR, CHROME_DRIVER
 
 import os
 import json
 import requests
 import googletrans
 import pytesseract
-pytesseract.pytesseract.tesseract_cmd = os.path.expanduser('~') + r"\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"
 
+pytesseract.pytesseract.tesseract_cmd = os.path.expanduser('~') + r"\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"
 
 ######################################################################
 ######################################################################
@@ -53,24 +56,25 @@ class Speed:
 class WebSiteContent:
     def __init__(self, url):
         self.domain = url
-        self.session = requests.Session()
 
         with open(CONTENT_STRUCTURE_JSON) as content_file:
             self.parsed_content = json.load(content_file)
 
-        with open(REALISTIC_HEADER_JSON) as header_file:
-            request_header = json.load(header_file)
-
         if url[0:4] != "http":
             url = "http://" + url
 
-        response = self.session.get(url, headers=request_header, timeout=15)
-        self.url = response.url
+        self.driver = webdriver.Chrome(CHROME_DRIVER)
+
+        # TODO: check timeout mechanism
+        self.driver.get(url)
+        WebDriverWait(self.driver, 10).until(expected_conditions.presence_of_all_elements_located)
+
+        self.url = self.driver.current_url
         self.__editUrl()
 
+        # TODO: get http status code
         self.parsed_content['url'] = self.url
-        self.home_page = response.text
-        self.status_code = response.status_code
+        self.home_page = self.driver.page_source
         self.internal_pages = []
 
     def __editUrl(self):
@@ -81,9 +85,8 @@ class WebSiteContent:
         return json.dumps(self.parsed_content, indent=indent)
 
     def parseContent(self):
-        self.parsed_content['status_code'] = self.status_code
-
         page_soup = BeautifulSoup(self.home_page, features="html.parser")
+
         self.parseTitle(page_soup.find('title'))
         self.parseScript(page_soup.findAll('script'))
         self.parseLinks(page_soup.findAll('link'))
@@ -122,15 +125,11 @@ class WebSiteContent:
             occurrence_count = Counter(detected_langs)
             self.parsed_content["dominant_lang"] = occurrence_count.most_common(1)[0][0]
 
-
-
-
     def parseScript(self, scripts):
         for script in scripts:
             src = script['src'] if script.has_attr('src') else "local script"
 
             self.parsed_content["head"]["script"].append(src)
-
 
         self.parsed_content["head"]["script_count"] = \
             len(self.parsed_content["head"]["script"]) if self.parsed_content["head"]["script"] else 0
@@ -149,7 +148,6 @@ class WebSiteContent:
 
         self.parsed_content["head"]["link_count"] = \
             len(self.parsed_content["head"]["link"])
-
 
     def parseMeta(self, metas):
         for meta in metas:
@@ -244,7 +242,7 @@ class WebSiteContent:
 
         try:
             image_name = IMAGES_DIR + "\\" + name.replace('/', '_').replace("http", "").replace(":", "") + image_type
-            image_bytes = self.session.get(image_link).content
+            image_bytes = requests.get(image_link).content
 
             byte = len(image_bytes)
 
@@ -258,7 +256,7 @@ class WebSiteContent:
             os.remove(image_name)
 
             return byte, width, height, ocr_text
-        except:
+        except Exception:
             return -1, -1, -1, "-1"
 
     def _isSmallestImage(self, width, height):
@@ -283,7 +281,8 @@ class WebSiteContent:
 
         return False
 
-    def getImageType(self, image_link):
+    @staticmethod
+    def getImageType(image_link):
         if image_link.find(".png") != -1:
             return ".png"
         elif image_link.find(".jpeg") != -1:
@@ -306,8 +305,6 @@ class WebSiteContent:
             return "SKIP"
         elif image_link.find(".webp") != -1:
             return "SKIP"
-
-
 
     def findInternalLinks(self, page_content):
         try:
@@ -339,18 +336,9 @@ class WebSiteContent:
                 used_internal_links.add(internal_link)
                 print("url:", internal_link, "processing...")
 
-                internal_page = self.session.get(self.url[0:-1] + internal_link).content
+                internal_page = requests.get(self.url[0:-1] + internal_link).content
                 internal_links |= set(self.findInternalLinks(internal_page) - used_internal_links)
                 self.internal_pages.append({self.url[0:-1] + internal_link: internal_page})
                 sleep(speed)
             except requests.exceptions.InvalidURL:
                 pass
-
-
-
-"""
-url = "stackoverflow.com"
-web = WebSiteContent(url)
-web.parseContent()
-print(web.getContent())
-"""

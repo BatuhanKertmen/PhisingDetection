@@ -17,6 +17,11 @@ WEBSITES_FEATURE_DIR = os.path.join(WEBSITES_DIR, "feature")
 IMAGES_DIR = os.path.join(CRAWLER_DIR, "Images")
 FEATURES_DIR = os.path.join(PYTHON_DIR, "Features")
 
+# DRIVERS
+DRIVER_DIR = os.path.join(WORKING_DIR, "GeckoDrivers")
+GECKO_DRIVER = os.path.join(DRIVER_DIR, "geckodriver.exe")
+CHROME_DRIVER = os.path.join(DRIVER_DIR, "chromedriver.exe")
+
 
 # GO
 # GO_DIR = os.path.join(WORKING_DIR, "Go")

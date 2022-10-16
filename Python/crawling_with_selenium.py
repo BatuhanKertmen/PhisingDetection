@@ -6,10 +6,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from seleniumwire import webdriver
+from Python.utilities.paths import GECKO_DRIVER
+
 import top_one_million_domains
 
-os.environ["PATH"] += os.pathsep + r'C:\Users\Do\geckodriver'
+print(GECKO_DRIVER)
+os.environ["PATH"] += GECKO_DRIVER
 driver = webdriver.Firefox()
 
 for index, website_name in enumerate(top_one_million_domains.domains[:5000]):
@@ -45,15 +47,15 @@ for index, website_name in enumerate(top_one_million_domains.domains[:5000]):
         driver.save_screenshot(filename='screenshots/WebsiteScreenShot{}.png'.format(website_index))
 
         # response of the current website
-        request = driver.requests[website_index]
-        response = request.response.status_code
-        print(response)
+        #request = driver.requests[website_index]
+        #response = request.response.status_code
+        #print(response)
 
         with codecs.open('selenium_crawled_texts/text{}.txt'.format(website_index), 'w', 'utf8') as f:
             f.write(title_of_the_page + " " + main_text + " " + body_text)
 
-        with codecs.open('selenium_crawled_responses/response{}.txt'.format(website_index), 'w', 'utf8') as f:
-            f.write(str(response))
+        #with codecs.open('selenium_crawled_responses/response{}.txt'.format(website_index), 'w', 'utf8') as f:
+        #    f.write(str(response))
     except:
         pass
 

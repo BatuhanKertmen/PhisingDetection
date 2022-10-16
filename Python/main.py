@@ -11,7 +11,7 @@ from joblib import Parallel, delayed
 from requests.exceptions import TooManyRedirects, ConnectionError, ReadTimeout
 from Python.Download.DownloadDomains import ScrapeWhoIsDs
 from Python.Crawlers import GetContents
-from Python.utilities.paths import VALID_NAMES_TXT, WEBSITES_CONTENT_DIR, WEBSITES_FEATURE_DIR, IMAGES_DIR, TLD_TXT
+from Python.utilities.paths import VALID_NAMES_TXT, WEBSITES_CONTENT_DIR, WEBSITES_FEATURE_DIR, IMAGES_DIR, TLD_TXT, RAW_NAMES_TXT
 from Python.utilities.log import Log
 from Python.Features.Featues import Features
 
@@ -39,8 +39,6 @@ def scrape(domain_name, folder):
         Log.log("Max time exceeded " + domain_name + " skipping!")
     except TooManyRedirects:
         Log.log(domain_name + " exceeded 30 redirections, skipping!")
-    except:
-        Log.warning("Unexpected error while scraping " + domain_name)
 
 def extractFeatures(filename, tld):
     try:
@@ -61,14 +59,15 @@ def extractFeatures(filename, tld):
 
 
 
-number_of_sites = 250
-batch_count = 250
-ping_thread_count = 250
-scrape_thread_count = 250
-feature_thread_count = 250
+number_of_sites = 10
+batch_count = 10
+ping_thread_count = 10
+scrape_thread_count = 10
+feature_thread_count = 10
 
 if __name__ == "__main__":
-    domains_address = ScrapeWhoIsDs(check_date=False)
+    domains_address = ScrapeWhoIsDs()
+    #domains_address = RAW_NAMES_TXT
 
     valid_domain_names = []
     counter = 0
