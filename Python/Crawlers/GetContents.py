@@ -73,7 +73,11 @@ class WebSiteContent:
         self.__editUrl()
 
         # TODO: get http status code
-        self.parsed_content['url'] = self.url
+        # response of the current website
+        request = self.driver.requests[0]
+        response = request.response.status_code
+
+        self.parsed_content['status_code'] = response
         self.home_page = self.driver.page_source
         self.internal_pages = []
 
