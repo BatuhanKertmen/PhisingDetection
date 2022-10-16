@@ -73,7 +73,11 @@ class WebSiteContent:
         self.__editUrl()
 
         # TODO: get http status code
-        self.parsed_content['url'] = self.url
+        # response of the current website
+        request = self.driver.requests[0]
+        response = request.response.status_code
+
+        self.parsed_content['status_code'] = response
         self.home_page = self.driver.page_source
         self.internal_pages = []
 
@@ -111,7 +115,7 @@ class WebSiteContent:
                     else:
                         self.parsed_content["text"]["original"][tag] = [text]
 
-                translation_objects = translator.translate(text=texts, dest='en')
+                translation_objects = translator.translate(text=texts)
                 detected_langs.extend([translation_object.src for translation_object in translation_objects])
 
                 translated_texts = [translation_object.text.strip() for translation_object in translation_objects]
