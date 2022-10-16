@@ -98,7 +98,7 @@ class WebSiteContent:
 
     def getTextualContent(self, body):
         tags = ['h1', 'h2', 'h3', 'h4', 'h5', 'strong', 'p', 'mark']
-        translator = googletrans.Translator()
+        translator = googletrans.Translator(service_urls=['translate.googleapis.com'])
         detected_langs = list()
         for tag in tags:
             text_tags = body.findAll(tag)
@@ -111,7 +111,7 @@ class WebSiteContent:
                     else:
                         self.parsed_content["text"]["original"][tag] = [text]
 
-                translation_objects = translator.translate(text=texts, dest='en')
+                translation_objects = translator.translate(text=texts)
                 detected_langs.extend([translation_object.src for translation_object in translation_objects])
 
                 translated_texts = [translation_object.text.strip() for translation_object in translation_objects]
