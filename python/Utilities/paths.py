@@ -19,8 +19,9 @@ FEATURES_DIR = os.path.join(PYTHON_DIR, "features")
 
 # DRIVERS
 DRIVER_DIR = os.path.join(WORKING_DIR, "GeckoDrivers")
-GECKO_DRIVER = os.path.join(DRIVER_DIR, "geckodriver.exe")
-CHROME_DRIVER = os.path.join(DRIVER_DIR, "chromedriver.exe")
+GECKO_DRIVER = os.path.join(DRIVER_DIR, "geckodriver_win.exe")
+CHROME_DRIVER = os.path.join(DRIVER_DIR, "chromedriver_win.exe")
+CHROME_DRIVER_LINUX = os.path.join(DRIVER_DIR, "chromedriver_linux")
 
 # -------- FILES ---------- #
 

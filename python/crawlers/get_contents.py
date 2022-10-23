@@ -6,7 +6,7 @@ from seleniumwire import webdriver
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
 
-from python.Utilities.paths import CONTENT_STRUCTURE_JSON, IMAGES_DIR, CHROME_DRIVER
+from python.Utilities.paths import CONTENT_STRUCTURE_JSON, IMAGES_DIR, CHROME_DRIVER, CHROME_DRIVER_LINUX
 
 import os
 import json
@@ -54,7 +54,10 @@ class WebSiteContent:
         if url[0:4] != "http":
             url = "http://" + url
 
-        self.driver = webdriver.Chrome(CHROME_DRIVER)
+        if os.name == "nt":
+            self.driver = webdriver.Chrome(CHROME_DRIVER)
+        elif os.name == "posix":
+            self.driver = webdriver.Chrome(CHROME_DRIVER_LINUX)
 
         self.driver.get(url)
         WebDriverWait(self.driver, 10).until(expected_conditions.presence_of_all_elements_located)

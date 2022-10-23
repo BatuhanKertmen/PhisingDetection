@@ -3,7 +3,6 @@ import multiprocessing
 import os
 import glob
 
-import urllib3
 from ping3 import ping
 from itertools import islice
 from joblib import Parallel, delayed
@@ -14,6 +13,11 @@ from python.crawlers import get_contents
 from python.Utilities.paths import VALID_NAMES_TXT, WEBSITES_CONTENT_DIR, WEBSITES_FEATURE_DIR, IMAGES_DIR, TLD_TXT
 from python.Utilities.log import Log
 from python.features.featues import Features
+
+
+os_name = os.name
+if not (os_name == "posix" or os_name == "nt"):
+    raise OSError("wrong OS")
 
 
 def pinging(d_name):
