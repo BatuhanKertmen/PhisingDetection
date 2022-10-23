@@ -1,0 +1,11 @@
+{
+  "method": "GET",
+  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36",
+  "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+  "Accept-Language": "*",
+  "Accept-Encoding": "gzip, deflate",
+  "Upgrade-Insecure-Requests": "1",
+  "Cache-Control": "max-age=0",
+  "te": "trailers",
+  "Connection": "close"
+}

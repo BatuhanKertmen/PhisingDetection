@@ -14,8 +14,8 @@ env.bak/
 venv.bak/
 
 # Debugging/Testing Files
-Python/benchmarking.py
-Python/Features/.google-cookie
+python/benchmarking.py
+python/features/.google-cookie
 errors.txt
 log.txt
 warnings.txt
