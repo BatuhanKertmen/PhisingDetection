@@ -1,6 +1,5 @@
-from python.Utilities.paths import WORKING_DIR
 from datetime import datetime
-from paths import LOG_TXT, WARNING_TXT, ERROR_TXT
+from python.utilities.paths import LOG_TXT, WARNING_TXT, ERROR_TXT
 
 
 class Log:

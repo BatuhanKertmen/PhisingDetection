@@ -4,8 +4,8 @@ import requests
 from io import BytesIO
 from datetime import date
 from bs4 import BeautifulSoup
-from python.Utilities.log import Log
-from python.Utilities.paths import RAW_NAMES_TXT, DOMAINS_RAW_DIR
+from python.utilities.log import Log
+from python.utilities.paths import RAW_NAMES_TXT, DOMAINS_RAW_DIR
 
 
 def _scrapeTodaysDomainsFileLink(check_date):

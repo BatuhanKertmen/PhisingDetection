@@ -10,8 +10,8 @@ from joblib import Parallel, delayed
 from requests.exceptions import TooManyRedirects, ConnectionError, ReadTimeout
 from python.download.download_domains import scrapeWhoIsDs
 from python.crawlers import get_contents
-from python.Utilities.paths import VALID_NAMES_TXT, WEBSITES_CONTENT_DIR, WEBSITES_FEATURE_DIR, IMAGES_DIR, TLD_TXT
-from python.Utilities.log import Log
+from python.utilities.paths import VALID_NAMES_TXT, WEBSITES_CONTENT_DIR, WEBSITES_FEATURE_DIR, IMAGES_DIR, TLD_TXT
+from python.utilities.log import Log
 from python.features.featues import Features
 
 

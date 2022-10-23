@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from selenium import webdriver
 import time
-from python.Utilities.paths import CHROME_DRIVER
+from python.utilities.paths import CHROME_DRIVER
 
 os.environ["PATH"] += CHROME_DRIVER
 

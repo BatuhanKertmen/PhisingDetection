@@ -6,7 +6,7 @@ from seleniumwire import webdriver
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
 
-from python.Utilities.paths import CONTENT_STRUCTURE_JSON, IMAGES_DIR, CHROME_DRIVER, CHROME_DRIVER_LINUX
+from python.utilities.paths import CONTENT_STRUCTURE_JSON, IMAGES_DIR, CHROME_DRIVER, CHROME_DRIVER_LINUX
 
 import os
 import json

@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from python.Utilities.paths import RAW_NAMES_TXT
+from python.utilities.paths import RAW_NAMES_TXT
 
 
 def downloadDomains():

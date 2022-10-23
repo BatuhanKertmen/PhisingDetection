@@ -4,7 +4,7 @@ import OpenSSL
 import requests
 from bs4 import BeautifulSoup
 from googlesearch import search
-from python.Utilities.paths import COUNTRY_CODES_TXT
+from python.utilities.paths import COUNTRY_CODES_TXT
 
 
 def getDomains(url):
