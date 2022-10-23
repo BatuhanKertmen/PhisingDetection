@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from collections import Counter
 
 from seleniumwire import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
 
@@ -54,10 +55,14 @@ class WebSiteContent:
         if url[0:4] != "http":
             url = "http://" + url
 
+        op = Options()
+        op.add_argument("--headless")
+        op.add_argument("--disable-gpu")
+
         if os.name == "nt":
-            self.driver = webdriver.Chrome(CHROME_DRIVER)
+            self.driver = webdriver.Chrome(CHROME_DRIVER, options=op)
         elif os.name == "posix":
-            self.driver = webdriver.Chrome(CHROME_DRIVER_LINUX)
+            self.driver = webdriver.Chrome(CHROME_DRIVER_LINUX, options=op)
 
         self.driver.get(url)
         WebDriverWait(self.driver, 10).until(expected_conditions.presence_of_all_elements_located)
