@@ -1,5 +1,6 @@
 from python.Utilities.paths import WORKING_DIR
 from datetime import datetime
+from paths import LOG_TXT, WARNING_TXT, ERROR_TXT
 
 
 class Log:
@@ -15,7 +16,7 @@ class Log:
     @staticmethod
     def log(message):
         dt = str(datetime.now())
-        with open(str(WORKING_DIR) + "\\log.txt", "a") as file:
+        with open(LOG_TXT, "a") as file:
             file.write("log:\t" + dt + "\t" + str(message) + "\n")
 
     @staticmethod
@@ -24,9 +25,9 @@ class Log:
         ends = '\033[0m'
         print(f"{warning}{message}{ends}")
         dt = str(datetime.now())
-        with open(str(WORKING_DIR) + "\\log.txt", "a") as file:
+        with open(LOG_TXT, "a") as file:
             file.write("warn:\t" + dt + "\t" + str(message) + "\n")
-        with open(str(WORKING_DIR) + "\\warnings.txt", "a") as file:
+        with open(WARNING_TXT, "a") as file:
             file.write("warn:\t" + dt + "\t" + str(message) + "\n")
 
     @staticmethod
@@ -35,11 +36,11 @@ class Log:
         ends = '\033[0m'
         print(f"{err}{message}{ends}")
         dt = str(datetime.now())
-        with open(str(WORKING_DIR) + "\\log.txt", "a") as file:
+        with open(LOG_TXT, "a") as file:
             file.write("error:\t" + dt + "\t" + str(message) + "\n")
-        with open(str(WORKING_DIR) + "\\warnings.txt", "a") as file:
+        with open(WARNING_TXT, "a") as file:
             file.write("error:\t" + dt + "\t" + str(message) + "\n")
-        with open(str(WORKING_DIR) + "\\errors.txt", "a") as file:
+        with open(ERROR_TXT, "a") as file:
             file.write("error:\t" + dt + "\t" + str(message) + "\n")
 
     @staticmethod
@@ -48,5 +49,5 @@ class Log:
         ends = '\033[0m'
         print(f"{suc}{message}{ends}")
         dt = str(datetime.now())
-        with open(str(WORKING_DIR) + "\\log.txt", "a") as file:
+        with open(LOG_TXT, "a") as file:
             file.write("succes:\t" + dt + "\t" + str(message) + "\n")
