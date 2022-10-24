@@ -1,6 +1,6 @@
 ######## DATA PROCESS ########
 
-googletrans == 4.0.0-rc1
+googletrans == 3.1.0a0
 pillow == 9.1.0
 pytesseract == 0.3.9
 pandas == 1.4.2
