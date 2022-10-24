@@ -1,8 +1,8 @@
 #LWP-Cookies-2.0
 Set-Cookie3: AEC=AakniGMYK_F8ZUQ1GEL8cGhQ3mjmm6dfuYPDg7P8ZwCl4IJZkd2MNbvcTg; path="/"; domain=".google.cat"; path_spec; domain_dot; secure; expires="2022-12-17 21:24:45Z"; HttpOnly=None; SameSite=lax; version=0
 Set-Cookie3: NID="511=bkK-ykrTnsaxRRlAaVgHyUptixvuGuxQEuZC6-Ogw68Es5pjf7ZbF9DhES12i2NzkzgrmdT2izbxd4DaPYc-6Af3x4ODqIcCQWHP3zL51NwTTQvce03y0x9Zml0bom-TP5jmdwYpLVGkKBEGlH29sf35Bptgnc59w7RnxZSzG-s"; path="/"; domain=".google.cat"; path_spec; domain_dot; expires="2022-12-20 21:24:47Z"; HttpOnly=None; version=0
-Set-Cookie3: 1P_JAR="2022-10-08-11"; path="/"; domain=".google.com"; path_spec; domain_dot; secure; expires="2022-11-07 11:55:11Z"; version=0
-Set-Cookie3: AEC="AakniGN3e_IlyocppEV-XGlb8CNwt-HE2KuzeqEYdHrtiFL5NeY631YkVaw"; path="/"; domain=".google.com"; path_spec; domain_dot; secure; expires="2022-12-21 11:22:02Z"; HttpOnly=None; SameSite=lax; version=0
+Set-Cookie3: 1P_JAR="2022-10-24-17"; path="/"; domain=".google.com"; path_spec; domain_dot; secure; expires="2022-11-23 17:33:57Z"; version=0
+Set-Cookie3: AEC="AakniGPik0RzNp8rIx4zCha1kLL5g_OeemoT-fKxdcWJZNbX8QC2a7nMigw"; path="/"; domain=".google.com"; path_spec; domain_dot; secure; expires="2022-12-21 11:22:02Z"; HttpOnly=None; SameSite=lax; version=0
 Set-Cookie3: NID="511=t3zDTptQIRXm4EkHP6sCkUZo_zG79qvlOrAeLQp_NO87KW5OWAUG_LcYFGxRniNu2xqV7h69Q1YFf9WSshW5rmwml1vpQkSYpBqiN_6l2IC9YJ7ZcF-7fgfcG4kVlzNF-SA0zuP1zUaPUsFh8PtpamIXJuUQY3W7PNnWkrxvgQs"; path="/"; domain=".google.com"; path_spec; domain_dot; expires="2022-12-11 19:17:24Z"; HttpOnly=None; version=0
 Set-Cookie3: AEC=AakniGPDXTTeN9roYR2ONOAdauM7RvXxVd8vSMkh2fe3FrHQ7t15R24b5w; path="/"; domain=".google.it"; path_spec; domain_dot; secure; expires="2022-12-17 21:27:33Z"; HttpOnly=None; SameSite=lax; version=0
 Set-Cookie3: NID="511=JWkxP7_Qn8U9FnZ1osAv3x5bbSOU3XFRAcmI4TrBwiiRl-p0Qas7ECQA-1rwRbvxSU547GUOL_yZLR5B2J4EWeMZ7uuwu19HlikWdf5l454RhFJZ9wNzLAykAMxRhGWnglPCieno5G0WUHldhBTYXAVO2LAWhxua9SKUREUb2lA"; path="/"; domain=".google.it"; path_spec; domain_dot; expires="2022-12-20 21:27:33Z"; HttpOnly=None; version=0

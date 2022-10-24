@@ -35,10 +35,9 @@ CONTENT_STRUCTURE_JSON = os.path.join(CRAWLER_DIR, "content_structure.json")
 REALISTIC_HEADER_JSON = os.path.join(CRAWLER_DIR, "realistic_header.json")
 COUNTRY_CODES_TXT = os.path.join(FEATURES_DIR, "country_codes.txt")
 TLD_TXT = os.path.join(FEATURES_DIR, "TLD.txt")
-LOG_TXT = os.path.join(WORKING_DIR, "log.txt")
-WARNING_TXT = os.path.join(WORKING_DIR, "warning.txt")
-ERROR_TXT = os.path.join(WORKING_DIR, "error.txt")
-
+LOG_TXT = os.path.join(WORKING_DIR, "logs.txt")
+WARNING_TXT = os.path.join(WORKING_DIR, "warnings.txt")
+ERROR_TXT = os.path.join(WORKING_DIR, "errors.txt")
 
 def debug():
     print("WORKING_DIR:", WORKING_DIR)

@@ -8,6 +8,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
 
 from python.utilities.paths import CONTENT_STRUCTURE_JSON, IMAGES_DIR, CHROME_DRIVER, CHROME_DRIVER_LINUX
+from python.utilities.log import Log
 
 import os
 import json
@@ -66,8 +67,14 @@ class WebSiteContent:
         elif os.name == "posix":
             self.driver = webdriver.Chrome(CHROME_DRIVER_LINUX, options=op)
 
-        self.driver.get(url)
-        WebDriverWait(self.driver, 10).until(expected_conditions.presence_of_all_elements_located)
+        try:
+            self.driver.get(url)
+            WebDriverWait(self.driver, 10).until(expected_conditions.presence_of_all_elements_located)
+        except TimeoutError:
+            Log.log("Time out error: " + url)
+        except ConnectionResetError:
+            Log.log("Connection Reset Error:" + url)
+
 
         self.url = self.driver.current_url
         self.__editUrl()

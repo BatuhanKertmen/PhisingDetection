@@ -17,5 +17,5 @@ venv.bak/
 python/benchmarking.py
 python/features/.google-cookie
 errors.txt
-log.txt
+logs.txt
 warnings.txt

@@ -1,0 +1,885 @@
+succes:	2022-10-06 18:07:03.331157	Downloading domains successful!
+succes:	2022-10-06 18:07:14.576864	Pinging Done
+log:	2022-10-06 18:07:15.556528	Could not connect to tgs.amsterdam skipping!
+log:	2022-10-06 18:07:15.998493	Could not connect to securemarketing.agency skipping!
+log:	2022-10-06 18:07:16.484728	Could not connect to rhine.academy skipping!
+log:	2022-10-06 18:07:17.018233	Could not connect to almomendigital.agency skipping!
+log:	2022-10-06 18:07:21.554599	Could not connect to credstore.africa skipping!
+log:	2022-10-06 18:07:21.576788	Could not connect to favori.app skipping!
+log:	2022-10-06 18:07:21.638151	Could not connect to futor.app skipping!
+log:	2022-10-06 18:07:21.743633	Could not connect to favouri.app skipping!
+log:	2022-10-06 18:07:21.844283	Could not connect to absolutemodels.agency skipping!
+log:	2022-10-06 18:07:21.832239	Could not connect to magicalemail.agency skipping!
+log:	2022-10-06 18:07:21.877415	Could not connect to geniali.academy skipping!
+log:	2022-10-06 18:07:21.774691	Could not connect to marketingplan.agency skipping!
+log:	2022-10-06 18:07:21.886389	Could not connect to itskim.agency skipping!
+log:	2022-10-06 18:07:21.886389	Could not connect to go-trace.africa skipping!
+log:	2022-10-06 18:07:21.891375	Could not connect to pitchdb.agency skipping!
+log:	2022-10-06 18:07:21.875419	Could not connect to thejolt.agency skipping!
+log:	2022-10-06 18:07:21.887386	Could not connect to tradeshows.africa skipping!
+log:	2022-10-06 18:07:21.865366	Could not connect to aheadless.agency skipping!
+log:	2022-10-06 18:07:21.954422	Could not connect to wizzkid.academy skipping!
+log:	2022-10-06 18:07:21.945325	Could not connect to abrahamdigital.agency skipping!
+log:	2022-10-06 18:07:22.035109	Could not connect to government.airforce skipping!
+log:	2022-10-06 18:07:22.037102	Could not connect to pinterestcreator.academy skipping!
+log:	2022-10-06 18:07:22.038072	Could not connect to kyrios.academy skipping!
+log:	2022-10-06 18:07:22.057412	Could not connect to youlink.academy skipping!
+log:	2022-10-06 18:07:22.062556	Could not connect to reusableenergysystems.academy skipping!
+log:	2022-10-06 18:07:22.169729	Could not connect to terfuu.agency skipping!
+log:	2022-10-06 18:07:31.636147	Could not connect to wapdjen27wkjddynamciccolombia.agency skipping!
+log:	2022-10-06 18:07:31.850696	Max time exceeded berlingot.agency skipping!
+succes:	2022-10-06 18:08:07.713991	Scraping Done.
+succes:	2022-10-06 18:08:45.580801	Feature Extraction Done.
+succes:	2022-10-08 14:54:55.119689	Downloading domains successful!
+succes:	2022-10-08 14:54:59.617786	Pinging Done
+warn:	2022-10-08 14:54:59.790330	Unexpected error while scraping eliteadviser.agency
+warn:	2022-10-08 14:54:59.794312	Unexpected error while scraping playon.academy
+warn:	2022-10-08 14:54:59.805675	Unexpected error while scraping theomega.agency
+warn:	2022-10-08 14:54:59.822630	Unexpected error while scraping jhb.agency
+warn:	2022-10-08 14:54:59.831605	Unexpected error while scraping pennstateinspection.agency
+warn:	2022-10-08 14:54:59.808667	Unexpected error while scraping leadsfirst.agency
+warn:	2022-10-08 14:54:59.815648	Unexpected error while scraping ecosystemprofits.academy
+warn:	2022-10-08 14:54:59.838586	Unexpected error while scraping nationalpositionsussemail.agency
+warn:	2022-10-08 14:54:59.844571	Unexpected error while scraping stockguide.agency
+warn:	2022-10-08 14:54:59.847564	Unexpected error while scraping email4nationalpositionsus.agency
+warn:	2022-10-08 14:54:59.809664	Unexpected error while scraping thoughtful3d.academy
+warn:	2022-10-08 14:54:59.855542	Unexpected error while scraping zuri.academy
+warn:	2022-10-08 14:54:59.824624	Unexpected error while scraping thenationalpositionsussmail.agency
+warn:	2022-10-08 14:54:59.781347	Unexpected error while scraping colleqtive.agency
+warn:	2022-10-08 14:54:59.857538	Unexpected error while scraping safemarkets.agency
+warn:	2022-10-08 14:54:59.834599	Unexpected error while scraping emailfornationalpositionsuss.agency
+warn:	2022-10-08 14:54:59.826620	Unexpected error while scraping mailfornationalpositionsuss.agency
+warn:	2022-10-08 14:54:59.865515	Unexpected error while scraping democrito.academy
+warn:	2022-10-08 14:54:59.859532	Unexpected error while scraping tez.agency
+warn:	2022-10-08 14:54:59.792318	Unexpected error while scraping blazemedia.agency
+warn:	2022-10-08 14:54:59.788327	Unexpected error while scraping thesales.agency
+warn:	2022-10-08 14:54:59.867510	Unexpected error while scraping email4nationalpositionsuss.agency
+warn:	2022-10-08 14:54:59.881472	Unexpected error while scraping starbornerecruitment.agency
+warn:	2022-10-08 14:54:59.876486	Unexpected error while scraping marketcrusade.agency
+warn:	2022-10-08 14:54:59.886459	Unexpected error while scraping australiaemployment.agency
+warn:	2022-10-08 14:54:59.874491	Unexpected error while scraping coopwealth.academy
+warn:	2022-10-08 14:54:59.869504	Unexpected error while scraping kibble.agency
+warn:	2022-10-08 14:54:59.807672	Unexpected error while scraping on-track-digital.agency
+warn:	2022-10-08 14:54:59.841579	Unexpected error while scraping art1st.academy
+warn:	2022-10-08 14:54:59.870502	Unexpected error while scraping gochina.agency
+warn:	2022-10-08 14:54:59.867510	Unexpected error while scraping datavox.agency
+warn:	2022-10-08 14:54:59.888455	Unexpected error while scraping fflforce.agency
+warn:	2022-10-08 14:54:59.885461	Unexpected error while scraping growth-up.agency
+warn:	2022-10-08 14:54:59.809664	Unexpected error while scraping clientsondemand.agency
+warn:	2022-10-08 14:54:59.844571	Unexpected error while scraping lascalinatella.agency
+warn:	2022-10-08 14:54:59.901307	Unexpected error while scraping 936.agency
+warn:	2022-10-08 14:54:59.898316	Unexpected error while scraping vfs.agency
+warn:	2022-10-08 14:54:59.900310	Unexpected error while scraping pergalingas.agency
+warn:	2022-10-08 14:54:59.873494	Unexpected error while scraping thoth.agency
+warn:	2022-10-08 14:54:59.853547	Unexpected error while scraping rsad.agency
+warn:	2022-10-08 14:54:59.874491	Unexpected error while scraping thenationalpositionsussemail.agency
+warn:	2022-10-08 14:54:59.920257	Unexpected error while scraping hytch.africa
+warn:	2022-10-08 14:54:59.902305	Unexpected error while scraping enjoymusic.agency
+warn:	2022-10-08 14:54:59.906294	Unexpected error while scraping fourarrows.agency
+warn:	2022-10-08 14:54:59.918263	Unexpected error while scraping devop.agency
+warn:	2022-10-08 14:54:59.893441	Unexpected error while scraping nationalusvp.agency
+warn:	2022-10-08 14:54:59.874491	Unexpected error while scraping autolab.agency
+warn:	2022-10-08 14:54:59.922251	Unexpected error while scraping mynewhome.agency
+warn:	2022-10-08 14:54:59.934220	Unexpected error while scraping peakperformance.academy
+warn:	2022-10-08 14:54:59.898316	Unexpected error while scraping jord.agency
+warn:	2022-10-08 14:54:59.866512	Unexpected error while scraping humanskills.academy
+warn:	2022-10-08 14:54:59.919260	Unexpected error while scraping hache.agency
+warn:	2022-10-08 14:54:59.927239	Unexpected error while scraping virtualis.agency
+warn:	2022-10-08 14:54:59.941201	Unexpected error while scraping earlysteam.academy
+warn:	2022-10-08 14:54:59.918263	Unexpected error while scraping gdis.agency
+warn:	2022-10-08 14:54:59.933222	Unexpected error while scraping voxmedia.agency
+warn:	2022-10-08 14:54:59.910285	Unexpected error while scraping qp.agency
+warn:	2022-10-08 14:54:59.930230	Unexpected error while scraping pss.agency
+warn:	2022-10-08 14:54:59.851552	Unexpected error while scraping sabor.agency
+warn:	2022-10-08 14:54:59.874491	Unexpected error while scraping cendynaus.agency
+warn:	2022-10-08 14:54:59.881472	Unexpected error while scraping thedigitalpatriot.academy
+warn:	2022-10-08 14:54:59.944194	Unexpected error while scraping brats.agency
+warn:	2022-10-08 14:54:59.943196	Unexpected error while scraping olivera.agency
+warn:	2022-10-08 14:54:59.882469	Unexpected error while scraping brussels.agency
+warn:	2022-10-08 14:54:59.899312	Unexpected error while scraping goparis.agency
+warn:	2022-10-08 14:54:59.925243	Unexpected error while scraping pushcon.academy
+warn:	2022-10-08 14:54:59.924246	Unexpected error while scraping intermed.agency
+warn:	2022-10-08 14:54:59.955163	Unexpected error while scraping 001.academy
+warn:	2022-10-08 14:54:59.910285	Unexpected error while scraping nationalpositionsusemail.agency
+warn:	2022-10-08 14:54:59.820635	Unexpected error while scraping gousa.agency
+warn:	2022-10-08 14:54:59.950177	Unexpected error while scraping thezaira.agency
+warn:	2022-10-08 14:54:59.885461	Unexpected error while scraping dubaidesertsafari.agency
+warn:	2022-10-08 14:54:59.896433	Unexpected error while scraping goturkey.agency
+warn:	2022-10-08 14:54:59.921254	Unexpected error while scraping godubai.agency
+warn:	2022-10-08 14:54:59.932225	Unexpected error while scraping vilniusartists.agency
+warn:	2022-10-08 14:54:59.956161	Unexpected error while scraping email2nationalpositionsuss.agency
+warn:	2022-10-08 14:54:59.838586	Unexpected error while scraping exte.agency
+warn:	2022-10-08 14:54:59.925243	Unexpected error while scraping fungirls.agency
+warn:	2022-10-08 14:54:59.894437	Unexpected error while scraping gits.agency
+warn:	2022-10-08 14:54:59.892443	Unexpected error while scraping fouders.academy
+warn:	2022-10-08 14:54:59.892443	Unexpected error while scraping inkie.africa
+warn:	2022-10-08 14:54:59.922251	Unexpected error while scraping cendynau.agency
+warn:	2022-10-08 14:54:59.966134	Unexpected error while scraping thenationalpositionsuss.agency
+warn:	2022-10-08 14:54:59.939206	Unexpected error while scraping 5tt.agency
+warn:	2022-10-08 14:54:59.945190	Unexpected error while scraping stomp.agency
+warn:	2022-10-08 14:54:59.957158	Unexpected error while scraping youkare.agency
+warn:	2022-10-08 14:54:59.935223	Unexpected error while scraping itszaira.agency
+warn:	2022-10-08 14:54:59.806675	Unexpected error while scraping intermezzo.agency
+warn:	2022-10-08 14:54:59.973115	Unexpected error while scraping mailnationalpositionsus.agency
+warn:	2022-10-08 14:54:59.951175	Unexpected error while scraping vedro.agency
+warn:	2022-10-08 14:54:59.961149	Unexpected error while scraping terewatt.africa
+warn:	2022-10-08 14:54:59.974112	Unexpected error while scraping vinestowine.academy
+warn:	2022-10-08 14:54:59.975110	Unexpected error while scraping email2nationalpositionsus.agency
+warn:	2022-10-08 14:54:59.931228	Unexpected error while scraping called.agency
+warn:	2022-10-08 14:54:59.973115	Unexpected error while scraping mail4nationalpositionsus.agency
+warn:	2022-10-08 14:54:59.970123	Unexpected error while scraping mail2nationalpositionsus.agency
+warn:	2022-10-08 14:54:59.959152	Unexpected error while scraping mail4nationalpositionsuss.agency
+warn:	2022-10-08 14:54:59.970123	Unexpected error while scraping nationalpositionsussmail.agency
+warn:	2022-10-08 14:54:59.869504	Unexpected error while scraping twoeightyfour.agency
+warn:	2022-10-08 14:54:59.964140	Unexpected error while scraping usnationalvp.agency
+warn:	2022-10-08 14:54:59.981095	Unexpected error while scraping headhunter.agency
+warn:	2022-10-08 14:54:59.932225	Unexpected error while scraping skillmigration.agency
+warn:	2022-10-08 14:54:59.966134	Unexpected error while scraping emailtonationalpositionsuss.agency
+warn:	2022-10-08 14:54:59.894437	Unexpected error while scraping uconnect.agency
+warn:	2022-10-08 14:54:59.971122	Unexpected error while scraping inversionenbolsa.academy
+warn:	2022-10-08 14:54:59.983089	Unexpected error while scraping myworkingspace.agency
+warn:	2022-10-08 14:54:59.946188	Unexpected error while scraping snapmodels.agency
+warn:	2022-10-08 14:54:59.950177	Unexpected error while scraping stryker.agency
+warn:	2022-10-08 14:54:59.974112	Unexpected error while scraping plusus.agency
+warn:	2022-10-08 14:54:59.963142	Unexpected error while scraping gouk.agency
+warn:	2022-10-08 14:54:59.979100	Unexpected error while scraping agilementor.academy
+warn:	2022-10-08 14:54:59.951175	Unexpected error while scraping nick.agency
+warn:	2022-10-08 14:54:59.976108	Unexpected error while scraping komorebi.agency
+warn:	2022-10-08 14:54:59.955163	Unexpected error while scraping careersecrets.academy
+warn:	2022-10-08 14:54:59.961149	Unexpected error while scraping pixelpk.agency
+warn:	2022-10-08 14:54:59.967132	Unexpected error while scraping 7ajar.agency
+warn:	2022-10-08 14:54:59.982092	Unexpected error while scraping blackfin.agency
+warn:	2022-10-08 14:54:59.971122	Unexpected error while scraping trill.agency
+warn:	2022-10-08 14:54:59.968129	Unexpected error while scraping markus-salm.academy
+warn:	2022-10-08 14:54:59.975110	Unexpected error while scraping quicknode.academy
+warn:	2022-10-08 14:54:59.949180	Unexpected error while scraping maestrodigital.agency
+warn:	2022-10-08 14:54:59.946188	Unexpected error while scraping agencya.agency
+warn:	2022-10-08 14:54:59.987080	Unexpected error while scraping mediagetik.academy
+warn:	2022-10-08 14:54:59.987080	Unexpected error while scraping emailsensei.agency
+warn:	2022-10-08 14:54:59.959152	Unexpected error while scraping fideirecruitment.africa
+warn:	2022-10-08 14:54:59.975110	Unexpected error while scraping lakey.academy
+warn:	2022-10-08 14:54:59.997052	Unexpected error while scraping pickleball.agency
+warn:	2022-10-08 14:54:59.919260	Unexpected error while scraping thenationalpositionsussemails.agency
+warn:	2022-10-08 14:54:59.984088	Unexpected error while scraping tchaptchap.africa
+warn:	2022-10-08 14:54:59.908290	Unexpected error while scraping outfront.agency
+warn:	2022-10-08 14:54:59.971122	Unexpected error while scraping mapshot.agency
+warn:	2022-10-08 14:54:59.982092	Unexpected error while scraping the-looking-glass.agency
+warn:	2022-10-08 14:54:59.898316	Unexpected error while scraping nextlevellife.academy
+warn:	2022-10-08 14:54:59.952171	Unexpected error while scraping mobaim.agency
+warn:	2022-10-08 14:54:59.981095	Unexpected error while scraping livingman.africa
+warn:	2022-10-08 14:54:59.995057	Unexpected error while scraping generationalwealthacademy.academy
+warn:	2022-10-08 14:54:59.966134	Unexpected error while scraping giv.agency
+warn:	2022-10-08 14:54:59.889451	Unexpected error while scraping openminds.agency
+warn:	2022-10-08 14:54:59.993062	Unexpected error while scraping nationalpositionsussemails.agency
+warn:	2022-10-08 14:54:59.931228	Unexpected error while scraping careerjump.academy
+warn:	2022-10-08 14:54:59.968129	Unexpected error while scraping ancestralroots.africa
+warn:	2022-10-08 14:54:59.990071	Unexpected error while scraping thenationalpositionsussmails.agency
+warn:	2022-10-08 14:54:59.987080	Unexpected error while scraping mail2nationalpositionsuss.agency
+warn:	2022-10-08 14:54:59.986081	Unexpected error while scraping vino.agency
+warn:	2022-10-08 14:54:59.939206	Unexpected error while scraping starbit.agency
+warn:	2022-10-08 14:54:59.977105	Unexpected error while scraping bratsmodeling.agency
+warn:	2022-10-08 14:54:59.985083	Unexpected error while scraping portsmouth.academy
+warn:	2022-10-08 14:55:00.009019	Unexpected error while scraping metavox.agency
+warn:	2022-10-08 14:54:59.977105	Unexpected error while scraping superiority.agency
+warn:	2022-10-08 14:54:59.983089	Unexpected error while scraping piktus.agency
+warn:	2022-10-08 14:54:59.994059	Unexpected error while scraping mailtonationalpositionsuss.agency
+warn:	2022-10-08 14:55:00.017996	Unexpected error while scraping thesecret.agency
+warn:	2022-10-08 14:55:00.000044	Unexpected error while scraping ft-design.agency
+warn:	2022-10-08 14:55:00.020988	Unexpected error while scraping vpnationalusa.agency
+warn:	2022-10-08 14:54:59.999047	Unexpected error while scraping regis.agency
+warn:	2022-10-08 14:55:00.015003	Unexpected error while scraping nagystr.actor
+warn:	2022-10-08 14:55:00.002038	Unexpected error while scraping bron.agency
+warn:	2022-10-08 14:55:00.015003	Unexpected error while scraping aska.agency
+warn:	2022-10-08 14:55:00.006029	Unexpected error while scraping diging.agency
+warn:	2022-10-08 14:54:59.991067	Unexpected error while scraping tnz.agency
+warn:	2022-10-08 14:55:00.014006	Unexpected error while scraping 1-wash.africa
+warn:	2022-10-08 14:55:00.032956	Unexpected error while scraping faranani.africa
+warn:	2022-10-08 14:55:00.011018	Unexpected error while scraping championplayers.academy
+warn:	2022-10-08 14:55:00.023980	Unexpected error while scraping nationalpositionsuss.agency
+warn:	2022-10-08 14:55:00.035948	Unexpected error while scraping youtubebusiness.academy
+warn:	2022-10-08 14:55:00.014006	Unexpected error while scraping 2heads.agency
+warn:	2022-10-08 14:55:00.016999	Unexpected error while scraping lotusbloom.agency
+warn:	2022-10-08 14:55:00.025974	Unexpected error while scraping ubadventurer.africa
+warn:	2022-10-08 14:55:00.049911	Unexpected error while scraping creativedirections.agency
+warn:	2022-10-08 14:55:00.030961	Unexpected error while scraping goabroad.agency
+warn:	2022-10-08 14:55:00.034950	Unexpected error while scraping ultimatebushadventurer.africa
+warn:	2022-10-08 14:55:00.042931	Unexpected error while scraping heidzedition.africa
+warn:	2022-10-08 14:55:00.043928	Unexpected error while scraping ventus.agency
+warn:	2022-10-08 14:55:00.046919	Unexpected error while scraping psdebeer.africa
+warn:	2022-10-08 14:55:00.035948	Unexpected error while scraping lial.academy
+warn:	2022-10-08 14:55:00.058887	Unexpected error while scraping centri.agency
+warn:	2022-10-08 14:55:00.060884	Unexpected error while scraping hrdiconsulting.africa
+warn:	2022-10-08 14:55:00.040941	Unexpected error while scraping exte.academy
+warn:	2022-10-08 14:55:00.056892	Unexpected error while scraping idealproperty.africa
+warn:	2022-10-08 14:55:00.062876	Unexpected error while scraping bbckids.africa
+warn:	2022-10-08 14:55:00.002038	Unexpected error while scraping scalinglab.agency
+warn:	2022-10-08 14:55:00.051905	Unexpected error while scraping tmobile.agency
+warn:	2022-10-08 14:55:00.026973	Unexpected error while scraping emailnationalpositionsus.agency
+warn:	2022-10-08 14:55:00.051905	Unexpected error while scraping cyberdefence.africa
+warn:	2022-10-08 14:55:00.070854	Unexpected error while scraping harcourtspilgrim.agency
+warn:	2022-10-08 14:55:00.074844	Unexpected error while scraping gotcha.agency
+warn:	2022-10-08 14:55:00.073846	Unexpected error while scraping hotproperty.agency
+warn:	2022-10-08 14:55:00.049911	Unexpected error while scraping buddy.academy
+warn:	2022-10-08 14:55:00.047916	Unexpected error while scraping futuresports.agency
+warn:	2022-10-08 14:55:00.029965	Unexpected error while scraping eduscrum.academy
+warn:	2022-10-08 14:55:00.053900	Unexpected error while scraping topnow.agency
+warn:	2022-10-08 14:55:00.062876	Unexpected error while scraping semanabees.africa
+warn:	2022-10-08 14:55:00.080827	Unexpected error while scraping nativewaypermaculture.africa
+warn:	2022-10-08 14:55:00.072850	Unexpected error while scraping realestate-geelong.agency
+warn:	2022-10-08 14:55:00.075841	Unexpected error while scraping jobcareer.africa
+warn:	2022-10-08 14:55:00.081825	Unexpected error while scraping thesourbite.agency
+warn:	2022-10-08 14:55:00.024977	Unexpected error while scraping guys.academy
+warn:	2022-10-08 14:55:00.082823	Unexpected error while scraping pronto-insure.africa
+warn:	2022-10-08 14:55:00.071852	Unexpected error while scraping freezone.africa
+warn:	2022-10-08 14:55:00.072850	Unexpected error while scraping adibcontr.actor
+warn:	2022-10-08 14:55:00.025974	Unexpected error while scraping frontrow.agency
+warn:	2022-10-08 14:55:00.077837	Unexpected error while scraping globeco.africa
+warn:	2022-10-08 14:55:00.080827	Unexpected error while scraping walletad.agency
+warn:	2022-10-08 14:55:00.081825	Unexpected error while scraping hubzmedia.africa
+warn:	2022-10-08 14:55:00.087810	Unexpected error while scraping mobiuspulse.agency
+warn:	2022-10-08 14:55:00.082823	Unexpected error while scraping vittini.agency
+warn:	2022-10-08 14:55:00.088808	Unexpected error while scraping atlascontr.actor
+warn:	2022-10-08 14:55:00.085816	Unexpected error while scraping mzansiiptv.africa
+warn:	2022-10-08 14:55:00.097786	Unexpected error while scraping 99gazi.africa
+warn:	2022-10-08 14:55:00.084817	Unexpected error while scraping uts.africa
+warn:	2022-10-08 14:55:00.102769	Unexpected error while scraping appjet.agency
+warn:	2022-10-08 14:55:00.101773	Unexpected error while scraping zionmagazine.africa
+warn:	2022-10-08 14:55:00.100775	Unexpected error while scraping nomogroup.agency
+warn:	2022-10-08 14:55:00.101773	Unexpected error while scraping tangent.agency
+warn:	2022-10-08 14:55:00.101773	Unexpected error while scraping pungwe-agri.africa
+warn:	2022-10-08 14:55:00.103766	Unexpected error while scraping entrepreneurafrica.africa
+warn:	2022-10-08 14:55:00.104763	Unexpected error while scraping yxx.agency
+warn:	2022-10-08 14:55:00.105762	Unexpected error while scraping elenakhalilova.agency
+warn:	2022-10-08 14:55:00.104763	Unexpected error while scraping raywhitedrysdale.agency
+warn:	2022-10-08 14:55:00.107756	Unexpected error while scraping kempojujutsu.academy
+warn:	2022-10-08 14:55:00.108754	Unexpected error while scraping insomnia.agency
+warn:	2022-10-08 14:55:00.110748	Unexpected error while scraping stampede.agency
+succes:	2022-10-08 14:55:00.114737	Scraping Done.
+succes:	2022-10-08 14:55:50.186553	Feature Extraction Done.
+succes:	2022-10-08 15:03:12.249083	Downloading domains successful!
+succes:	2022-10-08 15:03:17.433804	Pinging Done
+succes:	2022-10-08 15:04:07.663080	Scraping Done.
+succes:	2022-10-08 15:04:07.691006	Feature Extraction Done.
+succes:	2022-10-08 15:04:44.379639	Downloading domains successful!
+succes:	2022-10-08 15:04:49.529330	Pinging Done
+succes:	2022-10-08 15:05:39.854905	Scraping Done.
+succes:	2022-10-08 15:05:39.899680	Feature Extraction Done.
+warn:	2022-10-08 15:06:11.822550	C:\Users\batuh\OneDrive\Masaüstü\PhisingDetection\GeckoDrivers\geckodriver.exe
+succes:	2022-10-08 15:06:15.287444	Downloading domains successful!
+succes:	2022-10-08 15:06:19.641175	Pinging Done
+warn:	2022-10-08 15:06:19.741912	Unexpected error while scraping exte.academy
+warn:	2022-10-08 15:06:19.753880	Unexpected error while scraping democrito.academy
+warn:	2022-10-08 15:06:19.746899	Unexpected error while scraping inversionenbolsa.academy
+warn:	2022-10-08 15:06:19.759864	Unexpected error while scraping exte.agency
+warn:	2022-10-08 15:06:19.754878	Unexpected error while scraping regis.agency
+warn:	2022-10-08 15:06:19.754878	Unexpected error while scraping championplayers.academy
+warn:	2022-10-08 15:06:19.751886	Unexpected error while scraping quicknode.academy
+warn:	2022-10-08 15:06:19.760861	Unexpected error while scraping careerjump.academy
+warn:	2022-10-08 15:06:19.767843	Unexpected error while scraping 001.academy
+warn:	2022-10-08 15:06:19.762856	Unexpected error while scraping mapshot.agency
+warn:	2022-10-08 15:06:19.770834	Unexpected error while scraping centri.agency
+warn:	2022-10-08 15:06:19.773826	Unexpected error while scraping coopwealth.academy
+warn:	2022-10-08 15:06:19.770834	Unexpected error while scraping brussels.agency
+warn:	2022-10-08 15:06:19.781807	Unexpected error while scraping terewatt.africa
+warn:	2022-10-08 15:06:19.794771	Unexpected error while scraping snapmodels.agency
+warn:	2022-10-08 15:06:19.773826	Unexpected error while scraping pushcon.academy
+warn:	2022-10-08 15:06:19.774824	Unexpected error while scraping playon.academy
+warn:	2022-10-08 15:06:19.794771	Unexpected error while scraping on-track-digital.agency
+warn:	2022-10-08 15:06:19.777816	Unexpected error while scraping growth-up.agency
+warn:	2022-10-08 15:06:19.797763	Unexpected error while scraping generationalwealthacademy.academy
+warn:	2022-10-08 15:06:19.787791	Unexpected error while scraping eduscrum.academy
+warn:	2022-10-08 15:06:19.800755	Unexpected error while scraping art1st.academy
+warn:	2022-10-08 15:06:19.780827	Unexpected error while scraping humanskills.academy
+warn:	2022-10-08 15:06:19.794771	Unexpected error while scraping thedigitalpatriot.academy
+warn:	2022-10-08 15:06:19.799757	Unexpected error while scraping ft-design.agency
+warn:	2022-10-08 15:06:19.802750	Unexpected error while scraping fourarrows.agency
+warn:	2022-10-08 15:06:19.797763	Unexpected error while scraping buddy.academy
+warn:	2022-10-08 15:06:19.792776	Unexpected error while scraping lial.academy
+warn:	2022-10-08 15:06:19.802750	Unexpected error while scraping markus-salm.academy
+warn:	2022-10-08 15:06:19.776818	Unexpected error while scraping peakperformance.academy
+warn:	2022-10-08 15:06:19.811726	Unexpected error while scraping zuri.academy
+warn:	2022-10-08 15:06:19.804745	Unexpected error while scraping 7ajar.agency
+warn:	2022-10-08 15:06:19.802750	Unexpected error while scraping gits.agency
+warn:	2022-10-08 15:06:19.814717	Unexpected error while scraping lascalinatella.agency
+warn:	2022-10-08 15:06:19.806739	Unexpected error while scraping pss.agency
+warn:	2022-10-08 15:06:19.802750	Unexpected error while scraping openminds.agency
+warn:	2022-10-08 15:06:19.819704	Unexpected error while scraping nationalpositionsussemails.agency
+warn:	2022-10-08 15:06:19.822697	Unexpected error while scraping tez.agency
+warn:	2022-10-08 15:06:19.824691	Unexpected error while scraping cendynau.agency
+warn:	2022-10-08 15:06:19.836665	Unexpected error while scraping uconnect.agency
+warn:	2022-10-08 15:06:19.834664	Unexpected error while scraping nationalpositionsuss.agency
+warn:	2022-10-08 15:06:19.825688	Unexpected error while scraping fungirls.agency
+warn:	2022-10-08 15:06:19.836665	Unexpected error while scraping nationalpositionsusemail.agency
+warn:	2022-10-08 15:06:19.842644	Unexpected error while scraping email2nationalpositionsuss.agency
+warn:	2022-10-08 15:06:19.853613	Unexpected error while scraping komorebi.agency
+warn:	2022-10-08 15:06:19.855608	Unexpected error while scraping enjoymusic.agency
+warn:	2022-10-08 15:06:19.846633	Unexpected error while scraping bron.agency
+warn:	2022-10-08 15:06:19.844638	Unexpected error while scraping email4nationalpositionsuss.agency
+warn:	2022-10-08 15:06:19.827683	Unexpected error while scraping stomp.agency
+warn:	2022-10-08 15:06:19.848627	Unexpected error while scraping thesecret.agency
+warn:	2022-10-08 15:06:19.854611	Unexpected error while scraping 2heads.agency
+warn:	2022-10-08 15:06:19.841648	Unexpected error while scraping 936.agency
+warn:	2022-10-08 15:06:19.857603	Unexpected error while scraping guys.academy
+warn:	2022-10-08 15:06:19.880541	Unexpected error while scraping eliteadviser.agency
+warn:	2022-10-08 15:06:19.892509	Unexpected error while scraping headhunter.agency
+warn:	2022-10-08 15:06:19.869573	Unexpected error while scraping trill.agency
+warn:	2022-10-08 15:06:19.851622	Unexpected error while scraping kriaa.agency
+warn:	2022-10-08 15:06:19.893507	Unexpected error while scraping intermezzo.agency
+warn:	2022-10-08 15:06:19.872563	Unexpected error while scraping nationalpositionsussmail.agency
+warn:	2022-10-08 15:06:19.890515	Unexpected error while scraping ecosystemprofits.academy
+warn:	2022-10-08 15:06:19.875554	Unexpected error while scraping nextlevellife.academy
+warn:	2022-10-08 15:06:19.889517	Unexpected error while scraping mediagetik.academy
+warn:	2022-10-08 15:06:19.900488	Unexpected error while scraping godubai.agency
+warn:	2022-10-08 15:06:19.865581	Unexpected error while scraping emailtonationalpositionsuss.agency
+warn:	2022-10-08 15:06:19.906473	Unexpected error while scraping autolab.agency
+warn:	2022-10-08 15:06:19.913453	Unexpected error while scraping hytch.africa
+warn:	2022-10-08 15:06:19.895501	Unexpected error while scraping kibble.agency
+warn:	2022-10-08 15:06:19.912456	Unexpected error while scraping email2nationalpositionsus.agency
+warn:	2022-10-08 15:06:19.910462	Unexpected error while scraping gouk.agency
+warn:	2022-10-08 15:06:19.911459	Unexpected error while scraping adibcontr.actor
+warn:	2022-10-08 15:06:19.903480	Unexpected error while scraping goparis.agency
+warn:	2022-10-08 15:06:19.919438	Unexpected error while scraping plusus.agency
+warn:	2022-10-08 15:06:19.917443	Unexpected error while scraping vino.agency
+warn:	2022-10-08 15:06:19.870569	Unexpected error while scraping giv.agency
+warn:	2022-10-08 15:06:19.913453	Unexpected error while scraping bratsmodeling.agency
+warn:	2022-10-08 15:06:19.909465	Unexpected error while scraping intermed.agency
+warn:	2022-10-08 15:06:19.891512	Unexpected error while scraping gousa.agency
+warn:	2022-10-08 15:06:19.928414	Unexpected error while scraping hubzmedia.africa
+warn:	2022-10-08 15:06:19.918441	Unexpected error while scraping gochina.agency
+warn:	2022-10-08 15:06:19.924424	Unexpected error while scraping blackfin.agency
+warn:	2022-10-08 15:06:19.923427	Unexpected error while scraping email4nationalpositionsus.agency
+warn:	2022-10-08 15:06:19.924424	Unexpected error while scraping lakey.academy
+warn:	2022-10-08 15:06:19.934397	Unexpected error while scraping atlascontr.actor
+warn:	2022-10-08 15:06:19.923427	Unexpected error while scraping piktus.agency
+warn:	2022-10-08 15:06:19.940382	Unexpected error while scraping jhb.agency
+warn:	2022-10-08 15:06:19.937389	Unexpected error while scraping blazemedia.agency
+warn:	2022-10-08 15:06:19.941379	Unexpected error while scraping marketcrusade.agency
+warn:	2022-10-08 15:06:19.936392	Unexpected error while scraping goturkey.agency
+warn:	2022-10-08 15:06:19.946365	Unexpected error while scraping scalinglab.agency
+warn:	2022-10-08 15:06:19.917443	Unexpected error while scraping nationalpositionsussemail.agency
+warn:	2022-10-08 15:06:19.924424	Unexpected error while scraping nagystr.actor
+warn:	2022-10-08 15:06:19.946365	Unexpected error while scraping emailfornationalpositionsuss.agency
+warn:	2022-10-08 15:06:19.958333	Unexpected error while scraping vinestowine.academy
+warn:	2022-10-08 15:06:19.961325	Unexpected error while scraping agilementor.academy
+warn:	2022-10-08 15:06:19.960328	Unexpected error while scraping pickleball.agency
+warn:	2022-10-08 15:06:19.962323	Unexpected error while scraping fflforce.agency
+warn:	2022-10-08 15:06:19.948360	Unexpected error while scraping thesales.agency
+warn:	2022-10-08 15:06:19.966312	Unexpected error while scraping freezone.africa
+warn:	2022-10-08 15:06:19.951352	Unexpected error while scraping diging.agency
+warn:	2022-10-08 15:06:19.957336	Unexpected error while scraping ultimatebushadventurer.africa
+warn:	2022-10-08 15:06:19.953346	Unexpected error while scraping starbit.agency
+warn:	2022-10-08 15:06:19.959331	Unexpected error while scraping 1-wash.africa
+warn:	2022-10-08 15:06:19.977283	Unexpected error while scraping rsad.agency
+warn:	2022-10-08 15:06:19.982271	Unexpected error while scraping outfront.agency
+warn:	2022-10-08 15:06:19.962323	Unexpected error while scraping mail2nationalpositionsuss.agency
+warn:	2022-10-08 15:06:19.992243	Unexpected error while scraping leadsfirst.agency
+warn:	2022-10-08 15:06:19.953346	Unexpected error while scraping portsmouth.academy
+warn:	2022-10-08 15:06:19.952349	Unexpected error while scraping emailnationalpositionsus.agency
+warn:	2022-10-08 15:06:19.968307	Unexpected error while scraping brats.agency
+warn:	2022-10-08 15:06:19.989251	Unexpected error while scraping youkare.agency
+warn:	2022-10-08 15:06:19.993240	Unexpected error while scraping mail4nationalpositionsuss.agency
+warn:	2022-10-08 15:06:19.976286	Unexpected error while scraping emailsensei.agency
+warn:	2022-10-08 15:06:20.009197	Unexpected error while scraping superiority.agency
+warn:	2022-10-08 15:06:19.996232	Unexpected error while scraping thoughtful3d.academy
+warn:	2022-10-08 15:06:20.011192	Unexpected error while scraping careersecrets.academy
+warn:	2022-10-08 15:06:20.012189	Unexpected error while scraping jord.agency
+warn:	2022-10-08 15:06:20.009197	Unexpected error while scraping starbornerecruitment.agency
+warn:	2022-10-08 15:06:20.004212	Unexpected error while scraping mobaim.agency
+warn:	2022-10-08 15:06:20.028147	Unexpected error while scraping creativedirections.agency
+warn:	2022-10-08 15:06:20.001219	Unexpected error while scraping itszaira.agency
+warn:	2022-10-08 15:06:20.030141	Unexpected error while scraping vfs.agency
+warn:	2022-10-08 15:06:20.003213	Unexpected error while scraping pungwe-agri.africa
+warn:	2022-10-08 15:06:20.030141	Unexpected error while scraping vedro.agency
+warn:	2022-10-08 15:06:20.024157	Unexpected error while scraping voxmedia.agency
+warn:	2022-10-08 15:06:19.982271	Unexpected error while scraping sabor.agency
+warn:	2022-10-08 15:06:19.987257	Unexpected error while scraping pennstateinspection.agency
+warn:	2022-10-08 15:06:20.003213	Unexpected error while scraping colors.africa
+warn:	2022-10-08 15:06:20.030141	Unexpected error while scraping 99gazi.africa
+warn:	2022-10-08 15:06:20.012189	Unexpected error while scraping earlysteam.academy
+warn:	2022-10-08 15:06:20.061060	Unexpected error while scraping stryker.agency
+warn:	2022-10-08 15:06:20.051086	Unexpected error while scraping mailtonationalpositionsuss.agency
+warn:	2022-10-08 15:06:20.024157	Unexpected error while scraping hache.agency
+warn:	2022-10-08 15:06:20.057070	Unexpected error while scraping maestrodigital.agency
+warn:	2022-10-08 15:06:20.030141	Unexpected error while scraping called.agency
+warn:	2022-10-08 15:06:20.074540	Unexpected error while scraping theomega.agency
+warn:	2022-10-08 15:06:20.078529	Unexpected error while scraping usnationalvp.agency
+warn:	2022-10-08 15:06:20.076535	Unexpected error while scraping jobcareer.africa
+warn:	2022-10-08 15:06:20.072545	Unexpected error while scraping skillmigration.agency
+warn:	2022-10-08 15:06:20.088503	Unexpected error while scraping thenationalpositionsussemail.agency
+warn:	2022-10-08 15:06:20.024157	Unexpected error while scraping hrdiconsulting.africa
+warn:	2022-10-08 15:06:20.034130	Unexpected error while scraping metavox.agency
+warn:	2022-10-08 15:06:20.045102	Unexpected error while scraping cendynaus.agency
+warn:	2022-10-08 15:06:20.079527	Unexpected error while scraping vpnationalusa.agency
+warn:	2022-10-08 15:06:20.092492	Unexpected error while scraping psdebeer.africa
+warn:	2022-10-08 15:06:20.062057	Unexpected error while scraping tchaptchap.africa
+warn:	2022-10-08 15:06:20.074540	Unexpected error while scraping fouders.academy
+warn:	2022-10-08 15:06:20.116427	Unexpected error while scraping faranani.africa
+warn:	2022-10-08 15:06:20.093489	Unexpected error while scraping safemarkets.agency
+warn:	2022-10-08 15:06:20.112438	Unexpected error while scraping olivera.agency
+warn:	2022-10-08 15:06:20.121414	Unexpected error while scraping uts.africa
+warn:	2022-10-08 15:06:20.123409	Unexpected error while scraping realestate-geelong.agency
+warn:	2022-10-08 15:06:20.121414	Unexpected error while scraping 5tt.agency
+warn:	2022-10-08 15:06:20.122411	Unexpected error while scraping ventus.agency
+warn:	2022-10-08 15:06:20.090499	Unexpected error while scraping livingman.africa
+warn:	2022-10-08 15:06:20.097479	Unexpected error while scraping agencya.agency
+warn:	2022-10-08 15:06:20.048094	Unexpected error while scraping mailnationalpositionsus.agency
+warn:	2022-10-08 15:06:20.115430	Unexpected error while scraping dubaidesertsafari.agency
+warn:	2022-10-08 15:06:20.114433	Unexpected error while scraping datavox.agency
+warn:	2022-10-08 15:06:20.089500	Unexpected error while scraping virtualis.agency
+ency
+warn:	2022-10-08 15:06:20.120418	Unexpected error while scraping zionmagazine.africa
+warn:	2022-10-08 15:06:20.130391	Unexpected error while scraping bbckids.africa
+warn:	2022-10-08 15:06:20.121414	Unexpected error while scraping ubadventurer.africa
+warn:	2022-10-08 15:06:20.115430	Unexpected error while scraping lotusbloom.agency
+warn:	2022-10-08 15:06:20.114433	Unexpected error while scraping tmobile.agency
+warn:	2022-10-08 15:06:20.128396	Unexpected error while scraping idealproperty.africa
+warn:	2022-10-08 15:06:20.104462	Unexpected error while scraping mzansiiptv.africa
+warn:	2022-10-08 15:06:20.132385	Unexpected error while scraping heidzedition.africa
+warn:	2022-10-08 15:06:20.124406	Unexpected error while scraping mail2nationalpositionsus.agency
+warn:	2022-10-08 15:06:20.140363	Unexpected error while scraping fideirecruitment.africa
+warn:	2022-10-08 15:06:20.121414	Unexpected error while scraping thenationalpositionsuss.agency
+warn:	2022-10-08 15:06:20.116427	Unexpected error while scraping yxx.agency
+warn:	2022-10-08 15:06:20.127399	Unexpected error while scraping inkie.africa
+warn:	2022-10-08 15:06:20.145350	Unexpected error while scraping devop.agency
+warn:	2022-10-08 15:06:20.128396	Unexpected error while scraping mail4nationalpositionsus.agency
+warn:	2022-10-08 15:06:20.140363	Unexpected error while scraping goabroad.agency
+warn:	2022-10-08 15:06:20.128396	Unexpected error while scraping myworkingspace.agency
+warn:	2022-10-08 15:06:20.154327	Unexpected error while scraping insomnia.agency
+warn:	2022-10-08 15:06:20.156321	Unexpected error while scraping colleqtive.agency
+warn:	2022-10-08 15:06:20.158316	Unexpected error while scraping hotproperty.agency
+warn:	2022-10-08 15:06:20.155324	Unexpected error while scraping thenationalpositionsussmail.agency
+warn:	2022-10-08 15:06:20.137372	Unexpected error while scraping mynewhome.agency
+warn:	2022-10-08 15:06:20.153329	Unexpected error while scraping mailfornationalpositionsuss.agency
+warn:	2022-10-08 15:06:20.152332	Unexpected error while scraping tangent.agency
+warn:	2022-10-08 15:06:20.137372	Unexpected error while scraping globeco.africa
+warn:	2022-10-08 15:06:20.101469	Unexpected error while scraping youtubebusiness.academy
+warn:	2022-10-08 15:06:20.162305	Unexpected error while scraping ancestralroots.africa
+warn:	2022-10-08 15:06:20.163302	Unexpected error while scraping nationalusvp.agency
+warn:	2022-10-08 15:06:20.154327	Unexpected error while scraping elenakhalilova.agency
+warn:	2022-10-08 15:06:20.162305	Unexpected error while scraping cyberdefence.africa
+warn:	2022-10-08 15:06:20.165297	Unexpected error while scraping raywhitedrysdale.agency
+warn:	2022-10-08 15:06:20.139366	Unexpected error while scraping qp.agency
+warn:	2022-10-08 15:06:20.151334	Unexpected error while scraping vilniusartists.agency
+warn:	2022-10-08 15:06:20.166300	Unexpected error while scraping gdis.agency
+warn:	2022-10-08 15:06:20.169286	Unexpected error while scraping thesourbite.agency
+warn:	2022-10-08 15:06:20.173276	Unexpected error while scraping thenationalpositionsussemails.agency
+warn:	2022-10-08 15:06:20.178262	Unexpected error while scraping kempojujutsu.academy
+warn:	2022-10-08 15:06:20.169286	Unexpected error while scraping nativewaypermaculture.africa
+warn:	2022-10-08 15:06:20.172278	Unexpected error while scraping thezaira.agency
+warn:	2022-10-08 15:06:20.163302	Unexpected error while scraping stockguide.agency
+warn:	2022-10-08 15:06:20.173276	Unexpected error while scraping aska.agency
+warn:	2022-10-08 15:06:20.164299	Unexpected error while scraping pergalingas.agency
+warn:	2022-10-08 15:06:20.183249	Unexpected error while scraping walletad.agency
+warn:	2022-10-08 15:06:20.180257	Unexpected error while scraping twoeightyfour.agency
+warn:	2022-10-08 15:06:20.185243	Unexpected error while scraping harcourtspilgrim.agency
+warn:	2022-10-08 15:06:20.184246	Unexpected error while scraping frontrow.agency
+warn:	2022-10-08 15:06:20.187239	Unexpected error while scraping appjet.agency
+warn:	2022-10-08 15:06:20.191228	Unexpected error while scraping stampede.agency
+warn:	2022-10-08 15:06:20.170283	Unexpected error while scraping australiaemployment.agency
+warn:	2022-10-08 15:06:20.183249	Unexpected error while scraping vittini.agency
+rica
+warn:	2022-10-08 15:06:20.190231	Unexpected error while scraping thenationalpositionsussmails.agency
+warn:	2022-10-08 15:06:20.183249	Unexpected error while scraping semanabees.africa
+warn:	2022-10-08 15:06:20.194220	Unexpected error while scraping nick.agency
+warn:	2022-10-08 15:06:20.190231	Unexpected error while scraping pixelpk.agency
+warn:	2022-10-08 15:06:20.189234	Unexpected error while scraping tnz.agency
+warn:	2022-10-08 15:06:20.197211	Unexpected error while scraping topnow.agency
+warn:	2022-10-08 15:06:20.196214	Unexpected error while scraping mobiuspulse.agency
+warn:	2022-10-08 15:06:20.201201	Unexpected error while scraping gotcha.agency
+warn:	2022-10-08 15:06:20.198209	Unexpected error while scraping futuresports.agency
+warn:	2022-10-08 15:06:20.204193	Unexpected error while scraping nomogroup.agency
+warn:	2022-10-08 15:06:20.204193	Unexpected error while scraping the-looking-glass.agency
+warn:	2022-10-08 15:06:20.205190	Unexpected error while scraping thoth.agency
+warn:	2022-10-08 15:06:20.205190	Unexpected error while scraping entrepreneurafrica.africa
+succes:	2022-10-08 15:06:20.208184	Scraping Done.
+succes:	2022-10-08 15:06:20.210177	Feature Extraction Done.
+succes:	2022-10-08 15:07:00.216724	Downloading domains successful!
+succes:	2022-10-08 15:07:05.273423	Pinging Done
+warn:	2022-10-08 15:07:34.800446	Unexpected error while scraping topnow.agency
+warn:	2022-10-08 15:07:40.037191	Unexpected error while scraping growth-up.agency
+warn:	2022-10-08 15:07:40.066113	Unexpected error while scraping myworkingspace.agency
+warn:	2022-10-08 15:07:40.137558	Unexpected error while scraping voxmedia.agency
+warn:	2022-10-08 15:07:40.195198	Unexpected error while scraping livingman.africa
+warn:	2022-10-08 15:07:40.252524	Unexpected error while scraping nationalpositionsussemails.agency
+warn:	2022-10-08 15:07:40.276892	Unexpected error while scraping mail2nationalpositionsus.agency
+warn:	2022-10-08 15:07:40.295170	Unexpected error while scraping leadsfirst.agency
+warn:	2022-10-08 15:07:40.345250	Unexpected error while scraping hubzmedia.africa
+warn:	2022-10-08 15:07:40.366801	Unexpected error while scraping uconnect.agency
+warn:	2022-10-08 15:07:40.384750	Unexpected error while scraping mynewhome.agency
+warn:	2022-10-08 15:07:40.409683	Unexpected error while scraping nick.agency
+warn:	2022-10-08 15:07:40.419656	Unexpected error while scraping cendynau.agency
+warn:	2022-10-08 15:07:40.424643	Unexpected error while scraping youkare.agency
+warn:	2022-10-08 15:07:40.423645	Unexpected error while scraping freezone.africa
+warn:	2022-10-08 15:07:40.425639	Unexpected error while scraping eduscrum.academy
+warn:	2022-10-08 15:07:40.430627	Unexpected error while scraping semanabees.africa
+warn:	2022-10-08 15:07:40.431624	Unexpected error while scraping twoeightyfour.agency
+warn:	2022-10-08 15:07:40.432622	Unexpected error while scraping hytch.africa
+warn:	2022-10-08 15:07:40.435614	Unexpected error while scraping nationalpositionsussmail.agency
+warn:	2022-10-08 15:07:40.433619	Unexpected error while scraping jhb.agency
+warn:	2022-10-08 15:07:40.436611	Unexpected error while scraping vino.agency
+warn:	2022-10-08 15:07:40.434617	Unexpected error while scraping youtubebusiness.academy
+warn:	2022-10-08 15:07:40.439604	Unexpected error while scraping peakperformance.academy
+warn:	2022-10-08 15:07:40.447582	Unexpected error while scraping vittini.agency
+warn:	2022-10-08 15:07:40.441597	Unexpected error while scraping mobaim.agency
+warn:	2022-10-08 15:07:40.439604	Unexpected error while scraping kriaa.agency
+warn:	2022-10-08 15:07:40.446583	Unexpected error while scraping yxx.agency
+warn:	2022-10-08 15:07:40.454591	Unexpected error while scraping gochina.agency
+warn:	2022-10-08 15:07:40.452621	Unexpected error while scraping humanskills.academy
+warn:	2022-10-08 15:07:40.453575	Unexpected error while scraping thoughtful3d.academy
+warn:	2022-10-08 15:07:40.458550	Unexpected error while scraping itszaira.agency
+warn:	2022-10-08 15:07:40.454591	Unexpected error while scraping fouders.academy
+warn:	2022-10-08 15:07:40.455559	Unexpected error while scraping creativedirections.agency
+warn:	2022-10-08 15:07:40.463540	Unexpected error while scraping email4nationalpositionsus.agency
+warn:	2022-10-08 15:07:40.475507	Unexpected error while scraping aska.agency
+warn:	2022-10-08 15:07:40.471522	Unexpected error while scraping starbit.agency
+warn:	2022-10-08 15:07:40.472514	Unexpected error while scraping tez.agency
+warn:	2022-10-08 15:07:40.477065	Unexpected error while scraping fourarrows.agency
+warn:	2022-10-08 15:07:40.482706	Unexpected error while scraping thedigitalpatriot.academy
+warn:	2022-10-08 15:07:40.474507	Unexpected error while scraping lial.academy
+warn:	2022-10-08 15:07:40.485356	Unexpected error while scraping jobcareer.africa
+warn:	2022-10-08 15:07:40.488614	Unexpected error while scraping inversionenbolsa.academy
+warn:	2022-10-08 15:07:40.486616	Unexpected error while scraping entrepreneurafrica.africa
+warn:	2022-10-08 15:07:40.495634	Unexpected error while scraping mediagetik.academy
+warn:	2022-10-08 15:07:40.500582	Unexpected error while scraping hache.agency
+warn:	2022-10-08 15:07:40.505562	Unexpected error while scraping raywhitedrysdale.agency
+warn:	2022-10-08 15:07:40.503574	Unexpected error while scraping mobiuspulse.agency
+warn:	2022-10-08 15:07:40.504608	Unexpected error while scraping coopwealth.academy
+warn:	2022-10-08 15:07:40.507559	Unexpected error while scraping bbckids.africa
+warn:	2022-10-08 15:07:40.507559	Unexpected error while scraping snapmodels.agency
+warn:	2022-10-08 15:07:40.503574	Unexpected error while scraping stomp.agency
+warn:	2022-10-08 15:07:40.513557	Unexpected error while scraping emailsensei.agency
+warn:	2022-10-08 15:07:40.509556	Unexpected error while scraping jord.agency
+warn:	2022-10-08 15:07:40.520497	Unexpected error while scraping devop.agency
+warn:	2022-10-08 15:07:40.526251	Unexpected error while scraping 5tt.agency
+warn:	2022-10-08 15:07:40.526251	Unexpected error while scraping playon.academy
+warn:	2022-10-08 15:07:40.523489	Unexpected error while scraping headhunter.agency
+warn:	2022-10-08 15:07:40.517476	Unexpected error while scraping careersecrets.academy
+warn:	2022-10-08 15:07:40.530313	Unexpected error while scraping pixelpk.agency
+warn:	2022-10-08 15:07:40.542048	Unexpected error while scraping nagystr.actor
+warn:	2022-10-08 15:07:40.537593	Unexpected error while scraping rsad.agency
+warn:	2022-10-08 15:07:40.532587	Unexpected error while scraping vpnationalusa.agency
+warn:	2022-10-08 15:07:40.544588	Unexpected error while scraping thesales.agency
+warn:	2022-10-08 15:07:40.533588	Unexpected error while scraping 936.agency
+warn:	2022-10-08 15:07:40.543534	Unexpected error while scraping olivera.agency
+warn:	2022-10-08 15:07:40.534602	Unexpected error while scraping mailtonationalpositionsuss.agency
+warn:	2022-10-08 15:07:40.550577	Unexpected error while scraping fflforce.agency
+warn:	2022-10-08 15:07:40.552571	Unexpected error while scraping harcourtspilgrim.agency
+warn:	2022-10-08 15:07:40.552571	Unexpected error while scraping email4nationalpositionsuss.agency
+warn:	2022-10-08 15:07:40.553567	Unexpected error while scraping heidzedition.africa
+warn:	2022-10-08 15:07:40.554584	Unexpected error while scraping superiority.agency
+warn:	2022-10-08 15:07:40.557589	Unexpected error while scraping mailfornationalpositionsuss.agency
+warn:	2022-10-08 15:07:40.555582	Unexpected error while scraping insomnia.agency
+warn:	2022-10-08 15:07:40.557589	Unexpected error while scraping openminds.agency
+warn:	2022-10-08 15:07:40.561545	Unexpected error while scraping regis.agency
+warn:	2022-10-08 15:07:40.568142	Unexpected error while scraping emailtonationalpositionsuss.agency
+warn:	2022-10-08 15:07:40.563542	Unexpected error while scraping championplayers.academy
+warn:	2022-10-08 15:07:40.580781	Unexpected error while scraping blazemedia.agency
+warn:	2022-10-08 15:07:40.582746	Unexpected error while scraping email2nationalpositionsuss.agency
+warn:	2022-10-08 15:07:40.579782	Unexpected error while scraping intermed.agency
+warn:	2022-10-08 15:07:40.595947	Unexpected error while scraping generationalwealthacademy.academy
+warn:	2022-10-08 15:07:40.594994	Unexpected error while scraping maestrodigital.agency
+warn:	2022-10-08 15:07:40.599086	Unexpected error while scraping globeco.africa
+warn:	2022-10-08 15:07:40.610371	Unexpected error while scraping piktus.agency
+warn:	2022-10-08 15:07:40.611369	Unexpected error while scraping futuresports.agency
+warn:	2022-10-08 15:07:40.615255	Unexpected error while scraping nationalpositionsuss.agency
+warn:	2022-10-08 15:07:40.615255	Unexpected error while scraping terewatt.africa
+warn:	2022-10-08 15:07:40.622237	Unexpected error while scraping fungirls.agency
+warn:	2022-10-08 15:07:40.619244	Unexpected error while scraping mail2nationalpositionsuss.agency
+warn:	2022-10-08 15:07:40.624232	Unexpected error while scraping fideirecruitment.africa
+warn:	2022-10-08 15:07:40.639115	Unexpected error while scraping cyberdefence.africa
+warn:	2022-10-08 15:07:40.693233	Unexpected error while scraping art1st.academy
+warn:	2022-10-08 15:07:40.697216	Unexpected error while scraping brats.agency
+warn:	2022-10-08 15:07:40.755203	Unexpected error while scraping zuri.academy
+warn:	2022-10-08 15:07:40.779038	Unexpected error while scraping goabroad.agency
+warn:	2022-10-08 15:07:40.783211	Unexpected error while scraping safemarkets.agency
+warn:	2022-10-08 15:07:40.788506	Unexpected error while scraping gouk.agency
+warn:	2022-10-08 15:07:40.795520	Unexpected error while scraping thenationalpositionsussemail.agency
+warn:	2022-10-08 15:07:40.794275	Unexpected error while scraping colleqtive.agency
+warn:	2022-10-08 15:07:40.790530	Unexpected error while scraping 99gazi.africa
+warn:	2022-10-08 15:07:40.804847	Unexpected error while scraping tmobile.agency
+warn:	2022-10-08 15:07:40.796520	Unexpected error while scraping idealproperty.africa
+warn:	2022-10-08 15:07:40.806846	Unexpected error while scraping centri.agency
+warn:	2022-10-08 15:07:40.810844	Unexpected error while scraping hrdiconsulting.africa
+warn:	2022-10-08 15:07:40.808835	Unexpected error while scraping kibble.agency
+warn:	2022-10-08 15:07:40.807851	Unexpected error while scraping elenakhalilova.agency
+warn:	2022-10-08 15:07:40.815798	Unexpected error while scraping exte.academy
+warn:	2022-10-08 15:07:40.816830	Unexpected error while scraping colors.africa
+warn:	2022-10-08 15:07:40.816830	Unexpected error while scraping nationalusvp.agency
+warn:	2022-10-08 15:07:40.821784	Unexpected error while scraping zionmagazine.africa
+warn:	2022-10-08 15:07:40.821784	Unexpected error while scraping sabor.agency
+warn:	2022-10-08 15:07:40.826778	Unexpected error while scraping pushcon.academy
+warn:	2022-10-08 15:07:40.825775	Unexpected error while scraping realestate-geelong.agency
+warn:	2022-10-08 15:07:40.826778	Unexpected error while scraping email2nationalpositionsus.agency
+warn:	2022-10-08 15:07:40.830775	Unexpected error while scraping 1-wash.africa
+warn:	2022-10-08 15:07:40.835792	Unexpected error while scraping hotproperty.agency
+warn:	2022-10-08 15:07:40.834792	Unexpected error while scraping nomogroup.agency
+warn:	2022-10-08 15:07:40.845775	Unexpected error while scraping exte.agency
+warn:	2022-10-08 15:07:40.843781	Unexpected error while scraping tangent.agency
+warn:	2022-10-08 15:07:40.847752	Unexpected error while scraping komorebi.agency
+warn:	2022-10-08 15:07:40.852727	Unexpected error while scraping goturkey.agency
+warn:	2022-10-08 15:07:40.862510	Unexpected error while scraping scalinglab.agency
+warn:	2022-10-08 15:07:40.872470	Unexpected error while scraping marketcrusade.agency
+warn:	2022-10-08 15:07:40.870476	Unexpected error while scraping thezaira.agency
+warn:	2022-10-08 15:07:40.874465	Unexpected error while scraping nextlevellife.academy
+warn:	2022-10-08 15:07:40.873467	Unexpected error while scraping careerjump.academy
+warn:	2022-10-08 15:07:40.872470	Unexpected error while scraping on-track-digital.agency
+warn:	2022-10-08 15:07:40.876462	Unexpected error while scraping inkie.africa
+warn:	2022-10-08 15:07:40.878480	Unexpected error while scraping the-looking-glass.agency
+warn:	2022-10-08 15:07:40.889343	Unexpected error while scraping 2heads.agency
+warn:	2022-10-08 15:07:40.889343	Unexpected error while scraping atlascontr.actor
+warn:	2022-10-08 15:07:40.907497	Unexpected error while scraping ubadventurer.africa
+warn:	2022-10-08 15:07:40.893532	Unexpected error while scraping diging.agency
+warn:	2022-10-08 15:07:40.908496	Unexpected error while scraping thenationalpositionsussmail.agency
+warn:	2022-10-08 15:07:40.910489	Unexpected error while scraping mail4nationalpositionsuss.agency
+warn:	2022-10-08 15:07:40.912528	Unexpected error while scraping lascalinatella.agency
+warn:	2022-10-08 15:07:40.931433	Unexpected error while scraping thoth.agency
+warn:	2022-10-08 15:07:40.915477	Unexpected error while scraping mail4nationalpositionsus.agency
+warn:	2022-10-08 15:07:40.953847	Unexpected error while scraping giv.agency
+warn:	2022-10-08 15:07:40.963612	Unexpected error while scraping democrito.academy
+warn:	2022-10-08 15:07:40.965582	Unexpected error while scraping 001.academy
+warn:	2022-10-08 15:07:40.966563	Unexpected error while scraping thesourbite.agency
+warn:	2022-10-08 15:07:40.969557	Unexpected error while scraping thenationalpositionsuss.agency
+warn:	2022-10-08 15:07:40.985627	Unexpected error while scraping eliteadviser.agency
+warn:	2022-10-08 15:07:40.975217	Unexpected error while scraping dubaidesertsafari.agency
+warn:	2022-10-08 15:07:40.985627	Unexpected error while scraping pickleball.agency
+warn:	2022-10-08 15:07:40.980000	Unexpected error while scraping goparis.agency
+warn:	2022-10-08 15:07:40.995632	Unexpected error while scraping markus-salm.academy
+warn:	2022-10-08 15:07:40.996615	Unexpected error while scraping kempojujutsu.academy
+warn:	2022-10-08 15:07:40.995632	Unexpected error while scraping datavox.agency
+warn:	2022-10-08 15:07:40.999594	Unexpected error while scraping ventus.agency
+warn:	2022-10-08 15:07:40.996615	Unexpected error while scraping agilementor.academy
+succes:	2022-10-09 15:11:35.195253	Pinging Done
+warn:	2022-10-09 15:12:46.414930	Unexpected error while scraping fouders.academy
+succes:	2022-10-09 15:12:46.414958	Scraping Done.
+succes:	2022-10-09 15:12:46.414958	Feature Extraction Done.
+succes:	2022-10-09 15:13:54.648850	Pinging Done
+warn:	2022-10-09 15:14:31.864902	Unexpected error while scraping fouders.academy
+succes:	2022-10-09 15:14:31.864902	Scraping Done.
+succes:	2022-10-09 15:14:31.864902	Feature Extraction Done.
+succes:	2022-10-09 15:14:57.519931	Pinging Done
+warn:	2022-10-09 15:16:54.401303	Unexpected error while scraping google.com
+succes:	2022-10-09 15:16:58.196520	Scraping Done.
+succes:	2022-10-09 15:16:58.196520	Feature Extraction Done.
+succes:	2022-10-09 15:17:08.645801	Pinging Done
+warn:	2022-10-09 15:17:11.077793	Unexpected error while scraping google.com
+succes:	2022-10-09 15:17:13.142730	Scraping Done.
+succes:	2022-10-09 15:17:13.145185	Feature Extraction Done.
+succes:	2022-10-09 15:17:23.333600	Pinging Done
+warn:	2022-10-09 15:17:46.553728	Unexpected error while scraping google.com
+succes:	2022-10-09 15:17:46.553728	Scraping Done.
+succes:	2022-10-09 15:17:46.553728	Feature Extraction Done.
+succes:	2022-10-09 15:17:52.848209	Pinging Done
+warn:	2022-10-09 15:18:15.167210	Unexpected error while scraping google.com
+succes:	2022-10-09 15:18:15.167210	Scraping Done.
+succes:	2022-10-09 15:18:15.167210	Feature Extraction Done.
+succes:	2022-10-09 15:37:21.273726	Pinging Done
+succes:	2022-10-09 15:37:27.419672	Scraping Done.
+succes:	2022-10-09 15:37:31.322026	Feature Extraction Done.
+succes:	2022-10-09 20:46:41.669500	Pinging Done
+succes:	2022-10-09 20:46:51.774258	Scraping Done.
+succes:	2022-10-09 20:46:57.245599	Feature Extraction Done.
+succes:	2022-10-09 20:54:22.562736	Pinging Done
+succes:	2022-10-09 20:54:30.111741	Scraping Done.
+succes:	2022-10-09 20:54:38.176146	Feature Extraction Done.
+succes:	2022-10-09 20:55:59.548440	Pinging Done
+succes:	2022-10-09 20:55:59.549480	Scraping Done.
+succes:	2022-10-09 20:56:04.112089	Feature Extraction Done.
+succes:	2022-10-09 20:56:17.037194	Pinging Done
+succes:	2022-10-09 20:56:17.038193	Scraping Done.
+succes:	2022-10-09 20:56:21.622827	Feature Extraction Done.
+succes:	2022-10-09 20:56:56.297290	Pinging Done
+succes:	2022-10-09 20:56:56.297290	Scraping Done.
+succes:	2022-10-09 20:57:00.018415	Feature Extraction Done.
+succes:	2022-10-09 20:58:50.903973	Pinging Done
+succes:	2022-10-09 21:08:11.705118	Pinging Done
+succes:	2022-10-09 21:09:18.254412	Pinging Done
+succes:	2022-10-09 21:10:43.408302	Pinging Done
+succes:	2022-10-16 18:18:08.225549	Downloading domains successful!
+succes:	2022-10-16 18:18:08.650617	Pinging Done
+succes:	2022-10-16 18:18:44.156161	Downloading domains successful!
+succes:	2022-10-16 18:18:48.398458	Pinging Done
+succes:	2022-10-16 18:23:11.003664	Downloading domains successful!
+succes:	2022-10-16 18:23:15.248379	Pinging Done
+succes:	2022-10-16 18:24:20.265116	Scraping Done.
+succes:	2022-10-16 18:24:24.491772	Feature Extraction Done.
+succes:	2022-10-16 18:50:43.707945	Downloading domains successful!
+succes:	2022-10-16 18:50:43.896467	Pinging Done
+succes:	2022-10-16 18:52:12.915724	Downloading domains successful!
+succes:	2022-10-16 18:52:13.092489	Pinging Done
+succes:	2022-10-16 18:58:46.140069	Downloading domains successful!
+succes:	2022-10-16 18:58:46.307355	Pinging Done
+succes:	2022-10-16 18:59:23.822387	Downloading domains successful!
+succes:	2022-10-16 18:59:23.987069	Pinging Done
+succes:	2022-10-16 19:00:18.566540	Downloading domains successful!
+succes:	2022-10-16 19:00:18.731237	Pinging Done
+succes:	2022-10-16 19:01:02.263983	Downloading domains successful!
+succes:	2022-10-16 19:01:02.428319	Pinging Done
+succes:	2022-10-23 15:04:37.831550	Downloading domains successful!
+succes:	2022-10-23 15:04:37.966000	Pinging Done
+succes:	2022-10-23 16:14:11.955360	Downloading domains successful!
+succes:	2022-10-23 16:14:12.088883	Pinging Done
+succes:	2022-10-23 16:23:47.872301	Downloading domains successful!
+succes:	2022-10-23 16:23:47.902417	Pinging Done
+succes:	2022-10-24 20:05:50.235995	Downloading domains successful!
+succes:	2022-10-24 20:05:50.697455	Pinging Done
+succes:	2022-10-24 20:06:42.501022	Downloading domains successful!
+succes:	2022-10-24 20:06:42.712970	Pinging Done
+succes:	2022-10-24 20:07:33.162865	Downloading domains successful!
+succes:	2022-10-24 20:07:33.366517	Pinging Done
+succes:	2022-10-24 20:16:09.343977	Downloading domains successful!
+succes:	2022-10-24 20:16:09.548490	Pinging Done
+succes:	2022-10-24 20:16:24.089163	Downloading domains successful!
+succes:	2022-10-24 20:16:24.297282	Pinging Done
+succes:	2022-10-24 20:17:58.814566	Downloading domains successful!
+succes:	2022-10-24 20:17:59.019812	Pinging Done
+succes:	2022-10-24 20:18:27.435078	Scraping Done.
+warn:	2022-10-24 20:18:27.452032	Failed to extract features of pokertgo.com.json
+succes:	2022-10-24 20:18:27.454027	Feature Extraction Done.
+succes:	2022-10-24 20:32:55.486070	Downloading domains successful!
+succes:	2022-10-24 20:33:06.583076	Pinging Done
+warn:	2022-10-24 20:33:18.284451	Unexpected error!
+warn:	2022-10-24 20:33:18.719493	Unexpected error!
+warn:	2022-10-24 20:33:18.893539	Unexpected error!
+warn:	2022-10-24 20:33:22.316226	Unexpected error!
+succes:	2022-10-24 20:33:56.629374	Scraping Done.
+warn:	2022-10-24 20:33:56.673244	Failed to extract features of chefsfromhell.com.json
+warn:	2022-10-24 20:33:56.671249	Failed to extract features of acquisitionping1.gives.json
+warn:	2022-10-24 20:33:56.672246	Failed to extract features of acls-kitakanto.com.json
+warn:	2022-10-24 20:33:56.675238	Failed to extract features of brovpntxt.xyz.json
+warn:	2022-10-24 20:33:56.674242	Failed to extract features of 6z57a4tf.com.json
+warn:	2022-10-24 20:33:56.672246	Failed to extract features of cinezo.info.json
+warn:	2022-10-24 20:33:56.675238	Failed to extract features of 023.one.json
+ari.com.json
+warn:	2022-10-24 20:33:56.678230	Failed to extract features of gk5tuy.cyou.json
+warn:	2022-10-24 20:33:56.677233	Failed to extract features of 479019.vip.json
+warn:	2022-10-24 20:33:56.680226	Failed to extract features of hookmagical.com.json
+warn:	2022-10-24 20:33:56.680226	Failed to extract features of jib2.com.json
+warn:	2022-10-24 20:33:56.684214	Failed to extract features of neruumagneticos.shop.json
+warn:	2022-10-24 20:33:56.684214	Failed to extract features of mhfire.online.json
+warn:	2022-10-24 20:33:56.685212	Failed to extract features of leantime.online.json
+warn:	2022-10-24 20:33:56.685212	Failed to extract features of loveyoubut.wtf.json
+warn:	2022-10-24 20:33:56.690198	Failed to extract features of northwestpaints.com.json
+warn:	2022-10-24 20:33:56.690198	Failed to extract features of pasamotos.com.json
+warn:	2022-10-24 20:33:56.676237	Failed to extract features of 5369858.com.json
+
+ine.json
+warn:	2022-10-24 20:33:56.700171	Failed to extract features of yxar76.com.json
+warn:	2022-10-24 20:33:56.699174	Failed to extract features of zarembaconsultancy.com.json
+warn:	2022-10-24 20:33:56.681222	Failed to extract features of graphixhub.store.json
+warn:	2022-10-24 20:33:56.698178	Failed to extract features of trabalhoparaoamor.com.json
+warn:	2022-10-24 20:33:56.688203	Failed to extract features of laurabennettphotography.com.json
+warn:	2022-10-24 20:33:56.695185	Failed to extract features of tekityu-g1.com.json
+warn:	2022-10-24 20:33:56.707154	Failed to extract features of nftrealestate.store.json
+warn:	2022-10-24 20:33:56.707154	Failed to extract features of ceshiyuming-riben1022.com.json
+warn:	2022-10-24 20:33:56.708150	Failed to extract features of qimenggushi.com.json
+warn:	2022-10-24 20:33:56.710145	Failed to extract features of supplychainassessment.com.json
+warn:	2022-10-24 20:33:56.704161	Failed to extract features of spiritsoulbodyleadership.com.json
+warn:	2022-10-24 20:33:56.705158	Failed to extract features of playtheratrace.com.json
+warn:	2022-10-24 20:33:56.698178	Failed to extract features of theunknowncompanies.com.json
+warn:	2022-10-24 20:33:56.712139	Failed to extract features of bluupixeltechnologies.org.json
+warn:	2022-10-24 20:33:56.717126	Failed to extract features of comvegs.com.json
+warn:	2022-10-24 20:33:56.720119	Failed to extract features of enbdigitalmarketing.com.json
+warn:	2022-10-24 20:33:56.721115	Failed to extract features of kbty153.com.json
+warn:	2022-10-24 20:33:56.720119	Failed to extract features of purchasingemail.com.json
+warn:	2022-10-24 20:33:56.721115	Failed to extract features of cnwanshida.net.json
+warn:	2022-10-24 20:33:56.721115	Failed to extract features of engagelearntransform.com.json
+succes:	2022-10-24 20:33:59.821425	Feature Extraction Done.
+succes:	2022-10-24 20:58:14.724436	Downloading domains successful!
+succes:	2022-10-24 20:58:25.873150	Pinging Done
+warn:	2022-10-24 20:58:40.768942	Unexpected error!
+warn:	2022-10-24 20:58:40.933102	Unexpected error!
+warn:	2022-10-24 20:58:41.039150	Unexpected error!
+warn:	2022-10-24 20:58:46.345716	Unexpected error!
+succes:	2022-10-24 20:59:15.940327	Scraping Done.
+warn:	2022-10-24 20:59:16.173702	Failed to extract features of ceshiyuming-riben1022.com.json
+warn:	2022-10-24 20:59:16.175697	Failed to extract features of acquisitionping1.gives.json
+warn:	2022-10-24 20:59:16.189660	Failed to extract features of beconvenientclothing.com.json
+warn:	2022-10-24 20:59:16.190658	Failed to extract features of hookmagical.com.json
+warn:	2022-10-24 20:59:16.190658	Failed to extract features of 6z57a4tf.com.json
+warn:	2022-10-24 20:59:16.192652	Failed to extract features of griffinwwtravel.online.json
+warn:	2022-10-24 20:59:16.192652	Failed to extract features of adele-rs.org.json
+warn:	2022-10-24 20:59:16.196641	Failed to extract features of laurabennettphotography.com.json
+warn:	2022-10-24 20:59:16.193649	Failed to extract features of bluupixeltechnologies.org.json
+warn:	2022-10-24 20:59:16.192652	Failed to extract features of graphixhub.store.json
+warn:	2022-10-24 20:59:16.192652	Failed to extract features of jib2.com.json
+warn:	2022-10-24 20:59:16.196641	Failed to extract features of goldcoincrypta.sbs.json
+warn:	2022-10-24 20:59:16.196641	Failed to extract features of mywinteressentials.com.json
+warn:	2022-10-24 20:59:16.206615	Failed to extract features of animethighs.club.json
+warn:	2022-10-24 20:59:16.195644	Failed to extract features of mhfire.online.json
+warn:	2022-10-24 20:59:16.211602	Failed to extract features of pokertgo.com.json
+warn:	2022-10-24 20:59:16.195644	Failed to extract features of loveyoubut.wtf.json
+warn:	2022-10-24 20:59:16.208609	Failed to extract features of neruumagneticos.shop.json
+warn:	2022-10-24 20:59:16.199634	Failed to extract features of cinezo.info.json
+warn:	2022-10-24 20:59:16.215591	Failed to extract features of purchasingemail.com.json
+warn:	2022-10-24 20:59:16.214593	Failed to extract features of pokervqq99.club.json
+warn:	2022-10-24 20:59:16.218583	Failed to extract features of pasamotos.com.json
+warn:	2022-10-24 20:59:16.218583	Failed to extract features of spiritsoulbodyleadership.com.json
+warn:	2022-10-24 20:59:16.211602	Failed to extract features of nftrealestate.store.json
+warn:	2022-10-24 20:59:16.212598	Failed to extract features of engagelearntransform.com.json
+warn:	2022-10-24 20:59:16.222572	Failed to extract features of theunknowncompanies.com.json
+warn:	2022-10-24 20:59:16.222572	Failed to extract features of yxar76.com.json
+warn:	2022-10-24 20:59:16.222572	Failed to extract features of superspeck.com.json
+warn:	2022-10-24 20:59:16.228558	Failed to extract features of qimenggushi.com.json
+com.json
+warn:	2022-10-24 20:59:16.224567	Failed to extract features of brovpntxt.xyz.json
+warn:	2022-10-24 20:59:16.268449	Failed to extract features of leantime.online.json
+warn:	2022-10-24 20:59:16.270445	Failed to extract features of playtheratrace.com.json
+warn:	2022-10-24 20:59:16.288396	Failed to extract features of exodusclothing.shop.json
+warn:	2022-10-24 20:59:16.292386	Failed to extract features of zarembaconsultancy.com.json
+warn:	2022-10-24 20:59:16.264462	Failed to extract features of kbty153.com.json
+warn:	2022-10-24 20:59:16.293382	Failed to extract features of comvegs.com.json
+n
+warn:	2022-10-24 20:59:16.284408	Failed to extract features of enbdigitalmarketing.com.json
+warn:	2022-10-24 20:59:16.294380	Failed to extract features of 479019.vip.json
+warn:	2022-10-24 20:59:16.296375	Failed to extract features of eclecticartofkari.com.json
+warn:	2022-10-24 20:59:16.294380	Failed to extract features of chefsfromhell.com.json
+warn:	2022-10-24 20:59:16.294380	Failed to extract features of 5369858.com.json
+succes:	2022-10-24 20:59:16.313329	Feature Extraction Done.
+succes:	2022-10-24 21:02:24.722583	Downloading domains successful!
+succes:	2022-10-24 21:02:36.071715	Pinging Done
+warn:	2022-10-24 21:02:53.086733	Unexpected error!
+warn:	2022-10-24 21:02:53.745771	Unexpected error!
+warn:	2022-10-24 21:02:53.966775	Unexpected error!
+warn:	2022-10-24 21:02:58.343428	Unexpected error!
+succes:	2022-10-24 21:03:26.133205	Scraping Done.
+warn:	2022-10-24 21:03:26.172101	Failed to extract features of adele-rs.org.json
+warn:	2022-10-24 21:03:26.172101	Failed to extract features of ceshiyuming-riben1022.com.json
+warn:	2022-10-24 21:03:26.173100	Failed to extract features of brovpntxt.xyz.json
+warn:	2022-10-24 21:03:26.173100	Failed to extract features of acquisitionping1.gives.json
+warn:	2022-10-24 21:03:26.176091	Failed to extract features of cinezo.info.json
+warn:	2022-10-24 21:03:26.178085	Failed to extract features of comvegs.com.json
+warn:	2022-10-24 21:03:26.179082	Failed to extract features of dfinsolutions.info.json
+warn:	2022-10-24 21:03:26.178085	Failed to extract features of engagelearntransform.com.json
+warn:	2022-10-24 21:03:26.180079	Failed to extract features of bluupixeltechnologies.org.json
+warn:	2022-10-24 21:03:26.177088	Failed to extract features of chefsfromhell.com.json
+warn:	2022-10-24 21:03:26.179082	Failed to extract features of enbdigitalmarketing.com.json
+warn:	2022-10-24 21:03:26.180079	Failed to extract features of gk5tuy.cyou.json
+warn:	2022-10-24 21:03:26.179082	Failed to extract features of 023.one.json
+warn:	2022-10-24 21:03:26.179082	Failed to extract features of 6z57a4tf.com.json
+warn:	2022-10-24 21:03:26.180079	Failed to extract features of graphixhub.store.json
+warn:	2022-10-24 21:03:26.183072	Failed to extract features of jib2.com.json
+warn:	2022-10-24 21:03:26.186064	Failed to extract features of purchasingemail.com.json
+warn:	2022-10-24 21:03:26.186064	Failed to extract features of pokervqq99.club.json
+warn:	2022-10-24 21:03:26.185067	Failed to extract features of kbty153.com.json
+warn:	2022-10-24 21:03:26.185067	Failed to extract features of mhfire.online.json
+warn:	2022-10-24 21:03:26.185067	Failed to extract features of playtheratrace.com.json
+warn:	2022-10-24 21:03:26.185067	Failed to extract features of loveyoubut.wtf.json
+warn:	2022-10-24 21:03:26.185067	Failed to extract features of pokertgo.com.json
+warn:	2022-10-24 21:03:26.182076	Failed to extract features of griffinwwtravel.online.json
+warn:	2022-10-24 21:03:26.185067	Failed to extract features of marvellastore.com.json
+warn:	2022-10-24 21:03:26.193046	Failed to extract features of yxar76.com.json
+warn:	2022-10-24 21:03:26.192049	Failed to extract features of platformthen.info.json
+warn:	2022-10-24 21:03:26.189056	Failed to extract features of pasamotos.com.json
+warn:	2022-10-24 21:03:26.194043	Failed to extract features of theunknowncompanies.com.json
+warn:	2022-10-24 21:03:26.193046	Failed to extract features of lebanonmazad.com.json
+warn:	2022-10-24 21:03:26.196037	Failed to extract features of zarembaconsultancy.com.json
+warn:	2022-10-24 21:03:26.196037	Failed to extract features of nftrealestate.store.json
+warn:	2022-10-24 21:03:26.197035	Failed to extract features of spiritsoulbodyleadership.com.json
+warn:	2022-10-24 21:03:26.193046	Failed to extract features of hookmagical.com.json
+warn:	2022-10-24 21:03:26.197035	Failed to extract features of eclecticartofkari.com.json
+warn:	2022-10-24 21:03:26.199029	Failed to extract features of leantime.online.json
+warn:	2022-10-24 21:03:26.200027	Failed to extract features of supplychainassessment.com.json
+warn:	2022-10-24 21:03:26.199029	Failed to extract features of tekityu-g1.com.json
+warn:	2022-10-24 21:03:26.201025	Failed to extract features of animethighs.club.json
+warn:	2022-10-24 21:03:26.202021	Failed to extract features of qimenggushi.com.json
+succes:	2022-10-24 21:03:26.204016	Feature Extraction Done.

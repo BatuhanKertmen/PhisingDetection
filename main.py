@@ -64,11 +64,11 @@ def extractFeatures(filename, tld):
         Log.warning("Failed to extract features of " + file_name)
 
 
-number_of_sites = 1
-batch_count = 1
-ping_thread_count = 1
-scrape_thread_count = 1
-feature_thread_count = 1
+number_of_sites = 100
+batch_count = 100
+ping_thread_count = 100
+scrape_thread_count = 100
+feature_thread_count = 100
 
 if __name__ == "__main__":
     domains_address = scrapeWhoIsDs()
