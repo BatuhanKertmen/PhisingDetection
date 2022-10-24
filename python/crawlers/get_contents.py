@@ -58,6 +58,9 @@ class WebSiteContent:
         op = Options()
         op.add_argument("--headless")
         op.add_argument("--disable-gpu")
+        op.add_argument('--single-process')
+        op.add_argument('--no-sandbox')
+        op.add_argument('--disable-dev-shm-usage')
 
         if os.name == "nt":
             self.driver = webdriver.Chrome(CHROME_DRIVER, options=op)
