@@ -10,7 +10,7 @@ from joblib import Parallel, delayed
 from requests.exceptions import TooManyRedirects, ConnectionError, ReadTimeout
 from python.download.download_domains import scrapeWhoIsDs
 from python.crawlers import get_contents
-from python.utilities.paths import VALID_NAMES_TXT, WEBSITES_CONTENT_DIR, WEBSITES_FEATURE_DIR, IMAGES_DIR, TLD_TXT
+from python.utilities.paths import VALID_NAMES_TXT, WEBSITES_CONTENT_DIR, WEBSITES_FEATURE_DIR, IMAGES_DIR, TLD_TXT, TRANCO_DOMAINS_TXT
 from python.utilities.log import Log
 from python.features.featues import Features
 
@@ -74,7 +74,7 @@ feature_thread_count = 5
 if __name__ == "__main__":
     #domains_address = scrapeWhoIsDs()
     #domains_address = RAW_NAMES_TXT
-    domains_address = 'C:/Users/Doğu/PhisingDetection/tranco/arranged_tranco.txt'
+    domains_address = TRANCO_DOMAINS_TXT
     valid_domain_names = []
     counter = 0
 

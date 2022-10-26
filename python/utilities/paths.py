@@ -16,6 +16,7 @@ WEBSITES_CONTENT_DIR = os.path.join(WEBSITES_DIR, "content")
 WEBSITES_FEATURE_DIR = os.path.join(WEBSITES_DIR, "feature")
 IMAGES_DIR = os.path.join(CRAWLER_DIR, "images")
 FEATURES_DIR = os.path.join(PYTHON_DIR, "features")
+TRANCO_DIR = os.path.join(WORKING_DIR, "tranco")
 
 # DRIVERS
 DRIVER_DIR = os.path.join(WORKING_DIR, "GeckoDrivers")
@@ -29,6 +30,7 @@ CHROME_DRIVER_LINUX = os.path.join(DRIVER_DIR, "chromedriver_linux")
 VALID_NAMES_TXT = os.path.join(DOMAINS_VALID_DIR, "valid-domain-names.txt")
 RAW_NAMES_TXT = os.path.join(DOMAINS_RAW_DIR, "domain-names.txt")
 RAW_OPEN_PHISH_TXT = os.path.join(DOMAINS_RAW_DIR, "open_tank_phishing.txt")
+TRANCO_DOMAINS_TXT = os.path.join(TRANCO_DIR, "tranco.txt")
 
 # Internal work files
 CONTENT_STRUCTURE_JSON = os.path.join(CRAWLER_DIR, "content_structure.json")
