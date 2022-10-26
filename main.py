@@ -13,7 +13,6 @@ from python.crawlers import get_contents
 from python.utilities.paths import VALID_NAMES_TXT, WEBSITES_CONTENT_DIR, WEBSITES_FEATURE_DIR, IMAGES_DIR, TLD_TXT
 from python.utilities.log import Log
 from python.features.featues import Features
-import time
 
 
 os_name = os.name
@@ -30,6 +29,7 @@ def pinging(d_name):
 def scrape(domain_name, folder):
     try:
         web = get_contents.WebSiteContent(domain_name)
+        # TODO 
         web.parseContent()
 
         file_name = domain_name + ".json"
@@ -43,6 +43,8 @@ def scrape(domain_name, folder):
         Log.log("Max time exceeded " + domain_name + " skipping!")
     except TooManyRedirects:
         Log.log(domain_name + " exceeded 30 redirections, skipping!")
+    except Exception:
+        Log.warning("Unexpected error!")
 
 
 def extractFeatures(filename, tld):
@@ -63,27 +65,22 @@ def extractFeatures(filename, tld):
         Log.warning("Failed to extract features of " + file_name)
 
 
-number_of_sites = 10
-batch_count = 2
-ping_thread_count = 1
-scrape_thread_count = 1
-feature_thread_count = 1
+number_of_sites = 5
+batch_count = 5
+ping_thread_count = 5
+scrape_thread_count = 5
+feature_thread_count = 5
 
 if __name__ == "__main__":
-    domains_address = scrapeWhoIsDs()
+    #domains_address = scrapeWhoIsDs()
     #domains_address = RAW_NAMES_TXT
-
+    domains_address = 'C:/Users/Doğu/PhisingDetection/tranco/arranged_tranco.txt'
     valid_domain_names = []
     counter = 0
 
     with open(domains_address, 'r') as domain_file:
-        start = time.perf_counter()
         with open(VALID_NAMES_TXT, "w") as valid_domains_file:
             while counter < number_of_sites:
-                if counter % 100 == 0:
-                    finish = time.perf_counter()
-                    print(f'!!!!!!!!!!!!!!!!!!!!!!! Time passed for 100 domains: {finish-start} !!!!!!!!!!!!!!!!!!!!!!!')
-                    start = time.perf_counter()
                 try:
                     domain_names = list(islice(domain_file, batch_count))
                     if not domain_names:
@@ -91,7 +88,7 @@ if __name__ == "__main__":
 
                     domain_names = [domain_name.strip() for domain_name in domain_names]
                     Parallel(n_jobs=ping_thread_count, prefer="threads", verbose=1)(delayed(pinging)(i) for i in domain_names)
-                    valid_domains_file.write('\n'.join(valid_domain_names) + "\n")
+                    valid_domains_file.write('\n'.join(valid_domain_names))
 
                 finally:
                     valid_domain_names.clear()
@@ -104,7 +101,6 @@ if __name__ == "__main__":
             valid_domains = list(islice(file, batch_count))
             if not valid_domains:
                 break
-
             counter += len(valid_domains)
             valid_domains = [valid_domain.strip() for valid_domain in valid_domains]
 
