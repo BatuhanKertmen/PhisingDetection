@@ -62,11 +62,11 @@ def extractFeatures(filename, tld):
         Log.warning("Failed to extract features of " + file_name)
 
 
-number_of_sites = 100
-batch_count = 100
-ping_thread_count = 100
-scrape_thread_count = 100
-feature_thread_count = 100
+number_of_sites = 10
+batch_count = 2
+ping_thread_count = 1
+scrape_thread_count = 1
+feature_thread_count = 1
 
 if __name__ == "__main__":
     domains_address = scrapeWhoIsDs()
@@ -85,7 +85,7 @@ if __name__ == "__main__":
 
                     domain_names = [domain_name.strip() for domain_name in domain_names]
                     Parallel(n_jobs=ping_thread_count, prefer="threads", verbose=1)(delayed(pinging)(i) for i in domain_names)
-                    valid_domains_file.write('\n'.join(valid_domain_names))
+                    valid_domains_file.write('\n'.join(valid_domain_names) + "\n")
 
                 finally:
                     valid_domain_names.clear()
@@ -98,6 +98,7 @@ if __name__ == "__main__":
             valid_domains = list(islice(file, batch_count))
             if not valid_domains:
                 break
+
             counter += len(valid_domains)
             valid_domains = [valid_domain.strip() for valid_domain in valid_domains]
 
