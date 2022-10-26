@@ -42,8 +42,6 @@ def scrape(domain_name, folder):
         Log.log("Max time exceeded " + domain_name + " skipping!")
     except TooManyRedirects:
         Log.log(domain_name + " exceeded 30 redirections, skipping!")
-    except Exception:
-        Log.warning("Unexpected error!")
 
 
 def extractFeatures(filename, tld):

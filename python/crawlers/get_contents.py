@@ -65,7 +65,7 @@ class WebSiteContent:
         if os.name == "nt":
             self.driver = webdriver.Chrome(CHROME_DRIVER, options=op)
         elif os.name == "posix":
-            self.driver = webdriver.Chrome(CHROME_DRIVER_LINUX, options=op)
+            self.driver = webdriver.Chrome(str(CHROME_DRIVER_LINUX) + "_105", options=op)
 
         try:
             self.driver.get(url)
@@ -80,9 +80,9 @@ class WebSiteContent:
         self.__editUrl()
 
         request = self.driver.requests[0]
-        response = request.response.status_code
+        #response = request.response.status_code
 
-        self.parsed_content['status_code'] = response
+        #self.parsed_content['status_code'] = response
         self.home_page = self.driver.page_source
         self.internal_pages = []
 
