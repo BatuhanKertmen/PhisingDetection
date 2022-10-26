@@ -13,6 +13,7 @@ from python.crawlers import get_contents
 from python.utilities.paths import VALID_NAMES_TXT, WEBSITES_CONTENT_DIR, WEBSITES_FEATURE_DIR, IMAGES_DIR, TLD_TXT
 from python.utilities.log import Log
 from python.features.featues import Features
+import time
 
 
 os_name = os.name
@@ -76,8 +77,13 @@ if __name__ == "__main__":
     counter = 0
 
     with open(domains_address, 'r') as domain_file:
+        start = time.perf_counter()
         with open(VALID_NAMES_TXT, "w") as valid_domains_file:
             while counter < number_of_sites:
+                if counter % 100 == 0:
+                    finish = time.perf_counter()
+                    print(f'!!!!!!!!!!!!!!!!!!!!!!! Time passed for 100 domains: {finish-start} !!!!!!!!!!!!!!!!!!!!!!!')
+                    start = time.perf_counter()
                 try:
                     domain_names = list(islice(domain_file, batch_count))
                     if not domain_names:
