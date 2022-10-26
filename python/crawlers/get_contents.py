@@ -65,7 +65,7 @@ class WebSiteContent:
         if os.name == "nt":
             self.driver = webdriver.Chrome(CHROME_DRIVER, options=op)
         elif os.name == "posix":
-            self.driver = webdriver.Chrome(str(CHROME_DRIVER_LINUX) + "_105", options=op)
+            self.driver = webdriver.Chrome(str(CHROME_DRIVER_LINUX), options=op)
 
         try:
             self.driver.get(url)
