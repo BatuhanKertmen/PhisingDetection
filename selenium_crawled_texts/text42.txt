@@ -1,3 +1,0 @@
-502 Bad Gateway  502 Bad Gateway
-
-ProtocolException('Server connection to (\'www.csdn.net\', 443) failed: Error connecting to "www.csdn.net": [WinError 10060] BaÄŸlanÄ±lan uygun olarak belli bir sÃ¼re iÃ§inde yanÄ±t vermediÄŸinden veya kurulan\r\nbaÄŸlantÄ± baÄŸlanÄ±lan ana bilgisayar yanÄ±t vermediÄŸinden bir baÄŸlantÄ± kurulamadÄ±')

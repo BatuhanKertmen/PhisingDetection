@@ -19,3 +19,7 @@ python/features/.google-cookie
 errors.txt
 logs.txt
 warnings.txt
+
+# residual files
+geckodriver.log
+.google-cookie

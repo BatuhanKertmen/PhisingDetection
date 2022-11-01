@@ -10,9 +10,9 @@ from joblib import Parallel, delayed
 from requests.exceptions import TooManyRedirects, ConnectionError, ReadTimeout
 from python.download.download_domains import scrapeWhoIsDs
 from python.crawlers import get_contents
-from python.utilities.paths import VALID_NAMES_TXT, WEBSITES_CONTENT_DIR, WEBSITES_FEATURE_DIR, IMAGES_DIR, TLD_TXT, TRANCO_DOMAINS_TXT
+from python.utilities.paths import VALID_NAMES_TXT, WEBSITES_CONTENT_DIR, IMAGES_DIR, TRANCO_DOMAINS_TXT, TIMINGS_TXT
 from python.utilities.log import Log
-from python.features.featues import Features
+from python.utilities.benchmark import Benchmark
 
 
 os_name = os.name
@@ -45,10 +45,10 @@ def scrape(domain_name, folder):
 
 
 
-number_of_sites = 10
-batch_count = 2
-ping_thread_count = 2
-scrape_thread_count = 2
+number_of_sites = 100
+batch_count = 20
+ping_thread_count = 20
+scrape_thread_count = 20
 
 if __name__ == "__main__":
     #domains_address = scrapeWhoIsDs()
@@ -58,6 +58,9 @@ if __name__ == "__main__":
     counter = 0
 
     with open(domains_address, 'r') as domain_file:
+        benchmark = Benchmark(TIMINGS_TXT)
+        benchmark.initializeTimer()
+
         with open(VALID_NAMES_TXT, "w") as valid_domains_file:
             while counter < number_of_sites:
                 try:
@@ -72,6 +75,7 @@ if __name__ == "__main__":
                 finally:
                     valid_domain_names.clear()
                     counter += batch_count
+                    benchmark.record(str(counter) + " many domains pinged")
 
     Log.success("Pinging Done")
 

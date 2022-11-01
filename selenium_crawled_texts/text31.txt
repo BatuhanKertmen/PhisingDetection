@@ -1,3 +1,0 @@
-502 Bad Gateway  502 Bad Gateway
-
-ProtocolException('Server connection to (\'www.amazonaws.com\', 443) failed: Error connecting to "www.amazonaws.com": [WinError 10061] Hedef makine etkin olarak reddettiÄŸinden baÄŸlantÄ± kurulamadÄ±')

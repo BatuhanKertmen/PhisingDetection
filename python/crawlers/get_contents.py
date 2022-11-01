@@ -62,14 +62,10 @@ class WebSiteContent:
         op.add_argument('--no-sandbox')
         op.add_argument('--disable-dev-shm-usage')
 
-        print("before")
-        print(os.name)
         if os.name == "nt":
             self.driver = webdriver.Chrome(CHROME_DRIVER, options=op)
         elif os.name == "posix":
             self.driver = webdriver.Chrome(CHROME_DRIVER_LINUX, options=op)
-        print("opened selenium")
-
 
         try:
             self.driver.get(url)
@@ -78,8 +74,6 @@ class WebSiteContent:
             Log.log("Time out error: " + url)
         except ConnectionResetError:
             Log.log("Connection Reset Error:" + url)
-        print("opened url")
-
 
         self.url = self.driver.current_url
         self.__editUrl()
@@ -95,18 +89,20 @@ class WebSiteContent:
         return json.dumps(self.parsed_content, indent=indent)
 
     def parseContent(self):
-        page_soup = BeautifulSoup(self.home_page, features="html.parser")
+        try:
+            page_soup = BeautifulSoup(self.home_page, features="html.parser")
 
-        self.parseTitle(page_soup.find('title'))
-        self.parseScript(page_soup.findAll('script'))
-        self.parseLinks(page_soup.findAll('link'))
-        self.parseMeta(page_soup.findAll('meta'))
-        self.getTextualContent(page_soup)
-        self.parseAnchors(page_soup.findAll('a'))
-        self.parseImage(page_soup.findAll('img'))
-        self.parseAudio(page_soup.findAll('audio'))
+            self.parseTitle(page_soup.find('title'))
+            self.parseScript(page_soup.findAll('script'))
+            self.parseLinks(page_soup.findAll('link'))
+            self.parseMeta(page_soup.findAll('meta'))
+            self.getTextualContent(page_soup)
+            self.parseAnchors(page_soup.findAll('a'))
+            self.parseImage(page_soup.findAll('img'))
+            self.parseAudio(page_soup.findAll('audio'))
 
-        self.driver.close()
+        finally:
+            self.driver.close()
 
     def getTextualContent(self, body):
         tags = ['h1', 'h2', 'h3', 'h4', 'h5', 'strong', 'p', 'mark']

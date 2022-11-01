@@ -40,6 +40,7 @@ TLD_TXT = os.path.join(FEATURES_DIR, "TLD.txt")
 LOG_TXT = os.path.join(WORKING_DIR, "logs.txt")
 WARNING_TXT = os.path.join(WORKING_DIR, "warnings.txt")
 ERROR_TXT = os.path.join(WORKING_DIR, "errors.txt")
+TIMINGS_TXT = os.path.join(WORKING_DIR, "timings.txt")
 
 def debug():
     print("WORKING_DIR:", WORKING_DIR)
