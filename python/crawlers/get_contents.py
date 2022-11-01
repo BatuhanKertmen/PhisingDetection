@@ -62,24 +62,27 @@ class WebSiteContent:
         op.add_argument('--no-sandbox')
         op.add_argument('--disable-dev-shm-usage')
 
-        if os.name == "nt":
-            self.driver = webdriver.Chrome(CHROME_DRIVER, options=op)
-        elif os.name == "posix":
-            self.driver = webdriver.Chrome(CHROME_DRIVER_LINUX, options=op)
-
         try:
-            self.driver.get(url)
-            WebDriverWait(self.driver, 10).until(expected_conditions.presence_of_all_elements_located)
-        except TimeoutError:
-            Log.log("Time out error: " + url)
-        except ConnectionResetError:
-            Log.log("Connection Reset Error:" + url)
+            if os.name == "nt":
+                self.driver = webdriver.Chrome(CHROME_DRIVER, options=op)
+            elif os.name == "posix":
+                self.driver = webdriver.Chrome(CHROME_DRIVER_LINUX, options=op)
 
-        self.url = self.driver.current_url
-        self.__editUrl()
+            try:
+                self.driver.get(url)
+                WebDriverWait(self.driver, 10).until(expected_conditions.presence_of_all_elements_located)
+            except TimeoutError:
+                Log.log("Time out error: " + url)
+            except ConnectionResetError:
+                Log.log("Connection Reset Error:" + url)
 
-        self.home_page = self.driver.page_source
-        self.internal_pages = []
+            self.url = self.driver.current_url
+            self.__editUrl()
+
+            self.home_page = self.driver.page_source
+            self.internal_pages = []
+        except Exception:
+            self.driver.close()
 
     def __editUrl(self):
         if self.url.count("/") < 3 and self.url[-1] != "/":

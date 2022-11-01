@@ -2,6 +2,7 @@ import json
 import multiprocessing
 import os
 import glob
+import time
 
 from ping3 import ping
 from itertools import islice
@@ -76,6 +77,7 @@ if __name__ == "__main__":
                     counter += batch_count
                     benchmark.record(str(counter) + " domains pinged")
 
+
     benchmark.writeRecords(PING_TIMINGS_JSON)
     Log.success("Pinging Done")
 
@@ -106,5 +108,7 @@ if __name__ == "__main__":
                         pass
 
                 valid_domains.clear()
+                time.sleep(3)
+
     benchmark.writeRecords(SCRAPE_TIMINGS_JSON)
     Log.success("Scraping Done.")
