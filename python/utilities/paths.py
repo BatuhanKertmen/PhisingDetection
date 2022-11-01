@@ -38,9 +38,10 @@ REALISTIC_HEADER_JSON = os.path.join(CRAWLER_DIR, "realistic_header.json")
 COUNTRY_CODES_TXT = os.path.join(FEATURES_DIR, "country_codes.txt")
 TLD_TXT = os.path.join(FEATURES_DIR, "TLD.txt")
 LOG_TXT = os.path.join(WORKING_DIR, "logs.txt")
-WARNING_TXT = os.path.join(WORKING_DIR, "warnings.txt")
+WARNING_TXT = os.path.join(WORKING_DIR, "warnings.json")
 ERROR_TXT = os.path.join(WORKING_DIR, "errors.txt")
-TIMINGS_TXT = os.path.join(WORKING_DIR, "timings.txt")
+PING_TIMINGS_JSON = os.path.join(WORKING_DIR, "ping-timings.json")
+SCRAPE_TIMINGS_JSON = os.path.join(WORKING_DIR, "scrape-timings.json")
 
 def debug():
     print("WORKING_DIR:", WORKING_DIR)

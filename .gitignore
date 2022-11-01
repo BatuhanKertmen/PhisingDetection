@@ -18,7 +18,8 @@ python/benchmarking.py
 python/features/.google-cookie
 errors.txt
 logs.txt
-warnings.txt
+warnings.json
+*timings.json
 
 # residual files
 geckodriver.log

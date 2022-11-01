@@ -10,7 +10,7 @@ from joblib import Parallel, delayed
 from requests.exceptions import TooManyRedirects, ConnectionError, ReadTimeout
 from python.download.download_domains import scrapeWhoIsDs
 from python.crawlers import get_contents
-from python.utilities.paths import VALID_NAMES_TXT, WEBSITES_CONTENT_DIR, IMAGES_DIR, TRANCO_DOMAINS_TXT, TIMINGS_TXT
+from python.utilities.paths import VALID_NAMES_TXT, WEBSITES_CONTENT_DIR, IMAGES_DIR, TRANCO_DOMAINS_TXT, PING_TIMINGS_JSON, SCRAPE_TIMINGS_JSON
 from python.utilities.log import Log
 from python.utilities.benchmark import Benchmark
 
@@ -44,23 +44,22 @@ def scrape(domain_name, folder):
         Log.log(domain_name + " exceeded 30 redirections, skipping!")
 
 
-
-number_of_sites = 100
-batch_count = 20
-ping_thread_count = 20
-scrape_thread_count = 20
+number_of_sites = 10000
+batch_count = 1000
+ping_thread_count = 500
+scrape_thread_count = 200
 
 if __name__ == "__main__":
-    #domains_address = scrapeWhoIsDs()
-    #domains_address = RAW_NAMES_TXT
+    # domains_address = scrapeWhoIsDs()
+    # domains_address = RAW_NAMES_TXT
     domains_address = TRANCO_DOMAINS_TXT
     valid_domain_names = []
     counter = 0
 
-    with open(domains_address, 'r') as domain_file:
-        benchmark = Benchmark(TIMINGS_TXT)
-        benchmark.initializeTimer()
+    benchmark = Benchmark()
+    benchmark.initializeTimer()
 
+    with open(domains_address, 'r') as domain_file:
         with open(VALID_NAMES_TXT, "w") as valid_domains_file:
             while counter < number_of_sites:
                 try:
@@ -75,10 +74,12 @@ if __name__ == "__main__":
                 finally:
                     valid_domain_names.clear()
                     counter += batch_count
-                    benchmark.record(str(counter) + " many domains pinged")
+                    benchmark.record(str(counter) + " domains pinged")
 
+    benchmark.writeRecords(PING_TIMINGS_JSON)
     Log.success("Pinging Done")
 
+    benchmark.reset()
     counter = 0
     with open(VALID_NAMES_TXT, "r") as file:
         while counter < number_of_sites:
@@ -96,6 +97,7 @@ if __name__ == "__main__":
                 pass
 
             finally:
+                benchmark.record(str(counter) + " many domains scraped")
                 files = glob.glob(str(IMAGES_DIR) + "\\*")
                 for image_file in files:
                     try:
@@ -104,6 +106,5 @@ if __name__ == "__main__":
                         pass
 
                 valid_domains.clear()
-
+    benchmark.writeRecords(SCRAPE_TIMINGS_JSON)
     Log.success("Scraping Done.")
-
