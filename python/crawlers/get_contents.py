@@ -73,8 +73,10 @@ class WebSiteContent:
                 WebDriverWait(self.driver, 10).until(expected_conditions.presence_of_all_elements_located)
             except TimeoutError:
                 Log.log("Time out error: " + url)
+                self.driver.close()
             except ConnectionResetError:
                 Log.log("Connection Reset Error:" + url)
+                self.driver.close()
 
             self.url = self.driver.current_url
             self.__editUrl()
