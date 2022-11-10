@@ -45,10 +45,10 @@ def scrape(domain_name, folder):
         Log.log(domain_name + " exceeded 30 redirections, skipping!")
 
 
-number_of_sites = 10000
-batch_count = 1000
-ping_thread_count = 500
-scrape_thread_count = 200
+number_of_sites = 10
+batch_count = 10
+ping_thread_count = 250
+scrape_thread_count = 10
 
 if __name__ == "__main__":
     # domains_address = scrapeWhoIsDs()
@@ -59,6 +59,7 @@ if __name__ == "__main__":
 
     benchmark = Benchmark()
     benchmark.initializeTimer()
+
 
     with open(domains_address, 'r') as domain_file:
         with open(VALID_NAMES_TXT, "w") as valid_domains_file:
@@ -81,6 +82,7 @@ if __name__ == "__main__":
     benchmark.writeRecords(PING_TIMINGS_JSON)
     Log.success("Pinging Done")
 
+
     benchmark.reset()
     counter = 0
     with open(VALID_NAMES_TXT, "r") as file:
@@ -92,11 +94,8 @@ if __name__ == "__main__":
             valid_domains = [valid_domain.strip() for valid_domain in valid_domains]
 
             try:
-                Parallel(n_jobs=scrape_thread_count, prefer="threads", verbose=1, timeout=50)(
+                Parallel(n_jobs=scrape_thread_count, prefer="threads", verbose=10)(
                     (delayed(scrape)(i, str(WEBSITES_CONTENT_DIR)) for i in valid_domains))
-
-            except multiprocessing.context.TimeoutError:
-                pass
 
             finally:
                 benchmark.record(str(counter) + " many domains scraped")

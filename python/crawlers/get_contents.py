@@ -49,6 +49,7 @@ pytesseract.pytesseract.tesseract_cmd = os.path.expanduser('~') + r"\AppData\Loc
 class WebSiteContent:
     def __init__(self, url):
         self.domain = url
+        print(url)
 
         with open(CONTENT_STRUCTURE_JSON) as content_file:
             self.parsed_content = json.load(content_file)
@@ -63,51 +64,43 @@ class WebSiteContent:
         op.add_argument('--disable-dev-shm-usage')
 
         try:
-            if os.name == "nt":
-                self.driver = webdriver.Chrome(CHROME_DRIVER, options=op)
-            elif os.name == "posix":
-                self.driver = webdriver.Chrome(CHROME_DRIVER_LINUX, options=op)
+            self.driver = webdriver.Chrome(CHROME_DRIVER, options=op) if os.name == "nt" else webdriver.Chrome(CHROME_DRIVER_LINUX, options=op)
+            print("driver initialized")
 
-            try:
-                self.driver.get(url)
-                WebDriverWait(self.driver, 10).until(expected_conditions.presence_of_all_elements_located)
-            except TimeoutError:
-                Log.log("Time out error: " + url)
-                self.driver.close()
-            except ConnectionResetError:
-                Log.log("Connection Reset Error:" + url)
-                self.driver.close()
 
-            self.url = self.driver.current_url
+            wait = WebDriverWait(self.driver, 10)
+            self.driver.get(url)
+            wait.until(lambda d: d.execute_script("return document.readyState") == "complete")
+            print("website reached")
+
+            #self.parsed_content["status_code"] = self.driver.last_request.response.status_code
+            self.url = self.driver.execute_script("return document.documentURI")
             self.__editUrl()
-
             self.home_page = self.driver.page_source
-            self.internal_pages = []
-        except Exception:
-            self.driver.close()
-
-    def __editUrl(self):
-        if self.url.count("/") < 3 and self.url[-1] != "/":
-            self.url = self.url + "/"
-
-    def getContent(self, indent=2):
-        return json.dumps(self.parsed_content, indent=indent)
-
-    def parseContent(self):
-        try:
-            page_soup = BeautifulSoup(self.home_page, features="html.parser")
-
-            self.parseTitle(page_soup.find('title'))
-            self.parseScript(page_soup.findAll('script'))
-            self.parseLinks(page_soup.findAll('link'))
-            self.parseMeta(page_soup.findAll('meta'))
-            self.getTextualContent(page_soup)
-            self.parseAnchors(page_soup.findAll('a'))
-            self.parseImage(page_soup.findAll('img'))
-            self.parseAudio(page_soup.findAll('audio'))
+            print("html received")
 
         finally:
             self.driver.close()
+            print("driver closed")
+
+    def __editUrl(self):
+        query_start = self.url.find("?")
+        self.url = self.url[:query_start]
+
+    def parseContent(self):
+        page_soup = BeautifulSoup(self.home_page, features="html.parser")
+
+        self.parsed_content["url"] = self.url
+        self.parseTitle(page_soup.find('title'))
+        self.parseScript(page_soup.findAll('script'))
+        self.parseLinks(page_soup.findAll('link'))
+        self.parseMeta(page_soup.findAll('meta'))
+        self.getTextualContent(page_soup)
+        self.parseAnchors(page_soup.findAll('a'))
+        self.parseImage(page_soup.findAll('img'))
+        self.parseAudio(page_soup.findAll('audio'))
+
+
 
     def getTextualContent(self, body):
         tags = ['h1', 'h2', 'h3', 'h4', 'h5', 'strong', 'p', 'mark']
@@ -259,27 +252,24 @@ class WebSiteContent:
 
     def __processImage(self, image_link, name):
         image_type = self.__getImageType(image_link)
-        if image_type == "SKIP":
+        if image_type is None or image_type == "SKIP":
             return -1, -1, -1, "-1"
 
-        try:
-            image_name = IMAGES_DIR + "\\" + name.replace('/', '_').replace("http", "").replace(":", "") + image_type
-            image_bytes = requests.get(image_link).content
+        image_name = os.path.join(IMAGES_DIR, name.replace('/', '_').replace("http", "").replace(":", "") + image_type)
+        image_bytes = requests.get(image_link).content
 
-            byte = len(image_bytes)
+        byte = len(image_bytes)
 
-            with open(image_name, 'wb') as handler:
-                handler.write(image_bytes)
+        with open(image_name, 'wb') as handler:
+            handler.write(image_bytes)
 
-            with Image.open(image_name) as image:
-                width, height = image.size
-                ocr_text = pytesseract.image_to_string(image)
+        with Image.open(image_name) as image:
+            width, height = image.size
+            ocr_text = pytesseract.image_to_string(image)
 
-            os.remove(image_name)
+        os.remove(image_name)
 
-            return byte, width, height, ocr_text
-        except Exception:
-            return -1, -1, -1, "-1"
+        return byte, width, height, ocr_text
 
     def __isSmallestImage(self, width, height):
         if self.parsed_content['body']['img_smallest']['size'][0] == 0:
@@ -323,10 +313,7 @@ class WebSiteContent:
             return ".pjpeg"
         elif image_link.find(".pjp") != -1:
             return ".pjp"
-        elif image_link.find(".svg") != -1:
-            return "SKIP"
-        elif image_link.find(".webp") != -1:
-            return "SKIP"
+        return None
 
     def findInternalLinks(self, page_content):
         try:
