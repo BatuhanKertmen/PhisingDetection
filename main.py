@@ -8,12 +8,13 @@ from ping3 import ping
 from itertools import islice
 from joblib import Parallel, delayed
 
-from requests.exceptions import TooManyRedirects, ConnectionError, ReadTimeout
+from requests.exceptions import TooManyRedirects, ConnectionError
 from python.download.download_domains import scrapeWhoIsDs
 from python.crawlers import get_contents
 from python.utilities.paths import VALID_NAMES_TXT, WEBSITES_CONTENT_DIR, IMAGES_DIR, TRANCO_DOMAINS_TXT, PING_TIMINGS_JSON, SCRAPE_TIMINGS_JSON
 from python.utilities.log import Log
 from python.utilities.benchmark import Benchmark
+from selenium.common.exceptions import TimeoutException
 
 
 os_name = os.name
@@ -30,7 +31,7 @@ def pinging(d_name):
 def scrape(domain_name, folder):
     try:
         web = get_contents.WebSiteContent(domain_name)
-        web.parseContent()
+        web.scrapeUrl()
 
         file_name = domain_name + ".json"
         path = os.path.join(folder, file_name)
@@ -39,15 +40,15 @@ def scrape(domain_name, folder):
 
     except ConnectionError:
         Log.log("Could not connect to " + domain_name + " skipping!")
-    except ReadTimeout:
+    except TimeoutException:
         Log.log("Max time exceeded " + domain_name + " skipping!")
     except TooManyRedirects:
         Log.log(domain_name + " exceeded 30 redirections, skipping!")
 
 
-number_of_sites = 10
+number_of_sites = 20
 batch_count = 10
-ping_thread_count = 250
+ping_thread_count = 10
 scrape_thread_count = 10
 
 if __name__ == "__main__":

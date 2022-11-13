@@ -4,11 +4,9 @@ from collections import Counter
 
 from seleniumwire import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
 
 from python.utilities.paths import CONTENT_STRUCTURE_JSON, IMAGES_DIR, CHROME_DRIVER, CHROME_DRIVER_LINUX
-from python.utilities.log import Log
 
 import os
 import json
@@ -49,13 +47,12 @@ pytesseract.pytesseract.tesseract_cmd = os.path.expanduser('~') + r"\AppData\Loc
 class WebSiteContent:
     def __init__(self, url):
         self.domain = url
-        print(url)
 
         with open(CONTENT_STRUCTURE_JSON) as content_file:
             self.parsed_content = json.load(content_file)
 
-        if url[0:4] != "http":
-            url = "http://" + url
+    def scrapeUrl(self):
+        url = "http://" + self.domain if self.domain[0:4] != "http" else self.domain
 
         op = Options()
         op.add_argument("--headless")
@@ -64,42 +61,55 @@ class WebSiteContent:
         op.add_argument('--disable-dev-shm-usage')
 
         try:
-            self.driver = webdriver.Chrome(CHROME_DRIVER, options=op) if os.name == "nt" else webdriver.Chrome(CHROME_DRIVER_LINUX, options=op)
-            print("driver initialized")
+            self.driver = webdriver.Chrome(CHROME_DRIVER, options=op) if os.name == "nt" else webdriver.Chrome(
+                CHROME_DRIVER_LINUX, options=op)
 
-
-            wait = WebDriverWait(self.driver, 10)
+            wait = WebDriverWait(self.driver, 15)
             self.driver.get(url)
             wait.until(lambda d: d.execute_script("return document.readyState") == "complete")
-            print("website reached")
 
-            #self.parsed_content["status_code"] = self.driver.last_request.response.status_code
-            self.url = self.driver.execute_script("return document.documentURI")
-            self.__editUrl()
-            self.home_page = self.driver.page_source
-            print("html received")
+            if self.driver.last_request.response is None:
+                url = "https://" + self.domain if self.domain[0:4] != "http" else self.domain
+                wait = WebDriverWait(self.driver, 15)
+                self.driver.get(url)
+                wait.until(lambda d: d.execute_script("return document.readyState") == "complete")
+
+            if self.driver.last_request.response is not None:
+                self.parsed_content["status_code"] = self.driver.last_request.response.status_code
+                self.url = self.driver.execute_script("return document.documentURI")
+                self.__editUrl()
+                self.home_page = self.driver.page_source
+
+                self.__parseContent()
+        except FileNotFoundError:
+            pass
 
         finally:
-            self.driver.close()
-            print("driver closed")
+            try:
+                self.driver.quit()
+            except:
+                pass
 
     def __editUrl(self):
         query_start = self.url.find("?")
         self.url = self.url[:query_start]
 
-    def parseContent(self):
-        page_soup = BeautifulSoup(self.home_page, features="html.parser")
+    def __parseContent(self):
+        try:
+            page_soup = BeautifulSoup(self.home_page, features="html.parser")
 
-        self.parsed_content["url"] = self.url
-        self.parseTitle(page_soup.find('title'))
-        self.parseScript(page_soup.findAll('script'))
-        self.parseLinks(page_soup.findAll('link'))
-        self.parseMeta(page_soup.findAll('meta'))
-        self.getTextualContent(page_soup)
-        self.parseAnchors(page_soup.findAll('a'))
-        self.parseImage(page_soup.findAll('img'))
-        self.parseAudio(page_soup.findAll('audio'))
+            self.parsed_content["url"] = self.url
+            self.parseTitle(page_soup.find('title'))
+            self.parseScript(page_soup.findAll('script'))
+            self.parseLinks(page_soup.findAll('link'))
+            self.parseMeta(page_soup.findAll('meta'))
+            self.getTextualContent(page_soup)
+            self.parseAnchors(page_soup.findAll('a'))
+            self.parseImage(page_soup.findAll('img'))
+            self.parseAudio(page_soup.findAll('audio'))
 
+        except AttributeError:
+            pass
 
 
     def getTextualContent(self, body):
@@ -301,18 +311,6 @@ class WebSiteContent:
             return ".jpeg"
         elif image_link.find(".jpg") != -1:
             return ".jpg"
-        elif image_link.find(".apng") != -1:
-            return ".apng"
-        elif image_link.find(".avif") != -1:
-            return ".avif"
-        elif image_link.find(".gif") != -1:
-            return ".gif"
-        elif image_link.find(".jfif") != -1:
-            return ".jfif"
-        elif image_link.find(".pjpeg") != -1:
-            return ".pjpeg"
-        elif image_link.find(".pjp") != -1:
-            return ".pjp"
         return None
 
     def findInternalLinks(self, page_content):
