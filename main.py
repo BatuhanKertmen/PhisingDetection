@@ -63,10 +63,10 @@ def scrape(domain_name, folder):
         pass
 
 
-number_of_sites = 1_000_000
-batch_count = 1_000
-ping_thread_count = 500
-scrape_thread_count = 20
+number_of_sites = 10
+batch_count = 10
+ping_thread_count = 10
+scrape_thread_count = 2
 
 if __name__ == "__main__":
     domains_address = TRANCO_DOMAINS_TXT
@@ -75,7 +75,7 @@ if __name__ == "__main__":
 
     benchmark = Benchmark()
     benchmark.initializeTimer()
-    """
+
     with open(domains_address, 'r') as domain_file:
         with open(VALID_NAMES_TXT, "w") as valid_domains_file:
             while counter < number_of_sites:
@@ -96,12 +96,10 @@ if __name__ == "__main__":
 
     benchmark.writeRecords(PING_TIMINGS_JSON)
     Log.success("Pinging Done")
-    
-    """
+
     benchmark.reset()
     counter = 0
     with open(VALID_NAMES_TXT, "r") as file:
-        valid_domains = list(islice(file, 400))
         while counter < number_of_sites:
             valid_domains = list(islice(file, batch_count))
             if not valid_domains:
