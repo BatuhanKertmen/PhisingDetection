@@ -1,8 +1,11 @@
+import PIL
 from PIL import Image
 from bs4 import BeautifulSoup
 from collections import Counter
 
 from seleniumwire import webdriver
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 
@@ -10,6 +13,7 @@ from python.utilities.paths import CONTENT_STRUCTURE_JSON, IMAGES_DIR, CHROME_DR
 
 import os
 import json
+import time
 import requests
 import googletrans
 import pytesseract
@@ -47,6 +51,7 @@ pytesseract.pytesseract.tesseract_cmd = os.path.expanduser('~') + r"\AppData\Loc
 class WebSiteContent:
     def __init__(self, url):
         self.domain = url
+        self.home_page = ""
 
         with open(CONTENT_STRUCTURE_JSON) as content_file:
             self.parsed_content = json.load(content_file)
@@ -59,6 +64,7 @@ class WebSiteContent:
         op.add_argument("--disable-gpu")
         op.add_argument('--no-sandbox')
         op.add_argument('--disable-dev-shm-usage')
+        op.add_experimental_option('excludeSwitches', ['enable-logging'])
 
         try:
             self.driver = webdriver.Chrome(CHROME_DRIVER, options=op) if os.name == "nt" else webdriver.Chrome(
@@ -66,29 +72,31 @@ class WebSiteContent:
 
             wait = WebDriverWait(self.driver, 15)
             self.driver.get(url)
-            wait.until(lambda d: d.execute_script("return document.readyState") == "complete")
+            wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "body")))
 
-            if self.driver.last_request.response is None:
-                url = "https://" + self.domain if self.domain[0:4] != "http" else self.domain
-                wait = WebDriverWait(self.driver, 15)
-                self.driver.get(url)
-                wait.until(lambda d: d.execute_script("return document.readyState") == "complete")
+            if self.driver.last_request is None:
+                self.parsed_content["status_code"] = 502
+                self.parsed_content["url"] = url
 
-            if self.driver.last_request.response is not None:
-                self.parsed_content["status_code"] = self.driver.last_request.response.status_code
+            else:
                 self.url = self.driver.execute_script("return document.documentURI")
                 self.__editUrl()
                 self.home_page = self.driver.page_source
+                try:
+                    self.parsed_content["status_code"] = self.driver.last_request.response.status_code
+                except AttributeError:
+                    self.parsed_content["status_code"] = None
 
-                self.__parseContent()
+
         except FileNotFoundError:
             pass
 
         finally:
-            try:
-                self.driver.quit()
-            except:
-                pass
+            self.driver.close()
+
+            if  len(self.home_page) > 0:
+                self.__parseContent()
+
 
     def __editUrl(self):
         query_start = self.url.find("?")
@@ -273,11 +281,16 @@ class WebSiteContent:
         with open(image_name, 'wb') as handler:
             handler.write(image_bytes)
 
-        with Image.open(image_name) as image:
-            width, height = image.size
-            ocr_text = pytesseract.image_to_string(image)
+        try:
+            with Image.open(image_name) as image:
+                width, height = image.size
+                ocr_text = pytesseract.image_to_string(image)
 
-        os.remove(image_name)
+        except PIL.UnidentifiedImageError:
+            pass
+
+        finally:
+            os.remove(image_name)
 
         return byte, width, height, ocr_text
 
@@ -330,3 +343,8 @@ class WebSiteContent:
             return set(internal_links)
         except Exception:
             return set()
+
+
+#web = WebSiteContent("amazon.ca")
+#web.scrapeUrl()
+#print(web.parsed_content)
