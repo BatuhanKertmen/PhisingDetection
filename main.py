@@ -16,6 +16,14 @@ from python.utilities.log import Log
 from python.utilities.benchmark import Benchmark
 from selenium.common.exceptions import TimeoutException
 
+from pymongo import MongoClient
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
+
+password = os.environ.get('MONGODB_PASSWORD')
+connection_string = f"mongodb+srv://d:{password}@cluster.s33rotk.mongodb.net/?retryWrites=true&w=majority"
+
+client = MongoClient(connection_string)
 
 os_name = os.name
 if not (os_name == "posix" or os_name == "nt"):
@@ -37,6 +45,13 @@ def scrape(domain_name, folder):
         path = os.path.join(folder, file_name)
         with open(path, "w") as content_file:
             json.dump(web.parsed_content, content_file)
+        links_db = client.links
+        def insert_links_doc():
+            collection = links_db.link
+            link_document = web.parsed_content
+            inserted_id = collection.insert_one(link_document).inserted_id
+            print(inserted_id)
+        insert_links_doc()
 
     except ConnectionError:
         Log.log("Could not connect to " + domain_name + " skipping!")
