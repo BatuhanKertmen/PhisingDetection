@@ -1,11 +1,16 @@
 from flask import Flask, render_template
-from flask_sqlalchemy import SQLAlchemy
+import sqlite3
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    con = sqlite3.connect("websites.db")
+    con.row_factory = sqlite3.Row
+    cur = con.cursor()
+    cur.execute("SELECT * FROM WEBSITE")
+    rows = cur.fetchall()
+    return render_template("home.html", rows=rows)
 
 @app.route("/team")
 def team():
